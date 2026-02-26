@@ -1,0 +1,81 @@
+Create a modern, minimal and visually strong landing page for a startup called CultureCheck.
+CultureCheck is a digital platform to discover and book creative cultural activities such as ceramics, theatre workshops, writing, painting and local artistic experiences.
+The brand is contemporary, urban, creative and aesthetic — not corporate, not institutional, not bohemian. Clean design, strong visual identity.
+Use this color palette:
+•	Vibrant blue #2c47c7
+•	Warm orange #de734a
+Use a modern sans-serif typography similar to Anton for titles and Oswald for descriptions.
+The landing page must include:
+________________________________________
+1. Hero Section
+Headline that communicates:
+“Culture that is lived, not just consumed.”
+Subheadline explaining:
+A platform to discover and book creative activities in your city.
+Primary CTA:
+“Join the waitlist”
+Secondary CTA:
+“For creative centers”
+________________________________________
+2. About / Philosophy Section
+Explain the problem:
+•	Digital saturation
+•	Passive cultural consumption
+•	Fragmented discovery
+Explain the vision:
+CultureCheck helps people actively participate in culture and connect with creative communities.
+________________________________________
+3. For Users Section
+Explain benefits:
+•	Discover creative activities easily
+•	Flexible booking
+•	Access to curated creative spaces
+•	Community of like-minded people
+CTA:
+“Get early access”
+Include email capture form.
+________________________________________
+4. For Creative Centers Section
+Explain benefits:
+•	Increase visibility
+•	Attract new audiences
+•	Simplify booking management
+•	Become part of a creative network
+CTA:
+“Become a partner”
+Include form for centers to apply.
+________________________________________
+5. Join Us Section
+Headline:
+“Build CultureCheck with us”
+Explain that the project is open to:
+•	Strategic partners
+•	Mentors
+•	Cultural advisors
+•	Investors
+•	Creative ambassadors
+CTA:
+“Let’s talk”
+Include contact form.
+________________________________________
+6. Vision Section (Future)
+Short section explaining:
+International scalability, creative ecosystem, cultural innovation.
+________________________________________
+7. Footer
+Minimal.
+Social links.
+Contact email.
+Copyright.
+________________________________________
+Design style:
+•	Minimal
+•	Strong use of color blocks (terracotta and blue)
+•	Clean layout
+•	Generous whitespace
+•	Modern startup aesthetic
+•	Not overly animated
+•	Clear hierarchy
+•	Conversion focused
+Make it feel like a real early-stage but serious startup.
+
