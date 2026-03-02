@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: 'Inter', sans-serif;
+  --font-sans: 'Oswald', sans-serif;
   --font-heading: 'Anton', sans-serif;
   --font-subheading: 'Oswald', sans-serif;
 

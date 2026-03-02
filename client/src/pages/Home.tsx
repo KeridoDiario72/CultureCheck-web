@@ -294,7 +294,7 @@ export default function Home() {
           
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6 font-subheading text-lg md:text-xl text-foreground/70 py-8 border-y border-muted">
             {t.joinUs.roles.map((r, i) => (
-              <div key={i}>{r}</div>
+              <div key={i} className="flex items-center justify-center text-center p-2">{r}</div>
             ))}
           </div>
 
