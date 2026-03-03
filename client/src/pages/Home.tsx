@@ -325,8 +325,8 @@ export default function Home() {
       </section>
       {/* Footer */}
       <footer className="py-12 border-t border-muted px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6 bg-[#F5F1E8]">
-        <div className="h-14 md:h-20 lg:h-24 flex items-center">
-          <img src={logoImage} alt="CultureCheck Logo" className="h-full w-auto object-contain" />
+        <div className="font-heading text-2xl text-foreground flex items-start">
+          CultureCheck<span className="text-[0.6em] ml-1 mt-0.5 leading-none">®</span>
         </div>
         
         <div className="flex gap-6">
