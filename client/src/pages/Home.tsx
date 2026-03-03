@@ -81,10 +81,10 @@ export default function Home() {
       users: {
         title: "Para Creadores",
         benefits: [
-          "Descubre actividades creativas fácilmente",
-          "Reserva flexible",
-          "Acceso a espacios creativos curados",
-          "Comunidad de personas con ideas afines"
+          "Descubrir nuevas actividades creativas",
+          "Reservar talleres y experiencias culturales",
+          "Acceder a espacios creativos seleccionados",
+          "Conectar con personas con intereses similares"
         ],
         ctaTitle: "Obtén acceso anticipado",
         inputPlaceholder: "Tu correo electrónico",
@@ -93,12 +93,12 @@ export default function Home() {
       centers: {
         title: "Para Centros",
         benefits: [
-          "Aumenta la visibilidad",
-          "Atrae nuevas audiencias",
-          "Simplifica la gestión de reservas",
-          "Forma parte de una red creativa"
+          "Aumentar la visibilidad de tu espacio",
+          "Atraer a nuevas audiencias",
+          "Simplificar la gestión de reservas",
+          "Formar parte de una red creativa"
         ],
-        ctaTitle: "Conviértete en socio",
+        ctaTitle: "Conviértete en colaborador",
         namePlaceholder: "Nombre del Centro",
         emailPlaceholder: "Correo Electrónico",
         submit: "Solicitar ahora"
