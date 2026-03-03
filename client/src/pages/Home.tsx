@@ -286,7 +286,7 @@ export default function Home() {
           variants={fadeIn}
           className="space-y-10"
         >
-          <h2 className="text-4xl md:text-5xl text-primary lowercase tracking-tight">{t.joinUs.title}</h2>
+          <h2 className="text-4xl md:text-5xl text-foreground uppercase tracking-wider">{t.joinUs.title}</h2>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 font-subheading text-lg text-foreground/70 py-6 border-y border-muted">
             {t.joinUs.roles.map((r, i) => (
@@ -295,7 +295,7 @@ export default function Home() {
           </div>
 
           <div className="bg-background p-10 mt-8 shadow-xl border border-muted max-w-2xl mx-auto">
-            <h3 className="font-heading text-2xl mb-6 text-accent uppercase tracking-wide">{t.joinUs.cta}</h3>
+            <h3 className="font-heading text-2xl mb-6 text-foreground uppercase tracking-wide">{t.joinUs.cta}</h3>
             <form className="space-y-4 text-left" onSubmit={(e) => e.preventDefault()}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Input type="text" placeholder={lang === "es" ? "Nombre" : "Name"} className="rounded-none border-muted bg-muted/30 h-12" />
@@ -305,7 +305,7 @@ export default function Home() {
                 placeholder={lang === "es" ? "Cuéntanos cómo te gustaría colaborar" : "Tell us how you'd like to collaborate"}
                 className="w-full min-h-[100px] p-4 rounded-none border border-muted bg-muted/30 focus:outline-none focus:ring-1 focus:ring-primary font-sans"
               />
-              <Button type="submit" className="w-full rounded-none bg-primary text-white hover:bg-primary/90 font-subheading text-lg h-12 transition-all">
+              <Button type="submit" className="w-full rounded-none bg-foreground text-background hover:bg-foreground/90 font-subheading text-lg h-12 transition-all">
                 {lang === "es" ? "Enviar mensaje" : "Send message"}
               </Button>
             </form>
