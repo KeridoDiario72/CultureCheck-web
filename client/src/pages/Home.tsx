@@ -257,12 +257,12 @@ export default function Home() {
                 <li key={i} className="border-b border-white/20 pb-4">{b}</li>
               ))}
             </ul>
-            <div className="bg-white/10 backdrop-blur-sm p-8 mt-8 border border-white/20">
-              <h3 className="font-heading text-2xl mb-4">{t.centers.ctaTitle}</h3>
+            <div className="bg-white p-10 mt-8 border-l-8 border-primary shadow-2xl">
+              <h3 className="font-heading text-3xl mb-6 text-accent">{t.centers.ctaTitle}</h3>
               <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                <Input type="text" placeholder={t.centers.namePlaceholder} className="rounded-none border-white/30 bg-transparent placeholder:text-white/50 text-white" />
-                <Input type="email" placeholder={t.centers.emailPlaceholder} className="rounded-none border-white/30 bg-transparent placeholder:text-white/50 text-white" />
-                <Button type="submit" className="w-full rounded-none bg-white text-accent hover:bg-white/90 font-subheading text-lg">{t.centers.submit}</Button>
+                <Input type="text" placeholder={t.centers.namePlaceholder} className="rounded-none border-muted bg-background text-foreground h-12" />
+                <Input type="email" placeholder={t.centers.emailPlaceholder} className="rounded-none border-muted bg-background text-foreground h-12" />
+                <Button type="submit" className="w-full rounded-none bg-accent text-white hover:bg-accent/90 font-subheading text-xl h-14 transition-all hover:tracking-widest">{t.centers.submit}</Button>
               </form>
             </div>
           </motion.div>
@@ -272,7 +272,7 @@ export default function Home() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-             <img src={paintingImage} alt="Abstract painting studio" className="absolute inset-0 w-full h-full object-cover grayscale opacity-50" />
+             <img src={paintingImage} alt="Abstract painting studio" className="absolute inset-0 w-full h-full object-cover" />
           </motion.div>
         </div>
       </section>
@@ -294,20 +294,9 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="bg-primary/5 border border-primary/20 p-12 mt-12">
-            <h3 className="font-heading text-4xl mb-6 text-primary">{t.joinUs.cta}</h3>
-            <p className="font-subheading text-xl mb-8 text-foreground/70 max-w-md mx-auto">
-              {lang === "es" 
-                ? "Déjanos tu contacto para explorar cómo colaborar." 
-                : "Leave your contact info to explore how we can collaborate."}
-            </p>
-            <form className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto" onSubmit={(e) => e.preventDefault()}>
-              <Input type="email" placeholder={t.users.inputPlaceholder} className="rounded-none border-primary/30 bg-background h-14 text-lg" />
-              <Button type="submit" className="rounded-none bg-primary hover:bg-primary/90 text-white font-subheading text-xl px-10 h-14">
-                {t.users.submit}
-              </Button>
-            </form>
-          </div>
+          <Button size="lg" className="rounded-none bg-foreground text-background hover:bg-foreground/90 font-subheading text-2xl px-12 py-8">
+            {t.joinUs.cta}
+          </Button>
         </motion.div>
       </section>
       {/* Vision Section */}
