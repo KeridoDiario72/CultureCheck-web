@@ -109,7 +109,7 @@ export default function Home() {
         cta: "Hablemos"
       },
       vision: {
-        text: "Construyendo un ecosistema escalable internacionalmente para la innovación cultural."
+        text: "Creando un nuevo ecosistema de experiencias culturales creativas que conecte personas, espacios y comunidades."
       }
     }
   };
