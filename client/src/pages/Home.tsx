@@ -6,7 +6,7 @@ import { ArrowRight, Mail, Instagram, Twitter } from "lucide-react";
 import heroArt from "@/assets/images/hero-art.png";
 import ceramicsImage from "@/assets/images/ceramics.png";
 import paintingImage from "@/assets/images/painting.png";
-import logoImage from "@assets/Logo_-_CultureCheck_1772538066379.png";
+import logoImage from "@/assets/images/logo-trimmed.png";
 
 export default function Home() {
   const [email, setEmail] = useState("");
@@ -127,8 +127,8 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground overflow-hidden selection:bg-primary selection:text-white">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex justify-between items-center bg-[#F5F1E8] border-b border-muted shadow-sm">
-        <div className="h-12 md:h-16 flex items-center">
-          <img src={logoImage} alt="CultureCheck Logo" className="h-full w-auto object-contain" />
+        <div className="flex items-center">
+          <img src={logoImage} alt="CultureCheck Logo" className="h-8 md:h-10 w-auto object-contain mix-blend-multiply scale-150 origin-left ml-4" />
         </div>
         <div className="flex items-center gap-4">
           <button 
@@ -325,8 +325,8 @@ export default function Home() {
       </section>
       {/* Footer */}
       <footer className="py-12 border-t border-muted px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6 bg-[#F5F1E8]">
-        <div className="h-12 md:h-16 flex items-center">
-          <img src={logoImage} alt="CultureCheck Logo" className="h-full w-auto object-contain mix-blend-multiply" />
+        <div className="flex items-center">
+          <img src={logoImage} alt="CultureCheck Logo" className="h-10 md:h-14 w-auto object-contain mix-blend-multiply scale-150 origin-left ml-4" />
         </div>
         
         <div className="flex gap-6">
