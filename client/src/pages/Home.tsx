@@ -64,12 +64,12 @@ export default function Home() {
     },
     es: {
       nav: {
-        cta: "Unirse a la lista"
+        cta: "Únete a la lista de espera"
       },
       hero: {
         headline: <>Cultura que se <span className="text-[#c65a2e]">vive</span></>,
         subheadline: "Una plataforma para descubrir y reservar actividades creativas en tu ciudad.",
-        primaryCta: "Unirse a la lista",
+        primaryCta: "Únete a la lista de espera",
         secondaryCta: "Para centros creativos"
       },
       philosophy: {
