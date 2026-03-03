@@ -9,7 +9,7 @@ import paintingImage from "@/assets/images/painting.png";
 
 export default function Home() {
   const [email, setEmail] = useState("");
-  const [lang, setLang] = useState<"en" | "es">("en");
+  const [lang, setLang] = useState<"en" | "es">("es");
 
   const content = {
     en: {
