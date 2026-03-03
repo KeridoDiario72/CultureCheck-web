@@ -126,8 +126,10 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden selection:bg-primary selection:text-white">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex justify-between items-center bg-background/80 backdrop-blur-md border-b border-muted">
-        <img src={logoImage} alt="CultureCheck Logo" className="h-8 md:h-10 object-contain" />
+      <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex justify-between items-center bg-[#F5F1E8] border-b border-muted shadow-sm">
+        <div className="h-12 md:h-16 flex items-center">
+          <img src={logoImage} alt="CultureCheck Logo" className="h-full w-auto object-contain" />
+        </div>
         <div className="flex items-center gap-4">
           <button 
             onClick={() => setLang(lang === "en" ? "es" : "en")}
@@ -322,8 +324,10 @@ export default function Home() {
         </div>
       </section>
       {/* Footer */}
-      <footer className="py-12 border-t border-muted px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6">
-        <img src={logoImage} alt="CultureCheck Logo" className="h-6 md:h-8 object-contain opacity-80" />
+      <footer className="py-12 border-t border-muted px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6 bg-[#F5F1E8]">
+        <div className="h-12 md:h-16 flex items-center">
+          <img src={logoImage} alt="CultureCheck Logo" className="h-full w-auto object-contain mix-blend-multiply" />
+        </div>
         
         <div className="flex gap-6">
           <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><Instagram className="h-6 w-6" /></a>
