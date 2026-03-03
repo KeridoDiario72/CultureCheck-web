@@ -59,7 +59,7 @@ export default function Home() {
         cta: "Let's Talk"
       },
       vision: {
-        text: "Building an internationally scalable ecosystem for cultural innovation."
+        text: "Creando nuevas formas de descubrir, crear y compartir cultura"
       }
     },
     es: {
@@ -109,7 +109,7 @@ export default function Home() {
         cta: "Hablemos"
       },
       vision: {
-        text: "Creando un nuevo ecosistema de experiencias culturales creativas que conecte personas, espacios y comunidades."
+        text: "Creando nuevas formas de descubrir, crear y compartir cultura"
       }
     }
   };
