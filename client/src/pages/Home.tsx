@@ -76,7 +76,7 @@ export default function Home() {
         problem: "El Problema",
         problems: ["Saturación digital", "Consumo cultural pasivo", "Descubrimiento fragmentado"],
         vision: "Nuestra Visión",
-        visionText: <>CultureCheck ayuda a las personas a <span className="text-primary">participar activamente</span> en la cultura y conectar con comunidades creativas.</>
+        visionText: <>CultureCheck impulsa a <span className="text-primary">participar activamente</span> en la cultura y a conectar con una comunidad creativa.</>
       },
       users: {
         title: "Para Creadores",
@@ -139,7 +139,6 @@ export default function Home() {
           </Button>
         </div>
       </nav>
-
       {/* Hero Section */}
       <section className="pt-32 pb-20 md:pt-48 md:pb-32 px-6 md:px-12 max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         <motion.div 
@@ -176,7 +175,6 @@ export default function Home() {
           <img src={heroArt} alt="Abstract representation of culture" className="absolute inset-0 w-full h-full object-cover grayscale-[20%] contrast-125" />
         </motion.div>
       </section>
-
       {/* About / Philosophy Section */}
       <section className="py-24 bg-foreground text-background px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
@@ -191,7 +189,7 @@ export default function Home() {
               <h2 className="text-sm font-sans tracking-widest text-secondary mb-6 uppercase">{t.philosophy.problem}</h2>
               <ul className="space-y-6 font-subheading text-3xl md:text-5xl opacity-80">
                 {t.philosophy.problems.map((p, i) => (
-                  <li key={i} className="flex items-center gap-4">
+                  <li key={i} className="flex items-center gap-4 text-[36px]">
                     <span className="text-accent text-xl">0{i+1}</span> {p}
                   </li>
                 ))}
@@ -206,7 +204,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
       {/* For Users Section */}
       <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -244,7 +241,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
       {/* For Creative Centers Section */}
       <section className="py-24 bg-accent text-accent-foreground px-6 md:px-12">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
@@ -280,7 +276,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-
       {/* Join Us Section */}
       <section className="py-32 px-6 md:px-12 max-w-4xl mx-auto text-center">
         <motion.div
@@ -303,7 +298,6 @@ export default function Home() {
           </Button>
         </motion.div>
       </section>
-
       {/* Vision Section */}
       <section className="py-24 bg-primary text-primary-foreground px-6 md:px-12 text-center">
         <div className="max-w-4xl mx-auto">
@@ -312,7 +306,6 @@ export default function Home() {
           </p>
         </div>
       </section>
-
       {/* Footer */}
       <footer className="py-12 border-t border-muted px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="font-heading text-3xl text-foreground">CultureCheck</div>
