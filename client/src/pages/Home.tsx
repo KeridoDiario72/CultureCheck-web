@@ -92,7 +92,7 @@ export default function Home() {
         cta: "Let's Talk"
       },
       vision: {
-        text: "Creando nuevas formas de descubrir, crear y compartir cultura"
+        text: "Creating new ways to discover, create and share culture"
       }
     },
     es: {
