@@ -148,7 +148,7 @@ export default function Home() {
           viewport={{ once: true }}
           variants={fadeIn}
         >
-          <h1 className="text-6xl md:text-8xl leading-[0.9] text-foreground">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl leading-[1.1] tracking-tight text-foreground">
             {t.hero.headline}
           </h1>
           <p className="font-subheading text-xl md:text-2xl text-muted-foreground max-w-md">
@@ -187,9 +187,9 @@ export default function Home() {
           >
             <div>
               <h2 className="text-sm font-sans tracking-widest text-secondary mb-6 uppercase">{t.philosophy.problem}</h2>
-              <ul className="space-y-6 font-subheading text-3xl md:text-5xl opacity-80">
+              <ul className="space-y-6 font-subheading text-2xl md:text-4xl opacity-80 leading-normal">
                 {t.philosophy.problems.map((p, i) => (
-                  <li key={i} className="flex items-center gap-4 text-[36px]">
+                  <li key={i} className="flex items-center gap-4 text-3xl">
                     <span className="text-accent text-xl">0{i+1}</span> {p}
                   </li>
                 ))}
@@ -197,7 +197,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col justify-center">
               <h2 className="text-sm font-sans tracking-widest text-primary mb-6 uppercase">{t.philosophy.vision}</h2>
-              <p className="text-2xl md:text-4xl font-subheading leading-relaxed">
+              <p className="text-2xl md:text-4xl font-subheading leading-normal">
                 {t.philosophy.visionText}
               </p>
             </div>
@@ -314,8 +314,8 @@ export default function Home() {
       </section>
       {/* Vision Section */}
       <section className="py-24 bg-primary text-primary-foreground px-6 md:px-12 text-center flex items-center justify-center min-h-[50vh] overflow-hidden">
-        <div className="max-w-[95vw] mx-auto">
-          <p className="font-heading text-4xl sm:text-6xl md:text-8xl lg:text-[10rem] leading-[0.85] uppercase tracking-tighter break-words">
+        <div className="max-w-[90vw] mx-auto">
+          <p className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.3] uppercase tracking-normal break-words">
             {t.vision.text}
           </p>
         </div>
