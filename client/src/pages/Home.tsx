@@ -272,10 +272,11 @@ export default function Home() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-             <img src={paintingImage} alt="Abstract painting studio" className="absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-80" />
+             <img src={paintingImage} alt="Abstract painting studio" className="absolute inset-0 w-full h-full object-cover grayscale opacity-50" />
           </motion.div>
         </div>
       </section>
+
       {/* Join Us Section */}
       <section className="py-32 px-6 md:px-12 max-w-4xl mx-auto text-center">
         <motion.div
@@ -293,9 +294,20 @@ export default function Home() {
             ))}
           </div>
 
-          <Button size="lg" className="rounded-none bg-foreground text-background hover:bg-foreground/90 font-subheading text-2xl px-12 py-8">
-            {t.joinUs.cta}
-          </Button>
+          <div className="bg-primary/5 border border-primary/20 p-12 mt-12">
+            <h3 className="font-heading text-4xl mb-6 text-primary">{t.joinUs.cta}</h3>
+            <p className="font-subheading text-xl mb-8 text-foreground/70 max-w-md mx-auto">
+              {lang === "es" 
+                ? "Déjanos tu contacto para explorar cómo colaborar." 
+                : "Leave your contact info to explore how we can collaborate."}
+            </p>
+            <form className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto" onSubmit={(e) => e.preventDefault()}>
+              <Input type="email" placeholder={t.users.inputPlaceholder} className="rounded-none border-primary/30 bg-background h-14 text-lg" />
+              <Button type="submit" className="rounded-none bg-primary hover:bg-primary/90 text-white font-subheading text-xl px-10 h-14">
+                {t.users.submit}
+              </Button>
+            </form>
+          </div>
         </motion.div>
       </section>
       {/* Vision Section */}
