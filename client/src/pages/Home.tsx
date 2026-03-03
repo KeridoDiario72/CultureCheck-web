@@ -2,15 +2,47 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ArrowRight, Mail, Instagram, Twitter } from "lucide-react";
+import { ArrowRight, Mail, Instagram, Loader2, CheckCircle } from "lucide-react";
 import heroArt from "@/assets/images/hero-art.png";
 import ceramicsImage from "@/assets/images/ceramics.png";
 import paintingImage from "@/assets/images/painting.png";
 import logoImage from "@/assets/images/logo-transparent-trimmed.png";
 
+const FORMSPREE_URL = "https://formspree.io/f/xgoljqjv";
+
+type FormStatus = "idle" | "submitting" | "success" | "error";
+
+function useFormspree() {
+  const [status, setStatus] = useState<FormStatus>("idle");
+
+  const submit = async (data: Record<string, string>) => {
+    setStatus("submitting");
+    try {
+      const res = await fetch(FORMSPREE_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (res.ok) {
+        setStatus("success");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  };
+
+  const reset = () => setStatus("idle");
+
+  return { status, submit, reset };
+}
+
 export default function Home() {
-  const [email, setEmail] = useState("");
   const [lang, setLang] = useState<"en" | "es">("es");
+  const userForm = useFormspree();
+  const centerForm = useFormspree();
+  const joinForm = useFormspree();
 
   const content = {
     en: {
@@ -236,10 +268,28 @@ export default function Home() {
             </ul>
             <div className="bg-muted p-8 mt-8">
               <h3 className="font-heading text-2xl mb-4">{t.users.ctaTitle}</h3>
-              <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
-                <Input type="email" placeholder={t.users.inputPlaceholder} className="rounded-none border-foreground bg-background" />
-                <Button type="submit" className="rounded-none bg-primary hover:bg-primary/90">{t.users.submit}</Button>
-              </form>
+              {userForm.status === "success" ? (
+                <div className="flex items-center gap-2 text-green-600 font-subheading" data-testid="status-user-success">
+                  <CheckCircle className="h-5 w-5" />
+                  {lang === "es" ? "¡Gracias! Te contactaremos pronto." : "Thanks! We'll be in touch."}
+                </div>
+              ) : (
+                <form className="flex gap-2" data-testid="form-user" onSubmit={async (e) => {
+                  e.preventDefault();
+                  const form = e.currentTarget;
+                  const email = (form.elements.namedItem("email") as HTMLInputElement).value;
+                  await userForm.submit({ email, formType: "user" });
+                  form.reset();
+                }}>
+                  <Input name="email" type="email" required placeholder={t.users.inputPlaceholder} className="rounded-none border-foreground bg-background" data-testid="input-user-email" />
+                  <Button type="submit" disabled={userForm.status === "submitting"} className="rounded-none bg-primary hover:bg-primary/90" data-testid="button-user-submit">
+                    {userForm.status === "submitting" ? <Loader2 className="h-4 w-4 animate-spin" /> : t.users.submit}
+                  </Button>
+                </form>
+              )}
+              {userForm.status === "error" && (
+                <p className="text-red-500 text-sm mt-2">{lang === "es" ? "Error al enviar. Inténtalo de nuevo." : "Submission failed. Please try again."}</p>
+              )}
             </div>
           </motion.div>
         </div>
@@ -262,11 +312,30 @@ export default function Home() {
             </ul>
             <div className="bg-background p-10 mt-8 shadow-2xl border border-muted">
               <h3 className="font-heading text-3xl mb-6 text-accent">{t.centers.ctaTitle}</h3>
-              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                <Input type="text" placeholder={t.centers.namePlaceholder} className="rounded-none border-muted bg-muted/30 text-foreground h-12" />
-                <Input type="email" placeholder={t.centers.emailPlaceholder} className="rounded-none border-muted bg-muted/30 text-foreground h-12" />
-                <Button type="submit" className="w-full rounded-none bg-accent text-white hover:bg-accent/90 font-subheading text-xl h-14 transition-all hover:tracking-widest">{t.centers.submit}</Button>
-              </form>
+              {centerForm.status === "success" ? (
+                <div className="flex items-center gap-2 text-green-600 font-subheading" data-testid="status-center-success">
+                  <CheckCircle className="h-5 w-5" />
+                  {lang === "es" ? "¡Solicitud recibida! Te contactaremos pronto." : "Application received! We'll be in touch."}
+                </div>
+              ) : (
+                <form className="space-y-4" data-testid="form-center" onSubmit={async (e) => {
+                  e.preventDefault();
+                  const form = e.currentTarget;
+                  const name = (form.elements.namedItem("centerName") as HTMLInputElement).value;
+                  const email = (form.elements.namedItem("email") as HTMLInputElement).value;
+                  await centerForm.submit({ email, centerName: name, formType: "center" });
+                  form.reset();
+                }}>
+                  <Input name="centerName" type="text" required placeholder={t.centers.namePlaceholder} className="rounded-none border-muted bg-muted/30 text-foreground h-12" data-testid="input-center-name" />
+                  <Input name="email" type="email" required placeholder={t.centers.emailPlaceholder} className="rounded-none border-muted bg-muted/30 text-foreground h-12" data-testid="input-center-email" />
+                  <Button type="submit" disabled={centerForm.status === "submitting"} className="w-full rounded-none bg-accent text-white hover:bg-accent/90 font-subheading text-xl h-14 transition-all hover:tracking-widest" data-testid="button-center-submit">
+                    {centerForm.status === "submitting" ? <Loader2 className="h-5 w-5 animate-spin" /> : t.centers.submit}
+                  </Button>
+                </form>
+              )}
+              {centerForm.status === "error" && (
+                <p className="text-red-500 text-sm mt-2">{lang === "es" ? "Error al enviar. Inténtalo de nuevo." : "Submission failed. Please try again."}</p>
+              )}
             </div>
           </motion.div>
           <motion.div 
@@ -299,19 +368,39 @@ export default function Home() {
 
           <div className="bg-background p-8 mt-6 shadow-lg border border-muted max-w-lg mx-auto">
             <h3 className="font-heading text-xl mb-4 text-foreground uppercase tracking-wide">{t.joinUs.cta}</h3>
-            <form className="space-y-3 text-left" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid grid-cols-1 gap-3">
-                <Input type="text" placeholder={lang === "es" ? "Nombre" : "Name"} className="rounded-none border-muted bg-muted/20 h-10 text-sm" />
-                <Input type="email" placeholder={t.centers.emailPlaceholder} className="rounded-none border-muted bg-muted/20 h-10 text-sm" />
+            {joinForm.status === "success" ? (
+              <div className="flex items-center justify-center gap-2 text-green-600 font-subheading" data-testid="status-join-success">
+                <CheckCircle className="h-5 w-5" />
+                {lang === "es" ? "¡Mensaje enviado! Te responderemos pronto." : "Message sent! We'll get back to you."}
               </div>
-              <textarea 
-                placeholder={lang === "es" ? "Mensaje" : "Message"}
-                className="w-full min-h-[80px] p-3 rounded-none border border-muted bg-muted/20 focus:outline-none focus:ring-1 focus:ring-primary font-sans text-sm"
-              />
-              <Button type="submit" className="w-full rounded-none bg-foreground text-background hover:bg-foreground/90 font-subheading text-sm h-10 transition-all uppercase tracking-widest">
-                {lang === "es" ? "Enviar" : "Send"}
-              </Button>
-            </form>
+            ) : (
+              <form className="space-y-3 text-left" data-testid="form-joinus" onSubmit={async (e) => {
+                e.preventDefault();
+                const form = e.currentTarget;
+                const name = (form.elements.namedItem("name") as HTMLInputElement).value;
+                const email = (form.elements.namedItem("email") as HTMLInputElement).value;
+                const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value;
+                await joinForm.submit({ email, name, message, formType: "joinus" });
+                form.reset();
+              }}>
+                <div className="grid grid-cols-1 gap-3">
+                  <Input name="name" type="text" required placeholder={lang === "es" ? "Nombre" : "Name"} className="rounded-none border-muted bg-muted/20 h-10 text-sm" data-testid="input-join-name" />
+                  <Input name="email" type="email" required placeholder={t.centers.emailPlaceholder} className="rounded-none border-muted bg-muted/20 h-10 text-sm" data-testid="input-join-email" />
+                </div>
+                <textarea 
+                  name="message"
+                  placeholder={lang === "es" ? "Mensaje" : "Message"}
+                  className="w-full min-h-[80px] p-3 rounded-none border border-muted bg-muted/20 focus:outline-none focus:ring-1 focus:ring-primary font-sans text-sm"
+                  data-testid="input-join-message"
+                />
+                <Button type="submit" disabled={joinForm.status === "submitting"} className="w-full rounded-none bg-foreground text-background hover:bg-foreground/90 font-subheading text-sm h-10 transition-all uppercase tracking-widest" data-testid="button-join-submit">
+                  {joinForm.status === "submitting" ? <Loader2 className="h-4 w-4 animate-spin" /> : (lang === "es" ? "Enviar" : "Send")}
+                </Button>
+              </form>
+            )}
+            {joinForm.status === "error" && (
+              <p className="text-red-500 text-sm mt-2">{lang === "es" ? "Error al enviar. Inténtalo de nuevo." : "Submission failed. Please try again."}</p>
+            )}
           </div>
         </motion.div>
       </section>
