@@ -278,35 +278,35 @@ export default function Home() {
       </section>
 
       {/* Join Us Section */}
-      <section className="py-24 px-6 md:px-12 max-w-5xl mx-auto text-center">
+      <section className="py-20 px-6 md:px-12 max-w-4xl mx-auto text-center">
         <motion.div
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
           variants={fadeIn}
-          className="space-y-10"
+          className="space-y-8"
         >
-          <h2 className="text-4xl md:text-5xl text-foreground uppercase tracking-wider">{t.joinUs.title}</h2>
+          <h2 className="text-3xl md:text-4xl text-primary uppercase tracking-widest">{t.joinUs.title}</h2>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 font-subheading text-lg text-foreground/70 py-6 border-y border-muted">
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 font-subheading text-sm text-foreground/60 py-4 uppercase tracking-widest">
             {t.joinUs.roles.map((r, i) => (
-              <div key={i} className="flex items-center justify-center text-center p-2 uppercase tracking-widest text-sm">{r}</div>
+              <div key={i} className="flex items-center justify-center text-center">{r}</div>
             ))}
           </div>
 
-          <div className="bg-background p-10 mt-8 shadow-xl border border-muted max-w-2xl mx-auto">
-            <h3 className="font-heading text-2xl mb-6 text-foreground uppercase tracking-wide">{t.joinUs.cta}</h3>
-            <form className="space-y-4 text-left" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Input type="text" placeholder={lang === "es" ? "Nombre" : "Name"} className="rounded-none border-muted bg-muted/30 h-12" />
-                <Input type="email" placeholder={t.centers.emailPlaceholder} className="rounded-none border-muted bg-muted/30 h-12" />
+          <div className="bg-background p-8 mt-6 shadow-lg border border-muted max-w-lg mx-auto">
+            <h3 className="font-heading text-xl mb-4 text-foreground uppercase tracking-wide">{t.joinUs.cta}</h3>
+            <form className="space-y-3 text-left" onSubmit={(e) => e.preventDefault()}>
+              <div className="grid grid-cols-1 gap-3">
+                <Input type="text" placeholder={lang === "es" ? "Nombre" : "Name"} className="rounded-none border-muted bg-muted/20 h-10 text-sm" />
+                <Input type="email" placeholder={t.centers.emailPlaceholder} className="rounded-none border-muted bg-muted/20 h-10 text-sm" />
               </div>
               <textarea 
-                placeholder={lang === "es" ? "Cuéntanos cómo te gustaría colaborar" : "Tell us how you'd like to collaborate"}
-                className="w-full min-h-[100px] p-4 rounded-none border border-muted bg-muted/30 focus:outline-none focus:ring-1 focus:ring-primary font-sans"
+                placeholder={lang === "es" ? "Mensaje" : "Message"}
+                className="w-full min-h-[80px] p-3 rounded-none border border-muted bg-muted/20 focus:outline-none focus:ring-1 focus:ring-primary font-sans text-sm"
               />
-              <Button type="submit" className="w-full rounded-none bg-foreground text-background hover:bg-foreground/90 font-subheading text-lg h-12 transition-all">
-                {lang === "es" ? "Enviar mensaje" : "Send message"}
+              <Button type="submit" className="w-full rounded-none bg-foreground text-background hover:bg-foreground/90 font-subheading text-sm h-10 transition-all uppercase tracking-widest">
+                {lang === "es" ? "Enviar" : "Send"}
               </Button>
             </form>
           </div>
