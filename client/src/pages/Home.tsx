@@ -257,11 +257,11 @@ export default function Home() {
                 <li key={i} className="border-b border-white/20 pb-4">{b}</li>
               ))}
             </ul>
-            <div className="bg-white p-10 mt-8 border-l-8 border-primary shadow-2xl">
+            <div className="bg-background p-10 mt-8 shadow-2xl border border-muted">
               <h3 className="font-heading text-3xl mb-6 text-accent">{t.centers.ctaTitle}</h3>
               <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                <Input type="text" placeholder={t.centers.namePlaceholder} className="rounded-none border-muted bg-background text-foreground h-12" />
-                <Input type="email" placeholder={t.centers.emailPlaceholder} className="rounded-none border-muted bg-background text-foreground h-12" />
+                <Input type="text" placeholder={t.centers.namePlaceholder} className="rounded-none border-muted bg-muted/30 text-foreground h-12" />
+                <Input type="email" placeholder={t.centers.emailPlaceholder} className="rounded-none border-muted bg-muted/30 text-foreground h-12" />
                 <Button type="submit" className="w-full rounded-none bg-accent text-white hover:bg-accent/90 font-subheading text-xl h-14 transition-all hover:tracking-widest">{t.centers.submit}</Button>
               </form>
             </div>
