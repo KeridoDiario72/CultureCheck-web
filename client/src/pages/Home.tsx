@@ -67,7 +67,7 @@ export default function Home() {
         cta: "Unirse a la lista"
       },
       hero: {
-        headline: <>Cultura que se <span className="text-secondary">vive</span></>,
+        headline: <>Cultura que se <span className="text-[#c65a2e]">vive</span></>,
         subheadline: "Una plataforma para descubrir y reservar actividades creativas en tu ciudad.",
         primaryCta: "Unirse a la lista",
         secondaryCta: "Para centros creativos"
