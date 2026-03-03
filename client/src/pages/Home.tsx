@@ -313,9 +313,9 @@ export default function Home() {
         </motion.div>
       </section>
       {/* Vision Section */}
-      <section className="py-24 bg-primary text-primary-foreground px-6 md:px-12 text-center">
-        <div className="max-w-4xl mx-auto">
-          <p className="font-subheading text-3xl md:text-5xl leading-tight">
+      <section className="py-24 bg-primary text-primary-foreground px-6 md:px-12 text-center flex items-center justify-center min-h-[50vh] overflow-hidden">
+        <div className="max-w-[95vw] mx-auto">
+          <p className="font-heading text-4xl sm:text-6xl md:text-8xl lg:text-[10rem] leading-[0.85] uppercase tracking-tighter break-words">
             {t.vision.text}
           </p>
         </div>
