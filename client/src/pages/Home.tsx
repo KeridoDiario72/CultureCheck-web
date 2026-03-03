@@ -6,6 +6,7 @@ import { ArrowRight, Mail, Instagram, Twitter } from "lucide-react";
 import heroArt from "@/assets/images/hero-art.png";
 import ceramicsImage from "@/assets/images/ceramics.png";
 import paintingImage from "@/assets/images/painting.png";
+import logoImage from "@assets/Logo_-_CultureCheck_1772538066379.png";
 
 export default function Home() {
   const [email, setEmail] = useState("");
@@ -126,7 +127,7 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground overflow-hidden selection:bg-primary selection:text-white">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex justify-between items-center bg-background/80 backdrop-blur-md border-b border-muted">
-        <div className="font-heading text-2xl tracking-wider text-primary">CultureCheck</div>
+        <img src={logoImage} alt="CultureCheck Logo" className="h-8 md:h-10 object-contain" />
         <div className="flex items-center gap-4">
           <button 
             onClick={() => setLang(lang === "en" ? "es" : "en")}
@@ -322,7 +323,7 @@ export default function Home() {
       </section>
       {/* Footer */}
       <footer className="py-12 border-t border-muted px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6">
-        <div className="font-heading text-3xl text-foreground">CultureCheck</div>
+        <img src={logoImage} alt="CultureCheck Logo" className="h-6 md:h-8 object-contain opacity-80" />
         
         <div className="flex gap-6">
           <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><Instagram className="h-6 w-6" /></a>
