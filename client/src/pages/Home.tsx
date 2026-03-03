@@ -55,7 +55,7 @@ export default function Home() {
       },
       joinUs: {
         title: "Build CultureCheck with us",
-        roles: ["Strategic Partners", "Mentors", "Cultural Advisors", "Investors", "Creative Ambassadors"],
+        roles: ["Strategic Partners", "Cultural Advisors", "Investors", "Creative Ambassadors"],
         cta: "Let's Talk"
       },
       vision: {
@@ -105,7 +105,7 @@ export default function Home() {
       },
       joinUs: {
         title: "Construye CultureCheck con nosotros",
-        roles: ["Socios Estratégicos", "Mentores", "Asesores Culturales", "Inversores", "Embajadores Creativos"],
+        roles: ["Socios Estratégicos", "Asesores Culturales", "Inversores", "Embajadores Creativos"],
         cta: "Hablemos"
       },
       vision: {
@@ -278,25 +278,38 @@ export default function Home() {
       </section>
 
       {/* Join Us Section */}
-      <section className="py-32 px-6 md:px-12 max-w-4xl mx-auto text-center">
+      <section className="py-24 px-6 md:px-12 max-w-5xl mx-auto text-center">
         <motion.div
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
           variants={fadeIn}
-          className="space-y-12"
+          className="space-y-10"
         >
-          <h2 className="text-6xl md:text-8xl text-primary">{t.joinUs.title}</h2>
+          <h2 className="text-4xl md:text-5xl text-primary lowercase tracking-tight">{t.joinUs.title}</h2>
           
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 font-subheading text-lg md:text-xl text-foreground/70 py-8 border-y border-muted">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 font-subheading text-lg text-foreground/70 py-6 border-y border-muted">
             {t.joinUs.roles.map((r, i) => (
-              <div key={i} className="flex items-center justify-center text-center p-2">{r}</div>
+              <div key={i} className="flex items-center justify-center text-center p-2 uppercase tracking-widest text-sm">{r}</div>
             ))}
           </div>
 
-          <Button size="lg" className="rounded-none bg-foreground text-background hover:bg-foreground/90 font-subheading text-2xl px-12 py-8">
-            {t.joinUs.cta}
-          </Button>
+          <div className="bg-background p-10 mt-8 shadow-xl border border-muted max-w-2xl mx-auto">
+            <h3 className="font-heading text-2xl mb-6 text-accent uppercase tracking-wide">{t.joinUs.cta}</h3>
+            <form className="space-y-4 text-left" onSubmit={(e) => e.preventDefault()}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <Input type="text" placeholder={lang === "es" ? "Nombre" : "Name"} className="rounded-none border-muted bg-muted/30 h-12" />
+                <Input type="email" placeholder={t.centers.emailPlaceholder} className="rounded-none border-muted bg-muted/30 h-12" />
+              </div>
+              <textarea 
+                placeholder={lang === "es" ? "Cuéntanos cómo te gustaría colaborar" : "Tell us how you'd like to collaborate"}
+                className="w-full min-h-[100px] p-4 rounded-none border border-muted bg-muted/30 focus:outline-none focus:ring-1 focus:ring-primary font-sans"
+              />
+              <Button type="submit" className="w-full rounded-none bg-primary text-white hover:bg-primary/90 font-subheading text-lg h-12 transition-all">
+                {lang === "es" ? "Enviar mensaje" : "Send message"}
+              </Button>
+            </form>
+          </div>
         </motion.div>
       </section>
       {/* Vision Section */}
