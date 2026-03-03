@@ -17,7 +17,7 @@ export default function Home() {
         cta: "Join the waitlist"
       },
       hero: {
-        headline: <>Culture that is <span className="text-primary block">lived,</span> not just <span className="text-accent">consumed.</span></>,
+        headline: <>Culture that is <span className="text-secondary">lived</span></>,
         subheadline: "A platform to discover and book creative activities in your city.",
         primaryCta: "Join the waitlist",
         secondaryCta: "For creative centers"
@@ -67,7 +67,7 @@ export default function Home() {
         cta: "Unirse a la lista"
       },
       hero: {
-        headline: <>Cultura que se <span className="text-primary block">vive,</span> no solo se <span className="text-accent">consume.</span></>,
+        headline: <>Cultura que se <span className="text-secondary">vive</span></>,
         subheadline: "Una plataforma para descubrir y reservar actividades creativas en tu ciudad.",
         primaryCta: "Unirse a la lista",
         secondaryCta: "Para centros creativos"
