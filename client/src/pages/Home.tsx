@@ -171,7 +171,11 @@ export default function Home() {
           >
             {lang === "en" ? "ES" : "EN"}
           </button>
-          <Button variant="outline" className="font-subheading text-xs sm:text-sm md:text-lg rounded-none border-foreground hover:bg-foreground hover:text-background transition-colors px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 whitespace-nowrap">
+          <Button 
+            variant="outline" 
+            className="font-subheading text-xs sm:text-sm md:text-lg rounded-none border-foreground hover:bg-foreground hover:text-background transition-colors px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 whitespace-nowrap"
+            onClick={() => document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" })}
+          >
             {t.nav.cta}
           </Button>
         </div>
@@ -242,7 +246,7 @@ export default function Home() {
         </div>
       </section>
       {/* For Users Section */}
-      <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+      <section id="waitlist" className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <motion.div 
             className="order-2 md:order-1 relative h-[600px]"
