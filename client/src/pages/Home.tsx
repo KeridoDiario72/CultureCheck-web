@@ -158,18 +158,18 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden selection:bg-primary selection:text-white">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex justify-between items-center bg-[#F5F1E8] border-b border-muted shadow-sm">
-        <div className="h-12 md:h-16 lg:h-20 flex items-center">
-          <img src={logoImage} alt="CultureCheck Logo" className="h-full w-auto object-contain" />
+      <nav className="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 py-3 md:py-4 flex justify-between items-center bg-[#F5F1E8] border-b border-muted shadow-sm">
+        <div className="flex-shrink-0 h-8 sm:h-10 md:h-16 lg:h-20 flex items-center min-w-0">
+          <img src={logoImage} alt="CultureCheck Logo" className="h-full w-auto object-contain max-w-[140px] sm:max-w-[180px] md:max-w-none" />
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0">
           <button 
             onClick={() => setLang(lang === "en" ? "es" : "en")}
             className="font-subheading text-sm uppercase tracking-widest hover:text-primary transition-colors"
           >
             {lang === "en" ? "ES" : "EN"}
           </button>
-          <Button variant="outline" className="font-subheading text-lg rounded-none border-foreground hover:bg-foreground hover:text-background transition-colors">
+          <Button variant="outline" className="font-subheading text-xs sm:text-sm md:text-lg rounded-none border-foreground hover:bg-foreground hover:text-background transition-colors px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 whitespace-nowrap">
             {t.nav.cta}
           </Button>
         </div>
