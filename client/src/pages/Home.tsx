@@ -26,9 +26,11 @@ function useFormspree() {
       if (res.ok) {
         setStatus("success");
       } else {
+        console.error("Formspree error:", res.status, await res.text());
         setStatus("error");
       }
-    } catch {
+    } catch (err) {
+      console.error("Formspree fetch error:", err);
       setStatus("error");
     }
   };
