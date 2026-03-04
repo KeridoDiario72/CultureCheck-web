@@ -196,10 +196,10 @@ export default function Home() {
             {t.hero.subheadline}
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" className="rounded-none bg-primary hover:bg-primary/90 text-white font-subheading text-lg px-8 py-6">
+            <Button size="lg" className="rounded-none bg-primary hover:bg-primary/90 text-white font-subheading text-lg px-8 py-6" onClick={() => document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" })}>
               {t.hero.primaryCta} <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button size="lg" variant="outline" className="rounded-none border-2 border-foreground hover:bg-foreground hover:text-background font-subheading text-lg px-8 py-6">
+            <Button size="lg" variant="outline" className="rounded-none border-2 border-foreground hover:bg-foreground hover:text-background font-subheading text-lg px-8 py-6" onClick={() => document.getElementById("centers")?.scrollIntoView({ behavior: "smooth" })}>
               {t.hero.secondaryCta}
             </Button>
           </div>
@@ -301,7 +301,7 @@ export default function Home() {
         </div>
       </section>
       {/* For Creative Centers Section */}
-      <section className="py-24 bg-accent text-accent-foreground px-6 md:px-12">
+      <section id="centers" className="py-24 bg-accent text-accent-foreground px-6 md:px-12">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <motion.div 
             className="space-y-8"
