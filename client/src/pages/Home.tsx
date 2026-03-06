@@ -53,7 +53,7 @@ export default function Home() {
       },
       hero: {
         headline: <>Culture that is <span className="text-secondary">lived</span></>,
-        subheadline: "A platform to discover and book creative activities in your city.",
+        subheadline: <>Discover and book creative activities near you.<br/><br/><span className="text-muted-foreground text-lg md:text-xl">Ceramics · Painting · Workshops · Writing · Crafts<br/>and much more</span></>,
         primaryCta: "Join the waitlist",
         secondaryCta: "For creative centers"
       },
@@ -103,7 +103,7 @@ export default function Home() {
       },
       hero: {
         headline: <>Cultura que se <span className="text-[#c65a2e]">vive</span></>,
-        subheadline: "Una plataforma para descubrir y reservar actividades creativas en tu ciudad.",
+        subheadline: <>Descubre y reserva actividades creativas cerca de ti.<br/><br/><span className="text-muted-foreground text-lg md:text-xl">Cerámica · Pintura · Talleres · Escritura · Artesanía<br/>y mucho más</span></>,
         primaryCta: "Únete a la lista de espera",
         secondaryCta: "Para centros creativos"
       },
