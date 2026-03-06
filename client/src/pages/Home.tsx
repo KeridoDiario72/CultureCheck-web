@@ -253,8 +253,8 @@ export default function Home() {
                 </p>
                 <p className="font-subheading text-lg leading-relaxed text-background/75">
                   {lang === "es"
-                    ? <>CultureCheck conecta a las personas con experiencias culturales, facilitando que <span className="text-[#5b9bd5]">descubrir y crear</span> forme parte de la vida cotidiana.</>
-                    : <>CultureCheck connects people with cultural experiences, making <span className="text-[#5b9bd5]">discovering and creating</span> part of everyday life.</>}
+                    ? <>CultureCheck conecta a las personas con experiencias culturales, facilitando que descubrir y crear <span className="text-[#5b9bd5]">forme parte de la vida cotidiana</span>.</>
+                    : <>CultureCheck connects people with cultural experiences, making discovering and creating <span className="text-[#5b9bd5]">part of everyday life</span>.</>}
                 </p>
                 <p className="font-subheading text-lg leading-relaxed text-background/75">
                   {lang === "es"
