@@ -227,8 +227,8 @@ export default function Home() {
               <div className="space-y-6">
                 <p className="font-subheading text-lg leading-relaxed text-background/75">
                   {lang === "es"
-                    ? <>En un entorno cada vez más digital, muchas personas buscan una forma más activa de <span className="text-[#c65a2e]">vivir la cultura</span>.</>
-                    : <>In an increasingly digital world, many people are looking for a more active way to <span className="text-[#c65a2e]">live culture</span>.</>}
+                    ? <>En un entorno cada vez más digital, muchas personas buscan <span className="text-[#c65a2e]">participar en la cultura</span> de forma activa.</>
+                    : <>In an increasingly digital world, many people seek to <span className="text-[#c65a2e]">participate in culture</span> actively.</>}
                 </p>
                 <p className="font-subheading text-lg leading-relaxed text-background/75">
                   {lang === "es"
