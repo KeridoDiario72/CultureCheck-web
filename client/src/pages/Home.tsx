@@ -192,7 +192,7 @@ export default function Home() {
           <h1 className="text-5xl md:text-7xl lg:text-8xl leading-[1.1] tracking-tight text-foreground">
             {t.hero.headline}
           </h1>
-          <p className="font-subheading text-xl md:text-2xl text-muted-foreground max-w-md">
+          <p className="font-subheading text-xl md:text-2xl text-muted-foreground max-w-lg">
             {t.hero.subheadline}
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
