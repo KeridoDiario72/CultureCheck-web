@@ -59,9 +59,9 @@ export default function Home() {
       },
       philosophy: {
         problem: "Why CultureCheck",
-        problemText: <>We live surrounded by screens and digital content, but more and more people are looking for <span className="font-bold underline decoration-white/40">cultural experiences</span> that happen beyond them.<br/><br/>At the same time, discovering workshops, classes or cultural activities can be complicated and scattered.<br/><br/>CultureCheck was born to connect people with the <span className="font-bold underline decoration-white/40">culture that is lived by participating</span>.</>,
+        problemText: <>We live surrounded by screens and digital content, but more and more people are looking for <span className="text-[#c65a2e] font-bold">cultural experiences</span> that happen beyond them.<br/><br/>At the same time, discovering workshops, classes or cultural activities can be complicated and scattered.<br/><br/>CultureCheck was born to connect people with the <span className="text-[#c65a2e] font-bold">culture that is lived by participating</span>.</>,
         vision: "Our Vision",
-        visionText: <>We believe in a more <span className="font-bold underline decoration-white/40">active, close and accessible</span> culture.<br/><br/>CultureCheck connects people with workshops, creative spaces and cultural experiences, making <span className="font-bold underline decoration-white/40">discovering and creating</span> part of everyday life.<br/><br/>Our goal is to build a community where culture is explored, shared and <span className="font-bold underline decoration-white/40">lived</span>.</>
+        visionText: <>We believe in a more <span className="text-[#c65a2e] font-bold">active, close and accessible</span> culture.<br/><br/>CultureCheck connects people with workshops, creative spaces and cultural experiences, making <span className="text-[#c65a2e] font-bold">discovering and creating</span> part of everyday life.<br/><br/>Our goal is to build a community where culture is explored, shared and <span className="text-[#c65a2e] font-bold">lived</span>.</>
       },
       users: {
         title: "For You",
@@ -109,9 +109,9 @@ export default function Home() {
       },
       philosophy: {
         problem: "Por qué CultureCheck",
-        problemText: <>Vivimos rodeados de pantallas y de contenido digital, pero cada vez más personas buscan <span className="font-bold underline decoration-white/40">experiencias culturales</span> que se vivan fuera de ellas.<br/><br/>Al mismo tiempo, descubrir talleres, clases o actividades culturales puede ser algo complicado y disperso.<br/><br/>CultureCheck nace para conectar a las personas con esa <span className="font-bold underline decoration-white/40">cultura que se vive participando</span>.</>,
+        problemText: <>Vivimos rodeados de pantallas y de contenido digital, pero cada vez más personas buscan <span className="text-[#c65a2e] font-bold">experiencias culturales</span> que se vivan fuera de ellas.<br/><br/>Al mismo tiempo, descubrir talleres, clases o actividades culturales puede ser algo complicado y disperso.<br/><br/>CultureCheck nace para conectar a las personas con esa <span className="text-[#c65a2e] font-bold">cultura que se vive participando</span>.</>,
         vision: "Nuestra Visión",
-        visionText: <>Creemos en una cultura más <span className="font-bold underline decoration-white/40">activa, cercana y accesible</span>.<br/><br/>CultureCheck conecta a las personas con talleres, espacios creativos y experiencias culturales, facilitando que <span className="font-bold underline decoration-white/40">descubrir y crear</span> forme parte de la vida cotidiana.<br/><br/>Nuestro objetivo es construir una comunidad donde la cultura se explore, se comparta y <span className="font-bold underline decoration-white/40">se viva</span>.</>
+        visionText: <>Creemos en una cultura más <span className="text-[#c65a2e] font-bold">activa, cercana y accesible</span>.<br/><br/>CultureCheck conecta a las personas con talleres, espacios creativos y experiencias culturales, facilitando que <span className="text-[#c65a2e] font-bold">descubrir y crear</span> forme parte de la vida cotidiana.<br/><br/>Nuestro objetivo es construir una comunidad donde la cultura se explore, se comparta y <span className="text-[#c65a2e] font-bold">se viva</span>.</>
       },
       users: {
         title: "Para Ti",
@@ -217,7 +217,7 @@ export default function Home() {
         </motion.div>
       </section>
       {/* About / Philosophy Section */}
-      <section className="py-24 bg-[#c65a2e] text-white px-6 md:px-12">
+      <section className="py-24 bg-foreground text-background px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
           <motion.div 
             className="grid md:grid-cols-2 gap-16"
@@ -227,14 +227,14 @@ export default function Home() {
             variants={fadeIn}
           >
             <div>
-              <h2 className="text-sm font-sans tracking-widest text-white/70 mb-6 uppercase">{t.philosophy.problem}</h2>
-              <p className="font-subheading text-lg md:text-xl leading-relaxed">
+              <h2 className="text-sm font-sans tracking-widest text-[#c65a2e] mb-6 uppercase">{t.philosophy.problem}</h2>
+              <p className="font-subheading text-lg md:text-xl leading-relaxed text-background/80">
                 {t.philosophy.problemText}
               </p>
             </div>
-            <div className="flex flex-col justify-center">
-              <h2 className="text-sm font-sans tracking-widest text-white/70 mb-6 uppercase">{t.philosophy.vision}</h2>
-              <p className="font-subheading text-lg md:text-xl leading-relaxed">
+            <div>
+              <h2 className="text-sm font-sans tracking-widest text-[#c65a2e] mb-6 uppercase">{t.philosophy.vision}</h2>
+              <p className="font-subheading text-lg md:text-xl leading-relaxed text-background/80">
                 {t.philosophy.visionText}
               </p>
             </div>
