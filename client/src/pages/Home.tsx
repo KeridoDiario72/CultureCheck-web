@@ -244,22 +244,22 @@ export default function Home() {
             </div>
 
             <div>
-              <h2 className="font-heading text-primary text-sm md:text-base tracking-widest uppercase mb-8">{t.philosophy.vision}</h2>
+              <h2 className="font-heading text-[#5b9bd5] text-sm md:text-base tracking-widest uppercase mb-8">{t.philosophy.vision}</h2>
               <div className="space-y-6">
                 <p className="font-subheading text-lg leading-relaxed text-background/75">
                   {lang === "es"
-                    ? <>Creemos en una cultura más <span className="text-primary">activa, cercana y accesible</span>.</>
-                    : <>We believe in a more <span className="text-primary">active, close and accessible</span> culture.</>}
+                    ? <>Creemos en una cultura más <span className="text-[#5b9bd5]">activa, cercana y accesible</span>.</>
+                    : <>We believe in a more <span className="text-[#5b9bd5]">active, close and accessible</span> culture.</>}
                 </p>
                 <p className="font-subheading text-lg leading-relaxed text-background/75">
                   {lang === "es"
-                    ? <>CultureCheck conecta a las personas con talleres, espacios creativos y experiencias culturales, facilitando que <span className="text-primary">descubrir y crear</span> forme parte de la vida cotidiana.</>
-                    : <>CultureCheck connects people with workshops, creative spaces and cultural experiences, making <span className="text-primary">discovering and creating</span> part of everyday life.</>}
+                    ? <>CultureCheck conecta a las personas con talleres, espacios creativos y experiencias culturales, facilitando que <span className="text-[#5b9bd5]">descubrir y crear</span> forme parte de la vida cotidiana.</>
+                    : <>CultureCheck connects people with workshops, creative spaces and cultural experiences, making <span className="text-[#5b9bd5]">discovering and creating</span> part of everyday life.</>}
                 </p>
                 <p className="font-subheading text-lg leading-relaxed text-background/75">
                   {lang === "es"
-                    ? <>Nuestro objetivo es construir una comunidad donde la cultura se explore, se comparta y <span className="text-primary">se viva</span>.</>
-                    : <>Our goal is to build a community where culture is explored, shared and <span className="text-primary">lived</span>.</>}
+                    ? <>Nuestro objetivo es construir una comunidad donde la cultura se explore, se comparta y <span className="text-[#5b9bd5]">se viva</span>.</>
+                    : <>Our goal is to build a community where culture is explored, shared and <span className="text-[#5b9bd5]">lived</span>.</>}
                 </p>
               </div>
             </div>
