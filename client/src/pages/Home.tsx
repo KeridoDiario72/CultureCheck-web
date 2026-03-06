@@ -213,7 +213,7 @@ export default function Home() {
         </motion.div>
       </section>
       {/* Why CultureCheck */}
-      <section className="py-32 bg-foreground text-background px-6 md:px-12 overflow-hidden">
+      <section className="py-16 md:py-20 bg-foreground text-background px-6 md:px-12 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -221,7 +221,7 @@ export default function Home() {
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-heading text-[#c65a2e] text-sm md:text-base tracking-widest uppercase mb-12">{t.philosophy.problem}</h2>
+            <h2 className="font-heading text-[#c65a2e] text-sm md:text-base tracking-widest uppercase mb-10">{t.philosophy.problem}</h2>
             <div className="grid md:grid-cols-3 gap-8">
               <p className="font-subheading text-lg leading-relaxed text-background/70">
                 {lang === "es"
@@ -244,7 +244,7 @@ export default function Home() {
       </section>
 
       {/* Our Vision */}
-      <section className="py-32 bg-[#c65a2e] text-white px-6 md:px-12 overflow-hidden">
+      <section className="py-16 md:py-20 bg-[#F5F1E8] text-foreground px-6 md:px-12 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -252,22 +252,22 @@ export default function Home() {
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-heading text-white/60 text-sm md:text-base tracking-widest uppercase mb-12">{t.philosophy.vision}</h2>
+            <h2 className="font-heading text-[#c65a2e] text-sm md:text-base tracking-widest uppercase mb-10">{t.philosophy.vision}</h2>
             <div className="grid md:grid-cols-3 gap-8">
-              <p className="font-subheading text-lg leading-relaxed text-white/85">
+              <p className="font-subheading text-lg leading-relaxed text-foreground/70">
                 {lang === "es"
-                  ? <>Creemos en una cultura más <span className="text-white font-bold">activa, cercana y accesible</span>.</>
-                  : <>We believe in a more <span className="text-white font-bold">active, close and accessible</span> culture.</>}
+                  ? <>Creemos en una cultura más <span className="text-[#c65a2e] font-bold">activa, cercana y accesible</span>.</>
+                  : <>We believe in a more <span className="text-[#c65a2e] font-bold">active, close and accessible</span> culture.</>}
               </p>
-              <p className="font-subheading text-lg leading-relaxed text-white/85">
+              <p className="font-subheading text-lg leading-relaxed text-foreground/70">
                 {lang === "es"
-                  ? <>CultureCheck conecta a las personas con talleres, espacios creativos y experiencias culturales, facilitando que <span className="text-white font-bold">descubrir y crear</span> forme parte de la vida cotidiana.</>
-                  : <>CultureCheck connects people with workshops, creative spaces and cultural experiences, making <span className="text-white font-bold">discovering and creating</span> part of everyday life.</>}
+                  ? <>CultureCheck conecta a las personas con talleres, espacios creativos y experiencias culturales, facilitando que <span className="text-[#c65a2e] font-bold">descubrir y crear</span> forme parte de la vida cotidiana.</>
+                  : <>CultureCheck connects people with workshops, creative spaces and cultural experiences, making <span className="text-[#c65a2e] font-bold">discovering and creating</span> part of everyday life.</>}
               </p>
-              <p className="font-subheading text-lg leading-relaxed text-white/85">
+              <p className="font-subheading text-lg leading-relaxed text-foreground/70">
                 {lang === "es"
-                  ? <>Nuestro objetivo es construir una comunidad donde la cultura se explore, se comparta y <span className="text-white font-bold">se viva</span>.</>
-                  : <>Our goal is to build a community where culture is explored, shared and <span className="text-white font-bold">lived</span>.</>}
+                  ? <>Nuestro objetivo es construir una comunidad donde la cultura se explore, se comparta y <span className="text-[#c65a2e] font-bold">se viva</span>.</>
+                  : <>Our goal is to build a community where culture is explored, shared and <span className="text-[#c65a2e] font-bold">lived</span>.</>}
               </p>
             </div>
           </motion.div>
