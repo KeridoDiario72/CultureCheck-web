@@ -237,8 +237,8 @@ export default function Home() {
                 </p>
                 <p className="font-subheading text-lg leading-relaxed text-background/75">
                   {lang === "es"
-                    ? <>CultureCheck nace para conectar a las personas con esa <span className="text-[#c65a2e]">cultura que se vive participando</span>.</>
-                    : <>CultureCheck was born to connect people with the <span className="text-[#c65a2e]">culture that is lived by participating</span>.</>}
+                    ? <>CultureCheck nace para conectar a las personas con esa <span className="text-[#c65a2e]">cultura que se vive</span>.</>
+                    : <>CultureCheck was born to connect people with the <span className="text-[#c65a2e]">culture that is lived</span>.</>}
                 </p>
               </div>
             </div>
