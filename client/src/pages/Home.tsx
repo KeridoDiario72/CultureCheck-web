@@ -232,8 +232,8 @@ export default function Home() {
                 </p>
                 <p className="font-subheading text-lg leading-relaxed text-background/75">
                   {lang === "es"
-                    ? "Al mismo tiempo, descubrir talleres, clases o actividades culturales puede ser algo complicado y disperso."
-                    : "At the same time, discovering workshops, classes or cultural activities can be complicated and scattered."}
+                    ? <>Al mismo tiempo, <span className="underline decoration-[#c65a2e] underline-offset-4 text-background">no siempre es fácil descubrir</span> actividades culturales.</>
+                    : <>At the same time, <span className="underline decoration-[#c65a2e] underline-offset-4 text-background">it's not always easy to discover</span> cultural activities.</>}
                 </p>
                 <p className="font-subheading text-lg leading-relaxed text-background/75">
                   {lang === "es"
