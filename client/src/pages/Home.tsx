@@ -213,59 +213,55 @@ export default function Home() {
         </motion.div>
       </section>
       {/* Why CultureCheck + Our Vision */}
-      <section className="overflow-hidden">
-        <div className="grid md:grid-cols-2">
+      <section className="py-20 bg-foreground text-background px-6 md:px-12">
+        <div className="max-w-7xl mx-auto">
           <motion.div
-            className="bg-[#c65a2e] text-white py-16 md:py-20 px-8 md:px-12"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
+            className="grid md:grid-cols-2 gap-16"
+            initial="initial"
+            whileInView="animate"
             viewport={{ once: true }}
+            variants={fadeIn}
           >
-            <h2 className="font-heading text-white/60 text-sm md:text-base tracking-widest uppercase mb-8">{t.philosophy.problem}</h2>
-            <div className="space-y-6">
-              <p className="font-subheading text-lg leading-relaxed text-white">
-                {lang === "es"
-                  ? "Vivimos rodeados de pantallas y de contenido digital, pero cada vez más personas buscan experiencias culturales que se vivan fuera de ellas."
-                  : "We live surrounded by screens and digital content, but more and more people are looking for cultural experiences that happen beyond them."}
-              </p>
-              <p className="font-subheading text-lg leading-relaxed text-white">
-                {lang === "es"
-                  ? "Al mismo tiempo, descubrir talleres, clases o actividades culturales puede ser algo complicado y disperso."
-                  : "At the same time, discovering workshops, classes or cultural activities can be complicated and scattered."}
-              </p>
-              <p className="font-subheading text-lg leading-relaxed text-white">
-                {lang === "es"
-                  ? "CultureCheck nace para conectar a las personas con esa cultura que se vive participando."
-                  : "CultureCheck was born to connect people with the culture that is lived by participating."}
-              </p>
+            <div>
+              <h2 className="font-heading text-[#c65a2e] text-sm md:text-base tracking-widest uppercase mb-8">{t.philosophy.problem}</h2>
+              <div className="space-y-6">
+                <p className="font-subheading text-lg leading-relaxed text-background/75">
+                  {lang === "es"
+                    ? <>Vivimos rodeados de pantallas y de contenido digital, pero cada vez más personas buscan <span className="underline decoration-[#c65a2e] underline-offset-4 text-background">experiencias culturales</span> que se vivan fuera de ellas.</>
+                    : <>We live surrounded by screens and digital content, but more and more people are looking for <span className="underline decoration-[#c65a2e] underline-offset-4 text-background">cultural experiences</span> that happen beyond them.</>}
+                </p>
+                <p className="font-subheading text-lg leading-relaxed text-background/75">
+                  {lang === "es"
+                    ? "Al mismo tiempo, descubrir talleres, clases o actividades culturales puede ser algo complicado y disperso."
+                    : "At the same time, discovering workshops, classes or cultural activities can be complicated and scattered."}
+                </p>
+                <p className="font-subheading text-lg leading-relaxed text-background/75">
+                  {lang === "es"
+                    ? <>CultureCheck nace para conectar a las personas con esa <span className="underline decoration-[#c65a2e] underline-offset-4 text-background">cultura que se vive participando</span>.</>
+                    : <>CultureCheck was born to connect people with the <span className="underline decoration-[#c65a2e] underline-offset-4 text-background">culture that is lived by participating</span>.</>}
+                </p>
+              </div>
             </div>
-          </motion.div>
 
-          <motion.div
-            className="bg-primary text-white py-16 md:py-20 px-8 md:px-12"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="font-heading text-white/60 text-sm md:text-base tracking-widest uppercase mb-8">{t.philosophy.vision}</h2>
-            <div className="space-y-6">
-              <p className="font-subheading text-lg leading-relaxed text-white">
-                {lang === "es"
-                  ? "Creemos en una cultura más activa, cercana y accesible."
-                  : "We believe in a more active, close and accessible culture."}
-              </p>
-              <p className="font-subheading text-lg leading-relaxed text-white">
-                {lang === "es"
-                  ? "CultureCheck conecta a las personas con talleres, espacios creativos y experiencias culturales, facilitando que descubrir y crear forme parte de la vida cotidiana."
-                  : "CultureCheck connects people with workshops, creative spaces and cultural experiences, making discovering and creating part of everyday life."}
-              </p>
-              <p className="font-subheading text-lg leading-relaxed text-white">
-                {lang === "es"
-                  ? "Nuestro objetivo es construir una comunidad donde la cultura se explore, se comparta y se viva."
-                  : "Our goal is to build a community where culture is explored, shared and lived."}
-              </p>
+            <div>
+              <h2 className="font-heading text-primary text-sm md:text-base tracking-widest uppercase mb-8">{t.philosophy.vision}</h2>
+              <div className="space-y-6">
+                <p className="font-subheading text-lg leading-relaxed text-background/75">
+                  {lang === "es"
+                    ? <>Creemos en una cultura más <span className="underline decoration-primary underline-offset-4 text-background">activa, cercana y accesible</span>.</>
+                    : <>We believe in a more <span className="underline decoration-primary underline-offset-4 text-background">active, close and accessible</span> culture.</>}
+                </p>
+                <p className="font-subheading text-lg leading-relaxed text-background/75">
+                  {lang === "es"
+                    ? <>CultureCheck conecta a las personas con talleres, espacios creativos y experiencias culturales, facilitando que <span className="underline decoration-primary underline-offset-4 text-background">descubrir y crear</span> forme parte de la vida cotidiana.</>
+                    : <>CultureCheck connects people with workshops, creative spaces and cultural experiences, making <span className="underline decoration-primary underline-offset-4 text-background">discovering and creating</span> part of everyday life.</>}
+                </p>
+                <p className="font-subheading text-lg leading-relaxed text-background/75">
+                  {lang === "es"
+                    ? <>Nuestro objetivo es construir una comunidad donde la cultura se explore, se comparta y <span className="underline decoration-primary underline-offset-4 text-background">se viva</span>.</>
+                    : <>Our goal is to build a community where culture is explored, shared and <span className="underline decoration-primary underline-offset-4 text-background">lived</span>.</>}
+                </p>
+              </div>
             </div>
           </motion.div>
         </div>
