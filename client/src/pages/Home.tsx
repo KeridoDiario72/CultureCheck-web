@@ -232,8 +232,8 @@ export default function Home() {
                 </p>
                 <p className="font-subheading text-lg leading-relaxed text-background/75">
                   {lang === "es"
-                    ? <>Al mismo tiempo, <span className="underline decoration-[#c65a2e] underline-offset-4 text-background">no siempre es fácil descubrir</span> actividades culturales.</>
-                    : <>At the same time, <span className="underline decoration-[#c65a2e] underline-offset-4 text-background">it's not always easy to discover</span> cultural activities.</>}
+                    ? <>Al mismo tiempo, <span className="underline decoration-[#c65a2e] underline-offset-4 text-background">descubrir actividades culturales</span> puede ser complicado y disperso.</>
+                    : <>At the same time, <span className="underline decoration-[#c65a2e] underline-offset-4 text-background">discovering cultural activities</span> can be complicated and scattered.</>}
                 </p>
                 <p className="font-subheading text-lg leading-relaxed text-background/75">
                   {lang === "es"
