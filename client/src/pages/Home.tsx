@@ -128,10 +128,10 @@ export default function Home() {
       centers: {
         title: "Para Centros",
         benefits: [
-          "Aumentar la visibilidad de tu espacio",
-          "Atraer a nuevas audiencias",
-          "Simplificar la gestión de reservas",
-          "Formar parte de una red creativa"
+          "Aumenta la visibilidad de tu espacio",
+          "Atrae a nuevas audiencias",
+          "Simplifica la gestión de reservas",
+          "Forma parte de una red creativa"
         ],
         ctaTitle: "Conviértete en colaborador",
         namePlaceholder: "Nombre del Centro",
