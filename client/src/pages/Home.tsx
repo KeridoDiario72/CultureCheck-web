@@ -64,14 +64,14 @@ export default function Home() {
         visionText: <>CultureCheck helps people <span className="text-primary">actively participate</span> in culture and connect with creative communities.</>
       },
       users: {
-        title: "For Creators",
+        title: "For You",
         benefits: [
-          "Discover creative activities easily",
-          "Flexible booking",
-          "Access to curated creative spaces",
-          "Community of like-minded people"
+          "Discover new creative activities",
+          "Book workshops and cultural experiences",
+          "Access curated creative spaces",
+          "Connect with like-minded people"
         ],
-        ctaTitle: "Get Early Access",
+        ctaTitle: "Join the waitlist",
         inputPlaceholder: "Enter your email",
         submit: "Submit"
       },
@@ -114,14 +114,14 @@ export default function Home() {
         visionText: <>CultureCheck impulsa a <span className="text-primary">participar activamente</span> en la cultura y a conectar con una comunidad creativa.</>
       },
       users: {
-        title: "Para Creadores",
+        title: "Para Ti",
         benefits: [
-          "Descubrir nuevas actividades creativas",
-          "Reservar talleres y experiencias culturales",
-          "Acceder a espacios creativos seleccionados",
-          "Conectar con personas con intereses similares"
+          "Descubre nuevas actividades creativas",
+          "Reserva talleres y experiencias culturales",
+          "Accede a espacios creativos seleccionados",
+          "Conecta con personas con intereses similares"
         ],
-        ctaTitle: "Obtén acceso anticipado",
+        ctaTitle: "Únete a la lista de espera",
         inputPlaceholder: "Tu correo electrónico",
         submit: "Enviar"
       },
@@ -267,8 +267,8 @@ export default function Home() {
             <h2 className="text-5xl md:text-7xl text-primary">{t.users.title}</h2>
             <ul className="space-y-4 font-subheading text-xl text-foreground/80">
               {t.users.benefits.map((b, i) => (
-                <li key={i} className="border-b border-muted pb-4 flex items-center justify-between">
-                  {b} <ArrowRight className="h-4 w-4 text-primary" />
+                <li key={i} className="border-b border-muted pb-4">
+                  {b}
                 </li>
               ))}
             </ul>
