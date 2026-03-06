@@ -21,7 +21,7 @@ export default function AvisoLegal() {
             <div className="space-y-1 pl-4 border-l-2 border-[#c65a2e] mb-4">
               <p><strong>Titular:</strong> CultureCheck</p>
               <p><strong>Actividad:</strong> Plataforma digital para el descubrimiento y reserva de actividades culturales y creativas.</p>
-              <p><strong>Correo electrónico de contacto:</strong> info@culturecheck.es</p>
+              <p><strong>Correo electrónico de contacto:</strong> hola@culturecheck.site</p>
               <p><strong>Sitio web:</strong> https://culture-check-web.vercel.app/</p>
             </div>
             <p>El acceso y uso del sitio web atribuye la condición de usuario e implica la aceptación plena de las condiciones recogidas en este Aviso Legal.</p>
