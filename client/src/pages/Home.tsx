@@ -258,8 +258,8 @@ export default function Home() {
                 </p>
                 <p className="font-subheading text-lg leading-relaxed text-background/75">
                   {lang === "es"
-                    ? <>Nuestro objetivo es construir una comunidad donde la cultura se explore, se comparta y <span className="text-[#5b9bd5]">se viva</span>.</>
-                    : <>Our goal is to build a community where culture is explored, shared and <span className="text-[#5b9bd5]">lived</span>.</>}
+                    ? <>Nuestro objetivo es <span className="text-[#5b9bd5]">construir una comunidad</span> donde la cultura se explore, se comparta y se viva.</>
+                    : <>Our goal is to <span className="text-[#5b9bd5]">build a community</span> where culture is explored, shared and lived.</>}
                 </p>
               </div>
             </div>
