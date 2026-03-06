@@ -223,7 +223,7 @@ export default function Home() {
             variants={fadeIn}
           >
             <div>
-              <h2 className="font-heading text-[#c65a2e] text-sm md:text-base tracking-widest uppercase mb-8">{t.philosophy.problem}</h2>
+              <h2 className="font-heading text-[#c65a2e] text-base md:text-lg tracking-widest uppercase mb-8">{t.philosophy.problem}</h2>
               <div className="space-y-6">
                 <p className="font-subheading text-lg leading-relaxed text-background/75">
                   {lang === "es"
@@ -244,7 +244,7 @@ export default function Home() {
             </div>
 
             <div>
-              <h2 className="font-heading text-[#5b9bd5] text-sm md:text-base tracking-widest uppercase mb-8">{t.philosophy.vision}</h2>
+              <h2 className="font-heading text-[#5b9bd5] text-base md:text-lg tracking-widest uppercase mb-8">{t.philosophy.vision}</h2>
               <div className="space-y-6">
                 <p className="font-subheading text-lg leading-relaxed text-background/75">
                   {lang === "es"
