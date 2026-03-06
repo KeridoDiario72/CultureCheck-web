@@ -227,18 +227,18 @@ export default function Home() {
               <div className="space-y-6">
                 <p className="font-subheading text-lg leading-relaxed text-background/75">
                   {lang === "es"
-                    ? <>En un entorno cada vez más digital, muchas personas buscan una forma más activa de <span className="underline decoration-[#c65a2e] underline-offset-4 text-background">vivir la cultura</span>.</>
-                    : <>In an increasingly digital world, many people are looking for a more active way to <span className="underline decoration-[#c65a2e] underline-offset-4 text-background">live culture</span>.</>}
+                    ? <>En un entorno cada vez más digital, muchas personas buscan una forma más activa de <span className="underline decoration-[#c65a2e] decoration-wavy underline-offset-4 text-background">vivir la cultura</span>.</>
+                    : <>In an increasingly digital world, many people are looking for a more active way to <span className="underline decoration-[#c65a2e] decoration-wavy underline-offset-4 text-background">live culture</span>.</>}
                 </p>
                 <p className="font-subheading text-lg leading-relaxed text-background/75">
                   {lang === "es"
-                    ? <>Al mismo tiempo, <span className="underline decoration-[#c65a2e] underline-offset-4 text-background">descubrir actividades culturales</span> puede ser complicado y disperso.</>
-                    : <>At the same time, <span className="underline decoration-[#c65a2e] underline-offset-4 text-background">discovering cultural activities</span> can be complicated and scattered.</>}
+                    ? <>Al mismo tiempo, <span className="underline decoration-[#c65a2e] decoration-wavy underline-offset-4 text-background">descubrir actividades culturales</span> puede ser complicado y disperso.</>
+                    : <>At the same time, <span className="underline decoration-[#c65a2e] decoration-wavy underline-offset-4 text-background">discovering cultural activities</span> can be complicated and scattered.</>}
                 </p>
                 <p className="font-subheading text-lg leading-relaxed text-background/75">
                   {lang === "es"
-                    ? <>CultureCheck nace para conectar a las personas con esa <span className="underline decoration-[#c65a2e] underline-offset-4 text-background">cultura que se vive participando</span>.</>
-                    : <>CultureCheck was born to connect people with the <span className="underline decoration-[#c65a2e] underline-offset-4 text-background">culture that is lived by participating</span>.</>}
+                    ? <>CultureCheck nace para conectar a las personas con esa <span className="underline decoration-[#c65a2e] decoration-wavy underline-offset-4 text-background">cultura que se vive participando</span>.</>
+                    : <>CultureCheck was born to connect people with the <span className="underline decoration-[#c65a2e] decoration-wavy underline-offset-4 text-background">culture that is lived by participating</span>.</>}
                 </p>
               </div>
             </div>
@@ -248,18 +248,18 @@ export default function Home() {
               <div className="space-y-6">
                 <p className="font-subheading text-lg leading-relaxed text-background/75">
                   {lang === "es"
-                    ? <>Creemos en una cultura más <span className="underline decoration-primary underline-offset-4 text-background">activa, cercana y accesible</span>.</>
-                    : <>We believe in a more <span className="underline decoration-primary underline-offset-4 text-background">active, close and accessible</span> culture.</>}
+                    ? <>Creemos en una cultura más <span className="underline decoration-primary decoration-wavy underline-offset-4 text-background">activa, cercana y accesible</span>.</>
+                    : <>We believe in a more <span className="underline decoration-primary decoration-wavy underline-offset-4 text-background">active, close and accessible</span> culture.</>}
                 </p>
                 <p className="font-subheading text-lg leading-relaxed text-background/75">
                   {lang === "es"
-                    ? <>CultureCheck conecta a las personas con talleres, espacios creativos y experiencias culturales, facilitando que <span className="underline decoration-primary underline-offset-4 text-background">descubrir y crear</span> forme parte de la vida cotidiana.</>
-                    : <>CultureCheck connects people with workshops, creative spaces and cultural experiences, making <span className="underline decoration-primary underline-offset-4 text-background">discovering and creating</span> part of everyday life.</>}
+                    ? <>CultureCheck conecta a las personas con talleres, espacios creativos y experiencias culturales, facilitando que <span className="underline decoration-primary decoration-wavy underline-offset-4 text-background">descubrir y crear</span> forme parte de la vida cotidiana.</>
+                    : <>CultureCheck connects people with workshops, creative spaces and cultural experiences, making <span className="underline decoration-primary decoration-wavy underline-offset-4 text-background">discovering and creating</span> part of everyday life.</>}
                 </p>
                 <p className="font-subheading text-lg leading-relaxed text-background/75">
                   {lang === "es"
-                    ? <>Nuestro objetivo es construir una comunidad donde la cultura se explore, se comparta y <span className="underline decoration-primary underline-offset-4 text-background">se viva</span>.</>
-                    : <>Our goal is to build a community where culture is explored, shared and <span className="underline decoration-primary underline-offset-4 text-background">lived</span>.</>}
+                    ? <>Nuestro objetivo es construir una comunidad donde la cultura se explore, se comparta y <span className="underline decoration-primary decoration-wavy underline-offset-4 text-background">se viva</span>.</>
+                    : <>Our goal is to build a community where culture is explored, shared and <span className="underline decoration-primary decoration-wavy underline-offset-4 text-background">lived</span>.</>}
                 </p>
               </div>
             </div>
