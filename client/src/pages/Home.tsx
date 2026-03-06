@@ -58,10 +58,10 @@ export default function Home() {
         secondaryCta: "For creative centers"
       },
       philosophy: {
-        problem: "The Problem",
-        problems: ["Digital saturation", "Passive cultural consumption", "Fragmented discovery"],
+        problem: "Why CultureCheck",
+        problemText: <>We live surrounded by screens and digital content, but more and more people are looking for <span className="font-bold underline decoration-white/40">cultural experiences</span> that happen beyond them.<br/><br/>At the same time, discovering workshops, classes or cultural activities can be complicated and scattered.<br/><br/>CultureCheck was born to connect people with the <span className="font-bold underline decoration-white/40">culture that is lived by participating</span>.</>,
         vision: "Our Vision",
-        visionText: <>CultureCheck helps people <span className="text-primary">actively participate</span> in culture and connect with creative communities.</>
+        visionText: <>We believe in a more <span className="font-bold underline decoration-white/40">active, close and accessible</span> culture.<br/><br/>CultureCheck connects people with workshops, creative spaces and cultural experiences, making <span className="font-bold underline decoration-white/40">discovering and creating</span> part of everyday life.<br/><br/>Our goal is to build a community where culture is explored, shared and <span className="font-bold underline decoration-white/40">lived</span>.</>
       },
       users: {
         title: "For You",
@@ -108,10 +108,10 @@ export default function Home() {
         secondaryCta: "Para centros creativos"
       },
       philosophy: {
-        problem: "El Problema",
-        problems: ["Saturación digital", "Consumo cultural pasivo", "Descubrimiento fragmentado"],
+        problem: "Por qué CultureCheck",
+        problemText: <>Vivimos rodeados de pantallas y de contenido digital, pero cada vez más personas buscan <span className="font-bold underline decoration-white/40">experiencias culturales</span> que se vivan fuera de ellas.<br/><br/>Al mismo tiempo, descubrir talleres, clases o actividades culturales puede ser algo complicado y disperso.<br/><br/>CultureCheck nace para conectar a las personas con esa <span className="font-bold underline decoration-white/40">cultura que se vive participando</span>.</>,
         vision: "Nuestra Visión",
-        visionText: <>CultureCheck impulsa a <span className="text-primary">participar activamente</span> en la cultura y a conectar con una comunidad creativa.</>
+        visionText: <>Creemos en una cultura más <span className="font-bold underline decoration-white/40">activa, cercana y accesible</span>.<br/><br/>CultureCheck conecta a las personas con talleres, espacios creativos y experiencias culturales, facilitando que <span className="font-bold underline decoration-white/40">descubrir y crear</span> forme parte de la vida cotidiana.<br/><br/>Nuestro objetivo es construir una comunidad donde la cultura se explore, se comparta y <span className="font-bold underline decoration-white/40">se viva</span>.</>
       },
       users: {
         title: "Para Ti",
@@ -217,7 +217,7 @@ export default function Home() {
         </motion.div>
       </section>
       {/* About / Philosophy Section */}
-      <section className="py-24 bg-foreground text-background px-6 md:px-12">
+      <section className="py-24 bg-[#c65a2e] text-white px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
           <motion.div 
             className="grid md:grid-cols-2 gap-16"
@@ -227,18 +227,14 @@ export default function Home() {
             variants={fadeIn}
           >
             <div>
-              <h2 className="text-sm font-sans tracking-widest text-secondary mb-6 uppercase">{t.philosophy.problem}</h2>
-              <ul className="space-y-6 font-subheading text-2xl md:text-4xl opacity-80 leading-normal">
-                {t.philosophy.problems.map((p, i) => (
-                  <li key={i} className="flex items-center gap-4 text-3xl">
-                    <span className="text-accent text-xl">0{i+1}</span> {p}
-                  </li>
-                ))}
-              </ul>
+              <h2 className="text-sm font-sans tracking-widest text-white/70 mb-6 uppercase">{t.philosophy.problem}</h2>
+              <p className="font-subheading text-lg md:text-xl leading-relaxed">
+                {t.philosophy.problemText}
+              </p>
             </div>
             <div className="flex flex-col justify-center">
-              <h2 className="text-sm font-sans tracking-widest text-primary mb-6 uppercase">{t.philosophy.vision}</h2>
-              <p className="text-2xl md:text-4xl font-subheading leading-normal">
+              <h2 className="text-sm font-sans tracking-widest text-white/70 mb-6 uppercase">{t.philosophy.vision}</h2>
+              <p className="font-subheading text-lg md:text-xl leading-relaxed">
                 {t.philosophy.visionText}
               </p>
             </div>
