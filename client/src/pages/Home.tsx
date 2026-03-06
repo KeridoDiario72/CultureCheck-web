@@ -212,17 +212,16 @@ export default function Home() {
           <img src={heroArt} alt="Abstract representation of culture" className="absolute inset-0 w-full h-full object-cover grayscale-[20%] contrast-125" />
         </motion.div>
       </section>
-      {/* About / Philosophy Section */}
+      {/* Why CultureCheck */}
       <section className="py-32 bg-foreground text-background px-6 md:px-12 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <motion.div
-            className="mb-20"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-heading text-[#c65a2e] text-sm md:text-base tracking-widest uppercase mb-10">{t.philosophy.problem}</h2>
+            <h2 className="font-heading text-[#c65a2e] text-sm md:text-base tracking-widest uppercase mb-12">{t.philosophy.problem}</h2>
             <div className="grid md:grid-cols-3 gap-8">
               <p className="font-subheading text-lg leading-relaxed text-background/70">
                 {lang === "es"
@@ -241,34 +240,35 @@ export default function Home() {
               </p>
             </div>
           </motion.div>
+        </div>
+      </section>
 
+      {/* Our Vision */}
+      <section className="py-32 bg-[#c65a2e] text-white px-6 md:px-12 overflow-hidden">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            transition={{ duration: 0.7 }}
             viewport={{ once: true }}
           >
-            <div className="border-t border-background/10 pt-16">
-              <h2 className="font-heading text-[#c65a2e] text-sm md:text-base tracking-widest uppercase mb-10">{t.philosophy.vision}</h2>
-              <div className="grid md:grid-cols-2 gap-12 items-start">
-                <p className="font-subheading text-2xl md:text-3xl leading-snug text-background/90">
-                  {lang === "es"
-                    ? <>Creemos en una cultura más <span className="text-[#c65a2e]">activa, cercana y accesible</span>.</>
-                    : <>We believe in a more <span className="text-[#c65a2e]">active, close and accessible</span> culture.</>}
-                </p>
-                <div className="space-y-6">
-                  <p className="font-subheading text-lg leading-relaxed text-background/70">
-                    {lang === "es"
-                      ? <>CultureCheck conecta a las personas con talleres, espacios creativos y experiencias culturales, facilitando que <span className="text-[#c65a2e]">descubrir y crear</span> forme parte de la vida cotidiana.</>
-                      : <>CultureCheck connects people with workshops, creative spaces and cultural experiences, making <span className="text-[#c65a2e]">discovering and creating</span> part of everyday life.</>}
-                  </p>
-                  <p className="font-subheading text-lg leading-relaxed text-background/70">
-                    {lang === "es"
-                      ? <>Nuestro objetivo es construir una comunidad donde la cultura se explore, se comparta y <span className="text-[#c65a2e]">se viva</span>.</>
-                      : <>Our goal is to build a community where culture is explored, shared and <span className="text-[#c65a2e]">lived</span>.</>}
-                  </p>
-                </div>
-              </div>
+            <h2 className="font-heading text-white/60 text-sm md:text-base tracking-widest uppercase mb-12">{t.philosophy.vision}</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              <p className="font-subheading text-lg leading-relaxed text-white/85">
+                {lang === "es"
+                  ? <>Creemos en una cultura más <span className="text-white font-bold">activa, cercana y accesible</span>.</>
+                  : <>We believe in a more <span className="text-white font-bold">active, close and accessible</span> culture.</>}
+              </p>
+              <p className="font-subheading text-lg leading-relaxed text-white/85">
+                {lang === "es"
+                  ? <>CultureCheck conecta a las personas con talleres, espacios creativos y experiencias culturales, facilitando que <span className="text-white font-bold">descubrir y crear</span> forme parte de la vida cotidiana.</>
+                  : <>CultureCheck connects people with workshops, creative spaces and cultural experiences, making <span className="text-white font-bold">discovering and creating</span> part of everyday life.</>}
+              </p>
+              <p className="font-subheading text-lg leading-relaxed text-white/85">
+                {lang === "es"
+                  ? <>Nuestro objetivo es construir una comunidad donde la cultura se explore, se comparta y <span className="text-white font-bold">se viva</span>.</>
+                  : <>Our goal is to build a community where culture is explored, shared and <span className="text-white font-bold">lived</span>.</>}
+              </p>
             </div>
           </motion.div>
         </div>
