@@ -102,7 +102,7 @@ export default function Home() {
       },
       hero: {
         headline: <>Cultura que se <span className="text-[#c65a2e]">vive</span></>,
-        subheadline: <>Una plataforma para descubrir y reservar actividades creativas cerca de ti.<br/><br/><span className="text-muted-foreground text-lg md:text-xl">Cerámica · Pintura · Talleres · Escritura · Teatro · Artesanía<br/>y mucho más.</span></>,
+        subheadline: <>Una plataforma para descubrir y reservar actividades creativas cerca de ti.<br/><br/><span className="text-muted-foreground text-lg md:text-xl"><span className="hidden md:inline">Cerámica · Pintura · Talleres · Escritura · Teatro · Artesanía<br/>y mucho más.</span><span className="inline md:hidden leading-relaxed">Cerámica · Pintura · Talleres<br/>Escritura · Teatro · Artesanía<br/>y mucho más.</span></span></>,
         primaryCta: "Únete a la lista de espera",
         secondaryCta: "Para centros creativos"
       },
