@@ -54,7 +54,7 @@ export default function Home() {
       },
       hero: {
         headline: <>Culture that is <span className="text-secondary">lived</span></>,
-        subheadline: <>A platform to discover and book creative activities near you.<br/><br/><span className="text-muted-foreground text-lg md:text-xl">Ceramics · Painting · Workshops · Writing · Theatre · Crafts<br/>and much more.</span></>,
+        subheadline: <>A platform to discover and book creative activities near you.<br/><br/><span className="text-muted-foreground text-lg md:text-xl"><span className="hidden md:inline">Ceramics · Painting · Workshops · Writing · Theatre · Crafts<br/>and much more.</span><span className="inline md:hidden leading-relaxed">Ceramics · Painting · Workshops<br/>Writing · Theatre · Crafts<br/>and much more.</span></span></>,
         primaryCta: "Join the waitlist",
         secondaryCta: "For creative centers"
       },
