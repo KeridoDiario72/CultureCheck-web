@@ -89,6 +89,7 @@ export default function Privacidad() {
           <div className="flex gap-6 font-subheading text-sm text-muted-foreground">
             <Link href="/legal/aviso-legal" className="hover:text-primary transition-colors" data-testid="link-aviso-legal">Aviso Legal</Link>
             <span className="text-foreground">Política de Privacidad</span>
+            <Link href="/legal/cookies" className="hover:text-primary transition-colors" data-testid="link-cookies">Política de Cookies</Link>
           </div>
           <div className="text-muted-foreground font-subheading text-sm">
             © {new Date().getFullYear()} CultureCheck

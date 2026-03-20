@@ -456,6 +456,7 @@ export default function Home() {
             <div className="flex gap-6 font-subheading text-sm">
               <Link href="/legal/aviso-legal" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-aviso-legal">Aviso Legal</Link>
               <Link href="/legal/privacidad" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-privacidad">Política de Privacidad</Link>
+              <Link href="/legal/cookies" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-cookies">Política de Cookies</Link>
             </div>
             <div className="text-muted-foreground font-subheading text-sm">
               © {new Date().getFullYear()} CultureCheck

@@ -1,0 +1,73 @@
+Add a "Cookie Policy" page to my website, matching the exact style and structure of my existing legal pages (Privacy Policy and Legal Notice).
+
+Requirements:
+
+1. Create a new page:
+
+* File name: cookies.html (or same structure as other legal pages)
+* Use the SAME layout, typography, spacing, and styling as the existing legal pages
+
+2. Content:
+   Insert the following text and format it consistently with the other legal pages (headings, paragraphs, spacing):
+
+POLÍTICA DE COOKIES
+
+Última actualización: [add today's date]
+
+En CultureCheck (https://www.culturecheck.site) utilizamos cookies con el objetivo de mejorar la experiencia de usuario y analizar el uso de nuestra web.
+
+¿Qué son las cookies?
+
+Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo cuando visitas una página web. Sirven para reconocer tu navegador, recordar preferencias y recopilar información sobre la navegación.
+
+¿Qué tipos de cookies utilizamos?
+
+1. Cookies técnicas (necesarias)
+   Estas cookies permiten el funcionamiento básico de la web y no requieren consentimiento.
+
+2. Cookies de análisis
+   Utilizamos Google Analytics, un servicio de analítica web proporcionado por Google LLC, que nos permite conocer cómo los usuarios interactúan con la web.
+
+La información recogida incluye:
+
+* Dirección IP (anonimizada)
+* Tipo de dispositivo
+* Navegador
+* Páginas visitadas
+* Duración de la visita
+
+Esta información se utiliza únicamente con fines estadísticos.
+
+¿Quién utiliza la información?
+
+La información recogida es tratada por Google LLC y puede ser transferida fuera del Espacio Económico Europeo bajo garantías adecuadas.
+
+¿Cómo puedes gestionar las cookies?
+
+Puedes aceptar o rechazar las cookies desde el banner de configuración al acceder a la web.
+
+También puedes eliminarlas desde tu navegador.
+
+Base legal
+
+El uso de cookies analíticas se basa en el consentimiento del usuario.
+
+Contacto
+
+Para cualquier duda, puedes contactar en: [your email]
+
+3. Navigation:
+
+* Add a link to this page in the footer (same place as Privacy Policy and Legal Notice)
+* Use consistent naming: "Política de cookies"
+
+4. Do NOT:
+
+* Break existing styles
+* Create a different design
+* Use inline styles if the other pages don’t
+
+5. After implementation:
+
+* Confirm file created
+* Confirm where the link was added
