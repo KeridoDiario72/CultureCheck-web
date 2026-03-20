@@ -267,6 +267,60 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+      {/* For Creative Centers Section */}
+      <section id="centers" className="py-24 bg-accent text-accent-foreground px-6 md:px-12">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+          <motion.div 
+            className="space-y-8"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={fadeIn}
+          >
+            <h2 className="text-5xl md:text-7xl">{t.centers.title}</h2>
+            <ul className="space-y-4 font-subheading text-xl text-white/90">
+              {t.centers.benefits.map((b, i) => (
+                <li key={i} className="border-b border-white/20 pb-4">{b}</li>
+              ))}
+            </ul>
+            <div className="bg-background p-10 mt-8 shadow-2xl border border-muted">
+              <h3 className="font-heading text-3xl mb-6 text-accent">{t.centers.ctaTitle}</h3>
+              {centerForm.status === "success" ? (
+                <div className="flex items-center gap-2 text-green-600 font-subheading" data-testid="status-center-success">
+                  <CheckCircle className="h-5 w-5" />
+                  {lang === "es" ? "¡Solicitud recibida! Te contactaremos pronto." : "Application received! We'll be in touch."}
+                </div>
+              ) : (
+                <form className="space-y-4" data-testid="form-center" onSubmit={async (e) => {
+                  e.preventDefault();
+                  const form = e.currentTarget;
+                  const name = (form.elements.namedItem("centerName") as HTMLInputElement).value;
+                  const email = (form.elements.namedItem("email") as HTMLInputElement).value;
+                  await centerForm.submit({ email, centerName: name, formType: "center" });
+                  form.reset();
+                }}>
+                  <Input name="centerName" type="text" required placeholder={t.centers.namePlaceholder} className="rounded-none border-muted bg-muted/30 text-foreground h-12" data-testid="input-center-name" />
+                  <Input name="email" type="email" required placeholder={t.centers.emailPlaceholder} className="rounded-none border-muted bg-muted/30 text-foreground h-12" data-testid="input-center-email" />
+                  <Button type="submit" disabled={centerForm.status === "submitting"} className="w-full rounded-none bg-accent text-white hover:bg-accent/90 font-subheading text-xl h-14 transition-all hover:tracking-widest" data-testid="button-center-submit">
+                    {centerForm.status === "submitting" ? <Loader2 className="h-5 w-5 animate-spin" /> : t.centers.submit}
+                  </Button>
+                </form>
+              )}
+              {centerForm.status === "error" && (
+                <p className="text-red-500 text-sm mt-2">{lang === "es" ? "Error al enviar. Inténtalo de nuevo." : "Submission failed. Please try again."}</p>
+              )}
+            </div>
+          </motion.div>
+          <motion.div 
+            className="relative h-[600px] hidden md:block"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+             <img src={paintingImage} alt="Abstract painting studio" className="absolute inset-0 w-full h-full object-cover" />
+          </motion.div>
+        </div>
+      </section>
       {/* For Users Section */}
       <section id="waitlist" className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -319,60 +373,6 @@ export default function Home() {
                 <p className="text-red-500 text-sm mt-2">{lang === "es" ? "Error al enviar. Inténtalo de nuevo." : "Submission failed. Please try again."}</p>
               )}
             </div>
-          </motion.div>
-        </div>
-      </section>
-      {/* For Creative Centers Section */}
-      <section id="centers" className="py-24 bg-accent text-accent-foreground px-6 md:px-12">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          <motion.div 
-            className="space-y-8"
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={fadeIn}
-          >
-            <h2 className="text-5xl md:text-7xl">{t.centers.title}</h2>
-            <ul className="space-y-4 font-subheading text-xl text-white/90">
-              {t.centers.benefits.map((b, i) => (
-                <li key={i} className="border-b border-white/20 pb-4">{b}</li>
-              ))}
-            </ul>
-            <div className="bg-background p-10 mt-8 shadow-2xl border border-muted">
-              <h3 className="font-heading text-3xl mb-6 text-accent">{t.centers.ctaTitle}</h3>
-              {centerForm.status === "success" ? (
-                <div className="flex items-center gap-2 text-green-600 font-subheading" data-testid="status-center-success">
-                  <CheckCircle className="h-5 w-5" />
-                  {lang === "es" ? "¡Solicitud recibida! Te contactaremos pronto." : "Application received! We'll be in touch."}
-                </div>
-              ) : (
-                <form className="space-y-4" data-testid="form-center" onSubmit={async (e) => {
-                  e.preventDefault();
-                  const form = e.currentTarget;
-                  const name = (form.elements.namedItem("centerName") as HTMLInputElement).value;
-                  const email = (form.elements.namedItem("email") as HTMLInputElement).value;
-                  await centerForm.submit({ email, centerName: name, formType: "center" });
-                  form.reset();
-                }}>
-                  <Input name="centerName" type="text" required placeholder={t.centers.namePlaceholder} className="rounded-none border-muted bg-muted/30 text-foreground h-12" data-testid="input-center-name" />
-                  <Input name="email" type="email" required placeholder={t.centers.emailPlaceholder} className="rounded-none border-muted bg-muted/30 text-foreground h-12" data-testid="input-center-email" />
-                  <Button type="submit" disabled={centerForm.status === "submitting"} className="w-full rounded-none bg-accent text-white hover:bg-accent/90 font-subheading text-xl h-14 transition-all hover:tracking-widest" data-testid="button-center-submit">
-                    {centerForm.status === "submitting" ? <Loader2 className="h-5 w-5 animate-spin" /> : t.centers.submit}
-                  </Button>
-                </form>
-              )}
-              {centerForm.status === "error" && (
-                <p className="text-red-500 text-sm mt-2">{lang === "es" ? "Error al enviar. Inténtalo de nuevo." : "Submission failed. Please try again."}</p>
-              )}
-            </div>
-          </motion.div>
-          <motion.div 
-            className="relative h-[600px] hidden md:block"
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
-             <img src={paintingImage} alt="Abstract painting studio" className="absolute inset-0 w-full h-full object-cover" />
           </motion.div>
         </div>
       </section>
