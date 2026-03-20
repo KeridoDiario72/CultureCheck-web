@@ -168,6 +168,12 @@ export default function Home() {
           >
             {lang === "en" ? "ES" : "EN"}
           </button>
+          <a href="https://instagram.com/culturecheck_" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-instagram" aria-label="Instagram">
+            <Instagram className="h-4 w-4 sm:h-5 sm:w-5" />
+          </a>
+          <a href="mailto:hola@culturecheck.site" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-mail" aria-label="Email">
+            <Mail className="h-4 w-4 sm:h-5 sm:w-5" />
+          </a>
           <Button 
             variant="outline" 
             className="font-subheading text-xs sm:text-sm md:text-lg rounded-none border-foreground hover:bg-foreground hover:text-background transition-colors px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 whitespace-nowrap"
@@ -445,11 +451,6 @@ export default function Home() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="font-heading text-2xl text-foreground flex items-start">
             CultureCheck<span className="text-[0.6em] ml-1 mt-0.5 leading-none">®</span>
-          </div>
-
-          <div className="flex gap-6">
-            <a href="https://instagram.com/culturecheck_" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-instagram"><Instagram className="h-5 w-5" /></a>
-            <a href="mailto:hola@culturecheck.site" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-mail"><Mail className="h-5 w-5" /></a>
           </div>
 
           <div className="flex flex-col items-center md:items-end gap-2">
