@@ -23,9 +23,129 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600&family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+      #cc-banner {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+        background: #ffffff;
+        border-top: 1px solid #e5e0d8;
+        padding: 16px 24px;
+        box-shadow: 0 -4px 24px rgba(0,0,0,0.08);
+        font-family: 'Inter', sans-serif;
+      }
+      #cc-banner.visible {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      #cc-banner p {
+        margin: 0;
+        flex: 1;
+        font-size: 14px;
+        color: #444;
+        line-height: 1.5;
+        min-width: 200px;
+      }
+      #cc-banner p a {
+        color: #3b3b99;
+        text-decoration: underline;
+      }
+      #cc-buttons {
+        display: flex;
+        gap: 10px;
+        flex-shrink: 0;
+      }
+      #cc-accept, #cc-reject {
+        padding: 10px 22px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        border: none;
+        transition: opacity 0.2s;
+      }
+      #cc-accept:hover, #cc-reject:hover {
+        opacity: 0.85;
+      }
+      #cc-accept {
+        background: #3b3b99;
+        color: #ffffff;
+      }
+      #cc-reject {
+        background: #f0ece5;
+        color: #444;
+      }
+      @media (max-width: 600px) {
+        #cc-banner.visible {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 14px;
+          padding: 16px 18px;
+        }
+        #cc-buttons {
+          width: 100%;
+        }
+        #cc-accept, #cc-reject {
+          flex: 1;
+          text-align: center;
+        }
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
+
+    <div id="cc-banner" role="dialog" aria-label="Cookie consent">
+      <p>
+        Usamos cookies analíticas para mejorar tu experiencia. Puedes aceptar o rechazar su uso.
+        <a href="/privacidad" target="_blank">Política de privacidad</a>.
+      </p>
+      <div id="cc-buttons">
+        <button id="cc-reject">Rechazar</button>
+        <button id="cc-accept">Aceptar</button>
+      </div>
+    </div>
+
+    <script>
+      (function() {
+        function loadGA() {
+          var script1 = document.createElement('script');
+          script1.async = true;
+          script1.src = "https://www.googletagmanager.com/gtag/js?id=G-X5LP4ZKKTR";
+          document.head.appendChild(script1);
+          var script2 = document.createElement('script');
+          script2.innerHTML = "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-X5LP4ZKKTR');";
+          document.head.appendChild(script2);
+        }
+
+        var consent = localStorage.getItem('cc_consent');
+
+        if (consent === 'accepted') {
+          loadGA();
+        } else if (consent === null) {
+          var banner = document.getElementById('cc-banner');
+          banner.classList.add('visible');
+
+          document.getElementById('cc-accept').addEventListener('click', function() {
+            localStorage.setItem('cc_consent', 'accepted');
+            banner.classList.remove('visible');
+            loadGA();
+          });
+
+          document.getElementById('cc-reject').addEventListener('click', function() {
+            localStorage.setItem('cc_consent', 'rejected');
+            banner.classList.remove('visible');
+          });
+        }
+      })();
+    </script>
+
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
