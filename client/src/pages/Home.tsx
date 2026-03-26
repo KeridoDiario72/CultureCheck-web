@@ -8,9 +8,9 @@ import paintingImage from "@/assets/images/painting.png";
 import mosaicCeramica from "@/assets/images/mosaic-ceramica.jpg";
 import mosaicPintura from "@/assets/images/mosaic-pintura.jpg";
 import mosaicArtesania from "@/assets/images/mosaic-artesania.jpg";
-import mosaicFotografia from "@/assets/images/mosaic-fotografia.jpg";
-import mosaicDanza from "@/assets/images/mosaic-danza.jpg";
-import mosaicTeatro from "@/assets/images/mosaic-teatro.jpg";
+import mosaicCeramica2 from "@/assets/images/mosaic-ceramica-2.jpg";
+import mosaicPintura2 from "@/assets/images/mosaic-pintura-2.jpg";
+import mosaicArtesania2 from "@/assets/images/mosaic-artesania-2.jpg";
 import { SiteNav, MARKETPLACE_URL } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 
@@ -100,28 +100,28 @@ export default function Home() {
       {/* ── Hero ── */}
       <section className="relative min-h-[88vh] flex items-center justify-center overflow-hidden">
 
-        {/* Mosaic background — 3×2 grid */}
-        <div className="absolute inset-0 grid grid-cols-3 grid-rows-2">
+        {/* Mosaic background — 3×2 grid of real images */}
+        <div className="absolute inset-0 grid grid-cols-3 grid-rows-2 gap-[3px]">
           {[
             { src: mosaicCeramica,   alt: "Cerámica" },
             { src: mosaicPintura,    alt: "Pintura"  },
             { src: mosaicArtesania,  alt: "Artesanía" },
-            { src: mosaicFotografia, alt: "Fotografía" },
-            { src: mosaicDanza,      alt: "Danza"    },
-            { src: mosaicTeatro,     alt: "Teatro"   },
+            { src: mosaicCeramica2,  alt: "Cerámica taller" },
+            { src: mosaicPintura2,   alt: "Pintura abstracta" },
+            { src: mosaicArtesania2, alt: "Tejido artesanal" },
           ].map((img, i) => (
             <div key={i} className="overflow-hidden">
               <img
                 src={img.src}
                 alt={img.alt}
-                className="w-full h-full object-cover scale-105"
+                className="w-full h-full object-cover"
               />
             </div>
           ))}
         </div>
 
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/55" />
+        {/* Overlay — subtle to keep images visible */}
+        <div className="absolute inset-0 bg-black/50" />
 
         {/* Centered card */}
         <motion.div
