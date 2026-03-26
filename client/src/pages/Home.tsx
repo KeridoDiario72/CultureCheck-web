@@ -5,7 +5,12 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Search, CalendarCheck, Sparkles } from "lucide-react";
 import ceramicsImage from "@/assets/images/ceramics.png";
 import paintingImage from "@/assets/images/painting.png";
-import heroWorkshop from "@/assets/images/hero-workshop.jpg";
+import mosaicCeramica from "@/assets/images/mosaic-ceramica.jpg";
+import mosaicPintura from "@/assets/images/mosaic-pintura.jpg";
+import mosaicEscritura from "@/assets/images/mosaic-escritura.jpg";
+import mosaicFotografia from "@/assets/images/mosaic-fotografia.jpg";
+import mosaicDanza from "@/assets/images/mosaic-danza.jpg";
+import mosaicTeatro from "@/assets/images/mosaic-teatro.jpg";
 import { SiteNav, MARKETPLACE_URL } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 
@@ -93,26 +98,46 @@ export default function Home() {
       <SiteNav lang={lang} onLangToggle={() => setLang(lang === "en" ? "es" : "en")} activePage="home" />
 
       {/* ── Hero ── */}
-      <section
-        className="pt-24 pb-16 md:pt-36 md:pb-24 px-6 md:px-12 overflow-hidden"
-        style={{ background: "linear-gradient(160deg, #eef0fb 0%, #f9f8f6 45%, #F5F1E8 100%)" }}
-      >
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-          {/* Text column */}
-          <motion.div
-            className="flex flex-col gap-7 text-center md:text-left"
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={fadeIn}
-          >
-            <h1 className="font-heading text-5xl sm:text-6xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-[#1A1A1A]">
+      <section className="relative min-h-[88vh] flex items-center justify-center overflow-hidden">
+
+        {/* Mosaic background — 3×2 grid */}
+        <div className="absolute inset-0 grid grid-cols-3 grid-rows-2">
+          {[
+            { src: mosaicCeramica,   alt: "Cerámica" },
+            { src: mosaicPintura,    alt: "Pintura"  },
+            { src: mosaicEscritura,  alt: "Escritura" },
+            { src: mosaicFotografia, alt: "Fotografía" },
+            { src: mosaicDanza,      alt: "Danza"    },
+            { src: mosaicTeatro,     alt: "Teatro"   },
+          ].map((img, i) => (
+            <div key={i} className="overflow-hidden">
+              <img
+                src={img.src}
+                alt={img.alt}
+                className="w-full h-full object-cover scale-105"
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/55" />
+
+        {/* Centered card */}
+        <motion.div
+          className="relative z-10 w-full max-w-2xl mx-4 sm:mx-6"
+          initial={{ opacity: 0, y: 32 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
+          <div className="bg-white rounded-3xl shadow-2xl px-8 py-12 sm:px-14 sm:py-14 text-center">
+            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl leading-[1.05] tracking-tight text-[#1A1A1A] mb-6">
               {t.hero.headline}
             </h1>
-            <p className="font-subheading text-lg md:text-xl text-[#1A1A1A]/60 leading-relaxed max-w-md mx-auto md:mx-0">
+            <p className="font-subheading text-lg md:text-xl text-[#1A1A1A]/55 leading-relaxed max-w-lg mx-auto mb-10">
               {t.hero.subheadline}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href={MARKETPLACE_URL} data-testid="button-explore-hero">
                 <Button
                   size="lg"
@@ -125,35 +150,14 @@ export default function Home() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="rounded-full border-2 border-[#1A1A1A]/30 text-[#1A1A1A] hover:border-[#1A1A1A] font-subheading text-base px-8 py-6 h-auto w-full sm:w-auto transition-colors"
+                  className="rounded-full border-2 border-[#1A1A1A]/25 text-[#1A1A1A] hover:border-[#1A1A1A] font-subheading text-base px-8 py-6 h-auto w-full sm:w-auto transition-colors"
                 >
                   {t.hero.secondaryCta}
                 </Button>
               </Link>
             </div>
-          </motion.div>
-
-          {/* Image column */}
-          <motion.div
-            className="relative"
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-          >
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[3/4] md:aspect-[4/5]">
-              <img
-                src={heroWorkshop}
-                alt="Taller de cerámica"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/20 to-transparent" />
-            </div>
-            {/* Decorative element */}
-            <div className="absolute -bottom-4 -left-4 w-24 h-24 rounded-2xl bg-[#2C47C7]/10 -z-10" />
-            <div className="absolute -top-4 -right-4 w-16 h-16 rounded-full bg-accent/15 -z-10" />
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </section>
 
       {/* ── Cómo funciona ── */}
