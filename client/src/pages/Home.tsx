@@ -105,7 +105,7 @@ export default function Home() {
           className="absolute inset-0 grid gap-[5px]"
           style={{
             gridTemplateColumns: "38% 24% 38%",
-            gridTemplateRows: "44% 30% 26%",
+            gridTemplateRows: "34% 33% 33%",
           }}
         >
           {/* Col 1 · rows 1-2 → tall (pottery wheel) */}
@@ -144,7 +144,7 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <div className="bg-white rounded-3xl shadow-2xl px-7 py-10 sm:px-11 sm:py-12 text-center">
+          <div className="bg-[#F5F1E8] rounded-3xl shadow-2xl px-7 py-10 sm:px-11 sm:py-12 text-center">
             <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl leading-[1.08] tracking-tight text-[#1A1A1A] mb-4">
               {t.hero.headline}
             </h1>
