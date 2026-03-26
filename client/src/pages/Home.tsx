@@ -3,14 +3,15 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Search, CalendarCheck, Sparkles } from "lucide-react";
-import ceramicsImage from "@/assets/images/ceramics.png";
-import paintingImage from "@/assets/images/painting.png";
 import heroImg1 from "@assets/laura-tommasina-Wksd6I6mSkw-unsplash_1774551347035.jpg";
 import heroImg2 from "@assets/anya-richter-cuc8Fzz-Ct8-unsplash_1774551347027.jpg";
 import heroImg3 from "@assets/esha-verma-HAoTz6PfrBY-unsplash_1774551347029.jpg";
 import heroImg4 from "@assets/pew-nguyen-d2MLdFBO6aA-unsplash_1774551347030.jpg";
 import heroImg5 from "@assets/vitaly-gariev-1R_BI7Y_32M-unsplash_1774551347034.jpg";
 import heroImg6 from "@assets/lance-matthew-pahang-3-x4eUNuiqo-unsplash_1774551347028.jpg";
+import actPintura from "@assets/vitaly-gariev-9K1r-ubhwD0-unsplash_1774551347033.jpg";
+import actArtesania from "@assets/laura-adai-5H2ketFL1LE-unsplash_1774551347027.jpg";
+import actFloral from "@assets/hillary-ungson-y0VAG6tKjxU-unsplash_1774551347030.jpg";
 import { SiteNav, MARKETPLACE_URL } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 
@@ -41,13 +42,14 @@ export default function Home() {
         ]
       },
       activities: {
-        eyebrow: "Activities",
-        title: "What you can book",
         cta: "View activity",
         cards: [
-          { title: "Ceramics", desc: "Create unique pieces in a professional studio", bg: ceramicsImage, color: null },
-          { title: "Crafts", desc: "Handmade objects and traditional techniques", bg: null, color: "#c9b99a" },
-          { title: "Painting", desc: "Express yourself through colour and technique", bg: paintingImage, color: null }
+          { title: "Ceramics",      desc: "Throw and shape clay in a professional studio",    bg: heroImg1 },
+          { title: "Painting",      desc: "Express yourself through colour and technique",     bg: actPintura },
+          { title: "Textiles",      desc: "Dye, weave and spin with natural fibres",          bg: heroImg3 },
+          { title: "Crafts",        desc: "Handmade objects with traditional techniques",      bg: actArtesania },
+          { title: "Embroidery",    desc: "Bead and stitch unique handmade pieces",           bg: heroImg6 },
+          { title: "Floral Design", desc: "Arrange flowers and create botanical compositions", bg: actFloral },
         ]
       },
       finalCta: {
@@ -73,13 +75,14 @@ export default function Home() {
         ]
       },
       activities: {
-        eyebrow: "Actividades",
-        title: "Qué puedes reservar",
         cta: "Ver actividad",
         cards: [
-          { title: "Cerámica", desc: "Crea piezas únicas en un taller profesional", bg: ceramicsImage, color: null },
-          { title: "Artesanía", desc: "Objetos hechos a mano con técnicas tradicionales", bg: null, color: "#c9b99a" },
-          { title: "Pintura", desc: "Exprésate a través del color y la técnica", bg: paintingImage, color: null }
+          { title: "Cerámica",       desc: "Modela arcilla en el torno de un taller profesional",   bg: heroImg1 },
+          { title: "Pintura",        desc: "Exprésate a través del color y la técnica pictórica",    bg: actPintura },
+          { title: "Tejidos",        desc: "Tinte, telar y fibras naturales de la mano de expertos", bg: heroImg3 },
+          { title: "Artesanía",      desc: "Objetos hechos a mano con técnicas tradicionales",       bg: actArtesania },
+          { title: "Bordado",        desc: "Cose y borda piezas únicas con tus propias manos",       bg: heroImg6 },
+          { title: "Diseño Floral",  desc: "Crea composiciones botánicas y arreglos florales",       bg: actFloral },
         ]
       },
       finalCta: {
@@ -213,49 +216,29 @@ export default function Home() {
       </section>
 
       {/* ── Activity Cards ── */}
-      <section className="py-28 md:py-36 px-6 md:px-12 bg-[#F5F1E8]">
+      <section className="py-14 md:py-16 px-6 md:px-12 bg-[#F5F1E8]">
         <div className="max-w-5xl mx-auto">
-          <motion.div
-            className="mb-16 md:mb-20"
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={fadeIn}
-          >
-            <p className="font-subheading text-base uppercase tracking-widest text-[#2C47C7] mb-4">
-              {t.activities.eyebrow}
-            </p>
-            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-[#1A1A1A]">
-              {t.activities.title}
-            </h2>
-          </motion.div>
-          <div className="grid sm:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
             {t.activities.cards.map((card, i) => (
               <motion.div
                 key={i}
-                className="group bg-white border border-gray-200 overflow-hidden flex flex-col rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-                initial={{ opacity: 0, y: 24 }}
+                className="group bg-white overflow-hidden flex flex-col rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
                 data-testid={`card-activity-${i}`}
               >
-                <div className="relative h-64 overflow-hidden rounded-t-2xl">
-                  {card.bg ? (
-                    <img
-                      src={card.bg}
-                      alt={card.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center" style={{ backgroundColor: card.color! }}>
-                      <span className="font-heading text-7xl text-white/50">{card.title[0]}</span>
-                    </div>
-                  )}
+                <div className="relative h-44 overflow-hidden rounded-t-2xl">
+                  <img
+                    src={card.bg}
+                    alt={card.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
-                <div className="p-6 flex flex-col flex-1 gap-4">
-                  <h3 className="font-heading text-2xl text-[#1A1A1A]">{card.title}</h3>
-                  <p className="font-subheading text-base text-[#1A1A1A]/60 flex-1 leading-relaxed line-clamp-2">{card.desc}</p>
+                <div className="p-4 flex flex-col flex-1 gap-3">
+                  <h3 className="font-heading text-xl text-[#1A1A1A]">{card.title}</h3>
+                  <p className="font-subheading text-sm text-[#1A1A1A]/60 flex-1 leading-relaxed line-clamp-2">{card.desc}</p>
                   <a href={MARKETPLACE_URL} data-testid={`button-activity-${i}`}>
                     <Button
                       variant="outline"
