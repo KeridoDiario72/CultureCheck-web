@@ -55,7 +55,7 @@ export default function Home() {
       },
       finalCta: {
         eyebrow: "Ready to explore?",
-        title: "Explore cultural activities near you",
+        title: "Discover cultural activities near you",
         cta: "Explore activities"
       }
     },
@@ -89,7 +89,7 @@ export default function Home() {
       },
       finalCta: {
         eyebrow: "¿Listo para explorar?",
-        title: "Explora actividades culturales cerca de ti",
+        title: "Descubre actividades culturales cerca de ti",
         cta: "Explorar actividades"
       }
     }
