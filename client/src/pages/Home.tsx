@@ -12,6 +12,10 @@ import heroImg6 from "@assets/lance-matthew-pahang-3-x4eUNuiqo-unsplash_17745513
 import actPintura from "@assets/vitaly-gariev-9K1r-ubhwD0-unsplash_1774551347033.jpg";
 import actArtesania from "@assets/laura-adai-5H2ketFL1LE-unsplash_1774551347027.jpg";
 import actFloral from "@assets/hillary-ungson-y0VAG6tKjxU-unsplash_1774551347030.jpg";
+import heroVelas from "@assets/ionela-mat-4U-cfybSixM-unsplash_1774551347025.jpg";
+import heroAula from "@assets/illan-riestra-nava-vRKpmLZdGmw-unsplash_1774551347026.jpg";
+import heroVidriera from "@assets/jakub-zerdzicki-8_RxHhvMZz0-unsplash_1774551347032.jpg";
+import heroBrochas from "@assets/pew-nguyen-i0k1TyYw_Ss-unsplash_1774551347035.jpg";
 import { SiteNav, MARKETPLACE_URL } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 
@@ -105,42 +109,54 @@ export default function Home() {
       {/* ── Hero ── */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
 
-        {/* Mosaic background — irregular asymmetric grid */}
+        {/* Mosaic — 13 images, 3 rows (4-5-4), breaks don't align = dynamism */}
         <div
-          className="absolute inset-0 grid gap-[5px]"
+          className="absolute inset-0 grid gap-[3px]"
           style={{
-            gridTemplateColumns: "38% 24% 38%",
-            gridTemplateRows: "34% 33% 33%",
+            gridTemplateColumns: "repeat(20, 1fr)",
+            gridTemplateRows: "repeat(3, 1fr)",
           }}
         >
-          {/* Col 1 · rows 1-2 → tall (pottery wheel) */}
-          <div className="overflow-hidden [grid-column:1] [grid-row:1/3]">
-            <img src={heroImg1} alt="Taller de cerámica" className="w-full h-full object-cover kb-1" />
-          </div>
-          {/* Col 2 · row 1 → normal (art workshop) */}
-          <div className="overflow-hidden [grid-column:2] [grid-row:1]">
-            <img src={heroImg2} alt="Taller de pintura" className="w-full h-full object-cover kb-2" />
-          </div>
-          {/* Col 3 · rows 1-2 → tall (coloured yarn) */}
-          <div className="overflow-hidden [grid-column:3] [grid-row:1/3]">
-            <img src={heroImg3} alt="Textiles de colores" className="w-full h-full object-cover kb-3" />
-          </div>
-          {/* Col 1 · row 3 → normal (ceramic bowl) */}
-          <div className="overflow-hidden [grid-column:1] [grid-row:3]">
-            <img src={heroImg4} alt="Bol cerámico pintado" className="w-full h-full object-cover kb-4" />
-          </div>
-          {/* Col 2 · rows 2-3 → tall (painting studio) */}
-          <div className="overflow-hidden [grid-column:2] [grid-row:2/4]">
-            <img src={heroImg5} alt="Estudio de pintura" className="w-full h-full object-cover kb-5" />
-          </div>
-          {/* Col 3 · row 3 → normal (bead embroidery) */}
-          <div className="overflow-hidden [grid-column:3] [grid-row:3]">
-            <img src={heroImg6} alt="Bordado artesanal" className="w-full h-full object-cover kb-6" />
-          </div>
+          {/* ── Row 1: 4 images × 5 cols each ── */}
+          {[
+            { src: heroImg1,   alt: "Tornero cerámica",  col: "1/6"  },
+            { src: heroImg2,   alt: "Taller pintura",    col: "6/11" },
+            { src: heroImg3,   alt: "Hilo teñido",       col: "11/16"},
+            { src: heroVelas,  alt: "Velas artesanales", col: "16/21"},
+          ].map((img, i) => (
+            <div key={`r1-${i}`} className="overflow-hidden" style={{ gridColumn: img.col, gridRow: "1" }}>
+              <img src={img.src} alt={img.alt} className={`w-full h-full object-cover kb-${(i % 6) + 1}`} />
+            </div>
+          ))}
+
+          {/* ── Row 2: 5 images × 4 cols each (breaks shift vs row 1) ── */}
+          {[
+            { src: actPintura,   alt: "Chica en caballete",  col: "1/5"  },
+            { src: heroAula,     alt: "Aula de arte",         col: "5/9"  },
+            { src: heroImg4,     alt: "Bol cerámico pintado", col: "9/13" },
+            { src: actFloral,    alt: "Corona floral",        col: "13/17"},
+            { src: actArtesania, alt: "Estudio artesanía",    col: "17/21"},
+          ].map((img, i) => (
+            <div key={`r2-${i}`} className="overflow-hidden" style={{ gridColumn: img.col, gridRow: "2" }}>
+              <img src={img.src} alt={img.alt} className={`w-full h-full object-cover kb-${((i + 2) % 6) + 1}`} />
+            </div>
+          ))}
+
+          {/* ── Row 3: 4 images × 5 cols each (same breaks as row 1) ── */}
+          {[
+            { src: heroImg5,    alt: "Estudio de pintura",  col: "1/6"  },
+            { src: heroImg6,    alt: "Bordado artesanal",   col: "6/11" },
+            { src: heroVidriera,alt: "Vidriería",           col: "11/16"},
+            { src: heroBrochas, alt: "Brochas y cerámica",  col: "16/21"},
+          ].map((img, i) => (
+            <div key={`r3-${i}`} className="overflow-hidden" style={{ gridColumn: img.col, gridRow: "3" }}>
+              <img src={img.src} alt={img.alt} className={`w-full h-full object-cover kb-${((i + 4) % 6) + 1}`} />
+            </div>
+          ))}
         </div>
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/52" />
+        <div className="absolute inset-0 bg-black/55" />
 
         {/* Centered card */}
         <motion.div
