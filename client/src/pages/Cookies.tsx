@@ -17,7 +17,7 @@ export default function Cookies() {
 
         <div className="space-y-10 font-subheading text-base leading-relaxed text-foreground/80">
           <section>
-            <p>En CultureCheck (<a href="https://www.culturecheck.site" className="text-[#5b9bd5] hover:underline">https://www.culturecheck.site</a>) utilizamos cookies con el objetivo de mejorar la experiencia de usuario y analizar el uso de nuestra web.</p>
+            <p>En CultureCheck (<a href="https://www.culturecheck.site" className="text-[#2C47C7] hover:underline">https://www.culturecheck.site</a>) utilizamos cookies con el objetivo de mejorar la experiencia de usuario y analizar el uso de nuestra web.</p>
           </section>
 
           <section>
@@ -68,7 +68,7 @@ export default function Cookies() {
 
           <section>
             <h2 className="font-heading text-xl mb-4 text-foreground">Contacto</h2>
-            <p>Para cualquier duda, puedes contactar en: <a href="mailto:hola@culturecheck.site" className="text-[#5b9bd5] hover:underline">hola@culturecheck.site</a></p>
+            <p>Para cualquier duda, puedes contactar en: <a href="mailto:hola@culturecheck.site" className="text-[#2C47C7] hover:underline">hola@culturecheck.site</a></p>
           </section>
         </div>
       </main>

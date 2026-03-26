@@ -18,7 +18,7 @@ export default function Privacidad() {
           <section>
             <h2 className="font-heading text-xl mb-4 text-foreground">1. Responsable del tratamiento</h2>
             <p className="mb-4">El responsable del tratamiento de los datos personales recogidos a través del sitio web es:</p>
-            <div className="space-y-1 pl-4 border-l-2 border-[#5b9bd5] mb-4">
+            <div className="space-y-1 pl-4 border-l-2 border-[#2C47C7] mb-4">
               <p><strong>CultureCheck</strong></p>
               <p><strong>Correo electrónico de contacto:</strong> hola@culturecheck.site</p>
             </div>
