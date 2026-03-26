@@ -42,7 +42,7 @@ export default function Home() {
         ]
       },
       activities: {
-        cta: "View activity",
+        title: "What you can book",
         cards: [
           { title: "Ceramics",      desc: "Throw and shape clay in a professional studio",    bg: heroImg1 },
           { title: "Painting",      desc: "Express yourself through colour and technique",     bg: actPintura },
@@ -75,7 +75,7 @@ export default function Home() {
         ]
       },
       activities: {
-        cta: "Ver actividad",
+        title: "Qué puedes reservar",
         cards: [
           { title: "Cerámica",       desc: "Modela arcilla en el torno de un taller profesional",   bg: heroImg1 },
           { title: "Pintura",        desc: "Exprésate a través del color y la técnica pictórica",    bg: actPintura },
@@ -218,11 +218,23 @@ export default function Home() {
       {/* ── Activity Cards ── */}
       <section className="py-14 md:py-16 px-6 md:px-12 bg-[#F5F1E8]">
         <div className="max-w-5xl mx-auto">
+          <motion.div
+            className="text-center mb-10"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={fadeIn}
+          >
+            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-[#1A1A1A]">
+              {t.activities.title}
+            </h2>
+          </motion.div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
             {t.activities.cards.map((card, i) => (
-              <motion.div
+              <motion.a
+                href={MARKETPLACE_URL}
                 key={i}
-                className="group bg-white overflow-hidden flex flex-col rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                className="group overflow-hidden flex flex-col rounded-2xl shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -236,19 +248,10 @@ export default function Home() {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-                <div className="p-4 flex flex-col flex-1 gap-3">
+                <div className="bg-white px-4 py-3">
                   <h3 className="font-heading text-xl text-[#1A1A1A]">{card.title}</h3>
-                  <p className="font-subheading text-sm text-[#1A1A1A]/60 flex-1 leading-relaxed line-clamp-2">{card.desc}</p>
-                  <a href={MARKETPLACE_URL} data-testid={`button-activity-${i}`}>
-                    <Button
-                      variant="outline"
-                      className="rounded-full border-[#2C47C7] text-[#2C47C7] hover:bg-[#2C47C7] hover:text-white font-subheading text-sm w-full transition-all"
-                    >
-                      {t.activities.cta} <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </a>
                 </div>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
         </div>
