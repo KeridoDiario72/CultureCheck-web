@@ -144,8 +144,8 @@ export default function Home() {
 
           {/* ── Row 3: 4 images × 5 cols each (same breaks as row 1) ── */}
           {[
-            { src: heroVelas,   alt: "Velas artesanales",   col: "1/6"  },
-            { src: heroImg6,    alt: "Bordado artesanal",   col: "6/11" },
+            { src: heroImg6,    alt: "Bordado artesanal",   col: "1/6"  },
+            { src: heroVelas,   alt: "Velas artesanales",   col: "6/11" },
             { src: heroVidriera,alt: "Vidriería",           col: "11/16"},
             { src: heroBrochas, alt: "Brochas y cerámica",  col: "16/21"},
           ].map((img, i) => (
