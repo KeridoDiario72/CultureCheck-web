@@ -43,7 +43,7 @@ export default function Home() {
       },
       activities: {
         title: "What you can book",
-        more: "and much more waiting for you",
+        more: "and much more is waiting for you",
         cards: [
           { title: "Ceramics",      desc: "Throw and shape clay in a professional studio",    bg: heroImg1 },
           { title: "Painting",      desc: "Express yourself through colour and technique",     bg: actPintura },
@@ -77,7 +77,7 @@ export default function Home() {
       },
       activities: {
         title: "Qué puedes reservar",
-        more: "y mucho más te espera",
+        more: "y mucho más te está esperando",
         cards: [
           { title: "Cerámica",       desc: "Modela arcilla en el torno de un taller profesional",   bg: heroImg1 },
           { title: "Pintura",        desc: "Exprésate a través del color y la técnica pictórica",    bg: actPintura },
@@ -221,13 +221,13 @@ export default function Home() {
       <section className="py-14 md:py-16 px-6 md:px-12 bg-[#F5F1E8]">
         <div className="max-w-5xl mx-auto">
           <motion.div
-            className="text-right mb-10"
+            className="text-left mb-10"
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-[#1A1A1A]">
+            <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl text-[#1A1A1A]">
               {t.activities.title}
             </h2>
           </motion.div>
