@@ -273,7 +273,7 @@ export default function Home() {
       </section>
 
       {/* ── Final CTA ── */}
-      <section className="py-32 md:py-40 bg-[#2C47C7] text-white px-6 md:px-12 text-center">
+      <section className="py-14 md:py-20 bg-[#2C47C7] text-white px-6 md:px-12 text-center">
         <motion.div
           className="max-w-3xl mx-auto"
           initial="initial"
@@ -281,10 +281,10 @@ export default function Home() {
           viewport={{ once: true }}
           variants={fadeIn}
         >
-          <p className="font-subheading text-base uppercase tracking-widest text-white/50 mb-6">
+          <p className="font-heading text-3xl md:text-4xl text-white mb-5">
             {t.finalCta.eyebrow}
           </p>
-          <h2 className="font-heading text-3xl md:text-5xl leading-tight text-white mb-10">
+          <h2 className="font-heading text-2xl md:text-3xl leading-tight text-white/60 mb-8">
             {t.finalCta.title}
           </h2>
           <a href={MARKETPLACE_URL} data-testid="button-explore-final">
