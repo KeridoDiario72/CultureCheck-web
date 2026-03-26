@@ -20,14 +20,14 @@ export default function Home() {
   const content = {
     en: {
       hero: {
-        label: "Cultural activities marketplace",
         headline: "Discover and book cultural activities near you",
         subheadline: "Find your next creative workshop and book in a few steps",
         primaryCta: "Explore activities",
         secondaryCta: "I run a creative space"
       },
       howItWorks: {
-        label: "How it works",
+        eyebrow: "Simple process",
+        title: "How it works",
         steps: [
           { icon: Search, title: "Discover activities", desc: "Browse workshops and creative activities near you" },
           { icon: CalendarCheck, title: "Book easily", desc: "Simple, fast and secure booking" },
@@ -35,7 +35,7 @@ export default function Home() {
         ]
       },
       activities: {
-        label: "Activities",
+        eyebrow: "Activities",
         title: "What you can book",
         cta: "View activity",
         cards: [
@@ -45,21 +45,21 @@ export default function Home() {
         ]
       },
       finalCta: {
-        label: "Ready to explore?",
+        eyebrow: "Ready to explore?",
         title: "Explore cultural activities near you",
         cta: "Explore activities"
       }
     },
     es: {
       hero: {
-        label: "Marketplace de actividades culturales",
         headline: "Descubre y reserva actividades culturales cerca de ti",
         subheadline: "Encuentra tu próximo taller creativo y reserva en pocos pasos",
         primaryCta: "Explorar actividades",
         secondaryCta: "Tengo un centro creativo"
       },
       howItWorks: {
-        label: "Cómo funciona",
+        eyebrow: "Proceso sencillo",
+        title: "Cómo funciona",
         steps: [
           { icon: Search, title: "Descubre actividades", desc: "Explora talleres y actividades creativas cerca de ti" },
           { icon: CalendarCheck, title: "Reserva fácilmente", desc: "Reserva simple, rápida y segura" },
@@ -67,7 +67,7 @@ export default function Home() {
         ]
       },
       activities: {
-        label: "Actividades",
+        eyebrow: "Actividades",
         title: "Qué puedes reservar",
         cta: "Ver actividad",
         cards: [
@@ -77,7 +77,7 @@ export default function Home() {
         ]
       },
       finalCta: {
-        label: "¿Listo para explorar?",
+        eyebrow: "¿Listo para explorar?",
         title: "Explora actividades culturales cerca de ti",
         cta: "Explorar actividades"
       }
@@ -92,24 +92,24 @@ export default function Home() {
       <SiteNav lang={lang} onLangToggle={() => setLang(lang === "en" ? "es" : "en")} activePage="home" />
 
       {/* ── Hero ── */}
-      <section className="pt-28 pb-24 md:pt-40 md:pb-36 px-6 md:px-12 bg-white">
+      <section
+        className="pt-32 pb-28 md:pt-48 md:pb-40 px-6 md:px-12"
+        style={{ background: "linear-gradient(160deg, #eef0fb 0%, #f9f8f6 40%, #F5F1E8 100%)" }}
+      >
         <motion.div
-          className="max-w-4xl mx-auto text-center space-y-8"
+          className="max-w-4xl mx-auto text-center"
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
           variants={fadeIn}
         >
-          <span className="inline-block font-subheading text-sm uppercase tracking-widest text-[#2C47C7] bg-[#2C47C7]/8 px-4 py-1.5 rounded-full">
-            {t.hero.label}
-          </span>
-          <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-[82px] leading-[1.05] tracking-tight text-[#1A1A1A]">
+          <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-[88px] leading-[1.05] tracking-tight text-[#1A1A1A] mb-8 md:mb-10">
             {t.hero.headline}
           </h1>
-          <p className="font-subheading text-xl md:text-2xl text-[#1A1A1A]/60 max-w-2xl mx-auto leading-relaxed">
+          <p className="font-subheading text-xl md:text-2xl text-[#1A1A1A]/60 max-w-2xl mx-auto leading-relaxed mb-10 md:mb-12">
             {t.hero.subheadline}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={MARKETPLACE_URL} data-testid="button-explore-hero">
               <Button
                 size="lg"
@@ -132,34 +132,39 @@ export default function Home() {
       </section>
 
       {/* ── Cómo funciona ── */}
-      <section className="py-24 px-6 md:px-12 bg-[#F5F1E8]">
+      <section className="py-28 md:py-36 px-6 md:px-12 bg-white">
         <div className="max-w-5xl mx-auto">
           <motion.div
-            className="text-center mb-16"
+            className="text-center mb-20"
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <span className="inline-block font-subheading text-sm uppercase tracking-widest text-[#2C47C7] mb-4">{t.howItWorks.label}</span>
+            <p className="font-subheading text-sm uppercase tracking-widest text-[#2C47C7] mb-4">
+              {t.howItWorks.eyebrow}
+            </p>
+            <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-[#1A1A1A]">
+              {t.howItWorks.title}
+            </h2>
           </motion.div>
-          <div className="grid md:grid-cols-3 gap-10 md:gap-14">
+          <div className="grid md:grid-cols-3 gap-12 md:gap-16">
             {t.howItWorks.steps.map((step, i) => {
               const Icon = step.icon;
               return (
                 <motion.div
                   key={i}
-                  className="text-center space-y-5"
+                  className="text-center"
                   initial={{ opacity: 0, y: 28 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.15 }}
                 >
-                  <div className="w-16 h-16 rounded-2xl bg-[#2C47C7]/10 flex items-center justify-center mx-auto">
+                  <div className="w-16 h-16 rounded-2xl bg-[#2C47C7]/10 flex items-center justify-center mx-auto mb-6">
                     <Icon className="h-7 w-7 text-[#2C47C7]" />
                   </div>
-                  <h3 className="font-heading text-2xl text-[#1A1A1A]">{i + 1}. {step.title}</h3>
-                  <p className="font-subheading text-base text-[#1A1A1A]/60 leading-relaxed">{step.desc}</p>
+                  <h3 className="font-heading text-2xl text-[#1A1A1A] mb-3">{i + 1}. {step.title}</h3>
+                  <p className="font-subheading text-lg text-[#1A1A1A]/55 leading-relaxed">{step.desc}</p>
                 </motion.div>
               );
             })}
@@ -168,19 +173,23 @@ export default function Home() {
       </section>
 
       {/* ── Activity Cards ── */}
-      <section className="py-24 px-6 md:px-12 bg-white">
+      <section className="py-28 md:py-36 px-6 md:px-12 bg-[#F5F1E8]">
         <div className="max-w-5xl mx-auto">
           <motion.div
-            className="mb-12"
+            className="mb-16 md:mb-20"
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <span className="font-subheading text-sm uppercase tracking-widest text-[#2C47C7] block mb-3">{t.activities.label}</span>
-            <h2 className="font-heading text-4xl md:text-5xl text-[#1A1A1A]">{t.activities.title}</h2>
+            <p className="font-subheading text-sm uppercase tracking-widest text-[#2C47C7] mb-4">
+              {t.activities.eyebrow}
+            </p>
+            <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-[#1A1A1A]">
+              {t.activities.title}
+            </h2>
           </motion.div>
-          <div className="grid sm:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-3 gap-6 md:gap-8">
             {t.activities.cards.map((card, i) => (
               <motion.div
                 key={i}
@@ -191,7 +200,7 @@ export default function Home() {
                 transition={{ duration: 0.4, delay: i * 0.1 }}
                 data-testid={`card-activity-${i}`}
               >
-                <div className="relative h-60 overflow-hidden rounded-t-2xl">
+                <div className="relative h-64 overflow-hidden rounded-t-2xl">
                   {card.bg ? (
                     <img
                       src={card.bg}
@@ -204,9 +213,9 @@ export default function Home() {
                     </div>
                   )}
                 </div>
-                <div className="p-6 flex flex-col flex-1 gap-3">
+                <div className="p-6 flex flex-col flex-1 gap-4">
                   <h3 className="font-heading text-2xl text-[#1A1A1A]">{card.title}</h3>
-                  <p className="font-subheading text-sm text-[#1A1A1A]/60 flex-1 leading-relaxed line-clamp-2">{card.desc}</p>
+                  <p className="font-subheading text-base text-[#1A1A1A]/60 flex-1 leading-relaxed line-clamp-2">{card.desc}</p>
                   <a href={MARKETPLACE_URL} data-testid={`button-activity-${i}`}>
                     <Button
                       variant="outline"
@@ -223,24 +232,24 @@ export default function Home() {
       </section>
 
       {/* ── Final CTA ── */}
-      <section className="py-32 bg-[#2C47C7] text-white px-6 md:px-12 text-center">
+      <section className="py-32 md:py-40 bg-[#2C47C7] text-white px-6 md:px-12 text-center">
         <motion.div
-          className="max-w-3xl mx-auto space-y-8"
+          className="max-w-3xl mx-auto"
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
           variants={fadeIn}
         >
-          <span className="inline-block font-subheading text-sm uppercase tracking-widest text-white/60">
-            {t.finalCta.label}
-          </span>
-          <h2 className="font-heading text-4xl md:text-6xl leading-tight text-white">
+          <p className="font-subheading text-sm uppercase tracking-widest text-white/50 mb-6">
+            {t.finalCta.eyebrow}
+          </p>
+          <h2 className="font-heading text-4xl md:text-6xl leading-tight text-white mb-10">
             {t.finalCta.title}
           </h2>
           <a href={MARKETPLACE_URL} data-testid="button-explore-final">
             <Button
               size="lg"
-              className="bg-accent hover:bg-accent/90 text-white rounded-full font-subheading text-xl px-14 py-7 h-auto mt-2 shadow-lg hover:shadow-xl transition-all"
+              className="bg-accent hover:bg-accent/90 text-white rounded-full font-subheading text-xl px-14 py-7 h-auto shadow-lg hover:shadow-xl transition-all"
             >
               {t.finalCta.cta} <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
