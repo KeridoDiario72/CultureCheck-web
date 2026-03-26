@@ -122,7 +122,7 @@ export default function Home() {
             { src: heroImg1,   alt: "Tornero cerámica",  col: "1/6"  },
             { src: heroImg2,   alt: "Taller pintura",    col: "6/11" },
             { src: heroImg3,   alt: "Hilo teñido",       col: "11/16"},
-            { src: heroVelas,  alt: "Velas artesanales", col: "16/21"},
+            { src: heroImg5,   alt: "Estudio de pintura",col: "16/21"},
           ].map((img, i) => (
             <div key={`r1-${i}`} className="overflow-hidden" style={{ gridColumn: img.col, gridRow: "1" }}>
               <img src={img.src} alt={img.alt} className={`w-full h-full object-cover kb-${(i % 6) + 1}`} />
@@ -144,7 +144,7 @@ export default function Home() {
 
           {/* ── Row 3: 4 images × 5 cols each (same breaks as row 1) ── */}
           {[
-            { src: heroImg5,    alt: "Estudio de pintura",  col: "1/6"  },
+            { src: heroVelas,   alt: "Velas artesanales",   col: "1/6"  },
             { src: heroImg6,    alt: "Bordado artesanal",   col: "6/11" },
             { src: heroVidriera,alt: "Vidriería",           col: "11/16"},
             { src: heroBrochas, alt: "Brochas y cerámica",  col: "16/21"},
