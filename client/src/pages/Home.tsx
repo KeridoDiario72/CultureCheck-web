@@ -7,7 +7,7 @@ import ceramicsImage from "@/assets/images/ceramics.png";
 import paintingImage from "@/assets/images/painting.png";
 import mosaicCeramica from "@/assets/images/mosaic-ceramica.jpg";
 import mosaicPintura from "@/assets/images/mosaic-pintura.jpg";
-import mosaicEscritura from "@/assets/images/mosaic-escritura.jpg";
+import mosaicArtesania from "@/assets/images/mosaic-artesania.jpg";
 import mosaicFotografia from "@/assets/images/mosaic-fotografia.jpg";
 import mosaicDanza from "@/assets/images/mosaic-danza.jpg";
 import mosaicTeatro from "@/assets/images/mosaic-teatro.jpg";
@@ -105,7 +105,7 @@ export default function Home() {
           {[
             { src: mosaicCeramica,   alt: "Cerámica" },
             { src: mosaicPintura,    alt: "Pintura"  },
-            { src: mosaicEscritura,  alt: "Escritura" },
+            { src: mosaicArtesania,  alt: "Artesanía" },
             { src: mosaicFotografia, alt: "Fotografía" },
             { src: mosaicDanza,      alt: "Danza"    },
             { src: mosaicTeatro,     alt: "Teatro"   },
