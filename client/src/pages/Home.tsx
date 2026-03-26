@@ -3,13 +3,13 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ArrowRight, Mail, Instagram, Loader2, CheckCircle } from "lucide-react";
-import heroArt from "@/assets/images/hero-art.png";
+import { ArrowRight, Mail, Instagram, Loader2, CheckCircle, Search, CalendarCheck, Sparkles } from "lucide-react";
 import ceramicsImage from "@/assets/images/ceramics.png";
 import paintingImage from "@/assets/images/painting.png";
 import logoImage from "@/assets/images/logo-transparent-trimmed.png";
 
 const FORMSPREE_URL = "https://formspree.io/f/xgoljqjv";
+const MARKETPLACE_URL = "#";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
@@ -41,98 +41,110 @@ function useFormspree() {
   return { status, submit, reset };
 }
 
+const fadeIn = {
+  initial: { opacity: 0, y: 24 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6 }
+};
+
 export default function Home() {
   const [lang, setLang] = useState<"en" | "es">("es");
-  const userForm = useFormspree();
   const centerForm = useFormspree();
   const joinForm = useFormspree();
 
   const content = {
     en: {
-      nav: {
-        cta: "Join the waitlist"
-      },
+      nav: { cta: "I run a cultural space" },
       hero: {
-        headline: <>Culture that is <span className="text-secondary">lived</span></>,
-        subheadline: <>A platform to discover and book creative activities near you.<br/><br/><span className="text-muted-foreground text-lg md:text-xl"><span className="hidden md:inline">Ceramics · Painting · Workshops · Writing · Theatre · Crafts<br/>and much more.</span><span className="inline md:hidden leading-relaxed">Ceramics · Painting · Workshops<br/>Writing · Theatre · Crafts<br/>and much more.</span></span></>,
-        primaryCta: "Join the waitlist",
-        secondaryCta: "For creative centers"
+        headline: "Discover and book cultural experiences near you",
+        subheadline: "Explore workshops, creative classes and artistic activities in your city",
+        primaryCta: "Explore experiences",
+        secondaryCta: "I run a cultural space"
       },
-      philosophy: {
-        problem: "Why CultureCheck",
-        vision: "Our Vision"
+      what: {
+        label: "What is CultureCheck",
+        text: "A platform to discover and book cultural experiences in one place. Ceramics, painting, writing, theatre and much more — all in your city."
       },
-      users: {
-        title: "For You",
-        benefits: [
-          "Discover new creative activities",
-          "Book workshops and cultural experiences",
-          "Access curated creative spaces",
-          "Connect with like-minded people"
-        ],
-        ctaTitle: "Join the waitlist",
-        inputPlaceholder: "Enter your email",
-        submit: "Submit"
+      howItWorks: {
+        label: "How it works",
+        steps: [
+          { icon: Search, title: "Discover experiences", desc: "Browse workshops and creative activities near you" },
+          { icon: CalendarCheck, title: "Book in a few clicks", desc: "Simple, fast and secure booking" },
+          { icon: Sparkles, title: "Enjoy and explore", desc: "Live new creative experiences and keep discovering" }
+        ]
+      },
+      experiences: {
+        label: "Experiences",
+        title: "What you can book",
+        cta: "View experience",
+        cards: [
+          { title: "Ceramics", desc: "Create unique pieces in a professional studio", bg: ceramicsImage },
+          { title: "Painting", desc: "Express yourself through colour and technique", bg: paintingImage },
+          { title: "Creative Writing", desc: "Workshops to find your voice and tell your story", bg: null, color: "#e8e0d4" },
+          { title: "Theatre", desc: "Performance and expression workshops for all levels", bg: null, color: "#d4dce8" },
+          { title: "Crafts", desc: "Handmade objects and traditional techniques", bg: null, color: "#e8d4d4" },
+          { title: "Photography", desc: "Capture the world from your own perspective", bg: null, color: "#d4e8d4" }
+        ]
       },
       centers: {
-        title: "For Centers",
-        benefits: [
-          "Increase visibility",
-          "Attract new audiences",
-          "Simplify booking management",
-          "Become part of a creative network"
-        ],
+        title: "Do you run a cultural space?",
+        subtitle: "Reach new audiences and fill your activities",
+        benefits: ["More visibility for your space", "Attract new audiences", "Simplified booking management", "Part of a creative network"],
         ctaTitle: "Become a partner",
-        namePlaceholder: "Center Name",
-        emailPlaceholder: "Email Address",
-        submit: "Apply Now"
+        namePlaceholder: "Space name",
+        emailPlaceholder: "Email address",
+        submit: "Apply now"
       },
       joinUs: {
         title: "Build CultureCheck with us",
         roles: ["Strategic Partners", "Cultural Advisors", "Investors", "Creative Ambassadors"],
-        cta: "Let's Talk"
+        cta: "Let's talk"
       },
-      vision: {
-        text: "Creating new ways to discover, create and share culture"
+      finalCta: {
+        title: "Explore cultural experiences near you",
+        cta: "Explore experiences"
       }
     },
     es: {
-      nav: {
-        cta: "Únete a la lista de espera"
-      },
+      nav: { cta: "Tengo un espacio cultural" },
       hero: {
-        headline: <>Cultura que se <span className="text-[#c65a2e]">vive</span></>,
-        subheadline: <>Una plataforma para descubrir y reservar actividades creativas cerca de ti.<br/><br/><span className="text-muted-foreground text-lg md:text-xl"><span className="hidden md:inline">Cerámica · Pintura · Talleres · Escritura · Teatro · Artesanía<br/>y mucho más.</span><span className="inline md:hidden leading-relaxed">Cerámica · Pintura · Talleres<br/>Escritura · Teatro · Artesanía<br/>y mucho más.</span></span></>,
-        primaryCta: "Únete a la lista de espera",
-        secondaryCta: "Para centros creativos"
+        headline: "Descubre y reserva experiencias culturales cerca de ti",
+        subheadline: "Explora talleres, clases creativas y actividades artísticas en tu ciudad",
+        primaryCta: "Explorar experiencias",
+        secondaryCta: "Tengo un espacio cultural"
       },
-      philosophy: {
-        problem: "Por qué CultureCheck",
-        vision: "Nuestra Visión"
+      what: {
+        label: "Qué es CultureCheck",
+        text: "Una plataforma para descubrir y reservar experiencias culturales en un solo lugar. Cerámica, pintura, escritura, teatro y mucho más — todo en tu ciudad."
       },
-      users: {
-        title: "Para Ti",
-        benefits: [
-          "Descubre nuevas actividades creativas",
-          "Reserva talleres y experiencias culturales",
-          "Accede a espacios creativos seleccionados",
-          "Conecta con personas con intereses similares"
-        ],
-        ctaTitle: "Únete a la lista de espera",
-        inputPlaceholder: "Tu correo electrónico",
-        submit: "Enviar"
+      howItWorks: {
+        label: "Cómo funciona",
+        steps: [
+          { icon: Search, title: "Descubre experiencias", desc: "Explora talleres y actividades creativas cerca de ti" },
+          { icon: CalendarCheck, title: "Reserva en pocos clics", desc: "Reserva simple, rápida y segura" },
+          { icon: Sparkles, title: "Disfruta y explora", desc: "Vive nuevas experiencias creativas y sigue descubriendo" }
+        ]
+      },
+      experiences: {
+        label: "Experiencias",
+        title: "Qué puedes reservar",
+        cta: "Ver experiencia",
+        cards: [
+          { title: "Cerámica", desc: "Crea piezas únicas en un taller profesional", bg: ceramicsImage },
+          { title: "Pintura", desc: "Exprésate a través del color y la técnica", bg: paintingImage },
+          { title: "Escritura Creativa", desc: "Talleres para encontrar tu voz y contar tu historia", bg: null, color: "#e8e0d4" },
+          { title: "Teatro", desc: "Talleres de interpretación y expresión para todos los niveles", bg: null, color: "#d4dce8" },
+          { title: "Artesanía", desc: "Objetos hechos a mano con técnicas tradicionales", bg: null, color: "#e8d4d4" },
+          { title: "Fotografía", desc: "Capta el mundo desde tu propia perspectiva", bg: null, color: "#d4e8d4" }
+        ]
       },
       centers: {
-        title: "Para Centros",
-        benefits: [
-          "Aumenta la visibilidad de tu espacio",
-          "Atrae a nuevas audiencias",
-          "Simplifica la gestión de reservas",
-          "Forma parte de una red creativa"
-        ],
+        title: "¿Tienes un espacio cultural?",
+        subtitle: "Llega a nuevas audiencias y llena tus actividades",
+        benefits: ["Más visibilidad para tu espacio", "Atrae nuevas audiencias", "Gestión de reservas simplificada", "Parte de una red creativa"],
         ctaTitle: "Conviértete en colaborador",
-        namePlaceholder: "Nombre del Centro",
-        emailPlaceholder: "Correo Electrónico",
+        namePlaceholder: "Nombre del espacio",
+        emailPlaceholder: "Correo electrónico",
         submit: "Solicitar ahora"
       },
       joinUs: {
@@ -140,29 +152,25 @@ export default function Home() {
         roles: ["Socios Estratégicos", "Asesores Culturales", "Inversores", "Embajadores Creativos"],
         cta: "Hablemos"
       },
-      vision: {
-        text: "Creando nuevas formas de descubrir, crear y compartir cultura"
+      finalCta: {
+        title: "Explora experiencias culturales cerca de ti",
+        cta: "Explorar experiencias"
       }
     }
   };
 
   const t = content[lang];
 
-  const fadeIn = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
-  };
-
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden selection:bg-primary selection:text-white">
+
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 py-3 md:py-4 flex justify-between items-center bg-[#F5F1E8] border-b border-muted shadow-sm">
         <div className="flex-shrink-0 h-8 sm:h-10 md:h-16 lg:h-20 flex items-center min-w-0">
           <img src={logoImage} alt="CultureCheck Logo" className="h-full w-auto object-contain max-w-[140px] sm:max-w-[180px] md:max-w-none" />
         </div>
         <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0">
-          <button 
+          <button
             onClick={() => setLang(lang === "en" ? "es" : "en")}
             className="font-subheading text-sm uppercase tracking-widest hover:text-primary transition-colors"
           >
@@ -174,208 +182,273 @@ export default function Home() {
           <a href="mailto:hola@culturecheck.site" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-mail" aria-label="Email">
             <Mail className="h-4 w-4 sm:h-5 sm:w-5" />
           </a>
-          <Button 
-            variant="outline" 
-            className="font-subheading text-xs sm:text-sm md:text-lg rounded-none border-foreground hover:bg-foreground hover:text-background transition-colors px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 whitespace-nowrap"
-            onClick={() => document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" })}
+          <Button
+            variant="outline"
+            className="font-subheading text-xs sm:text-sm md:text-base rounded-none border-foreground hover:bg-foreground hover:text-background transition-colors px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 whitespace-nowrap"
+            onClick={() => document.getElementById("centers")?.scrollIntoView({ behavior: "smooth" })}
           >
             {t.nav.cta}
           </Button>
         </div>
       </nav>
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 md:pt-48 md:pb-32 px-6 md:px-12 max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        <motion.div 
+
+      {/* Hero */}
+      <section className="pt-32 pb-20 md:pt-48 md:pb-32 px-6 md:px-12 max-w-5xl mx-auto text-center">
+        <motion.div
           className="space-y-8"
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
           variants={fadeIn}
         >
-          <h1 className="text-5xl md:text-7xl lg:text-8xl leading-[1.1] tracking-tight text-foreground">
+          <p className="font-subheading text-sm uppercase tracking-widest text-[#c65a2e]">CultureCheck</p>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight text-foreground font-heading">
             {t.hero.headline}
           </h1>
-          <p className="font-subheading text-xl md:text-2xl text-muted-foreground max-w-lg">
+          <p className="font-subheading text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
             {t.hero.subheadline}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" className="rounded-none bg-primary hover:bg-primary/90 text-white font-subheading text-lg px-8 py-6" onClick={() => document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" })}>
-              {t.hero.primaryCta} <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button size="lg" variant="outline" className="rounded-none border-2 border-foreground hover:bg-foreground hover:text-background font-subheading text-lg px-8 py-6" onClick={() => document.getElementById("centers")?.scrollIntoView({ behavior: "smooth" })}>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+            <a href={MARKETPLACE_URL} data-testid="button-explore-hero">
+              <Button size="lg" className="rounded-none bg-primary hover:bg-primary/90 text-white font-subheading text-lg px-10 py-6 w-full sm:w-auto">
+                {t.hero.primaryCta} <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </a>
+            <Button
+              size="lg"
+              variant="outline"
+              className="rounded-none border-2 border-foreground hover:bg-foreground hover:text-background font-subheading text-lg px-10 py-6"
+              onClick={() => document.getElementById("centers")?.scrollIntoView({ behavior: "smooth" })}
+              data-testid="button-centers-hero"
+            >
               {t.hero.secondaryCta}
             </Button>
           </div>
         </motion.div>
-        
-        <motion.div 
-          className="relative h-[500px] w-full"
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
+      </section>
+
+      {/* What is CultureCheck */}
+      <section className="py-16 bg-foreground text-background px-6 md:px-12">
+        <motion.div
+          className="max-w-3xl mx-auto text-center space-y-4"
+          initial="initial"
+          whileInView="animate"
           viewport={{ once: true }}
+          variants={fadeIn}
         >
-          <div className="absolute inset-0 bg-secondary/20 translate-x-4 translate-y-4"></div>
-          <img src={heroArt} alt="Abstract representation of culture" className="absolute inset-0 w-full h-full object-cover grayscale-[20%] contrast-125" />
+          <p className="font-subheading text-xs uppercase tracking-widest text-[#c65a2e]">{t.what.label}</p>
+          <p className="font-heading text-2xl md:text-3xl text-background/90 leading-relaxed">
+            {t.what.text}
+          </p>
         </motion.div>
       </section>
-      {/* Why CultureCheck + Our Vision */}
-      <section className="py-20 bg-foreground text-background px-6 md:px-12">
-        <div className="max-w-7xl mx-auto">
+
+      {/* How it works */}
+      <section className="py-24 px-6 md:px-12">
+        <div className="max-w-5xl mx-auto">
           <motion.div
-            className="grid md:grid-cols-2 gap-16"
+            className="text-center mb-16"
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <div>
-              <h2 className="font-heading text-[#c65a2e] text-base md:text-lg tracking-widest uppercase mb-8">{t.philosophy.problem}</h2>
-              <div className="space-y-6">
-                <p className="font-subheading text-lg leading-relaxed text-background/75">
-                  {lang === "es"
-                    ? <>En un entorno cada vez más digital, muchas personas buscan <span className="text-[#c65a2e]">participar en la cultura</span> de forma activa.</>
-                    : <>In an increasingly digital world, many people seek to <span className="text-[#c65a2e]">participate in culture</span> actively.</>}
-                </p>
-                <p className="font-subheading text-lg leading-relaxed text-background/75">
-                  {lang === "es"
-                    ? <>Al mismo tiempo, <span className="text-[#c65a2e]">descubrir actividades culturales</span> puede ser complicado y disperso.</>
-                    : <>At the same time, <span className="text-[#c65a2e]">discovering cultural activities</span> can be complicated and scattered.</>}
-                </p>
-                <p className="font-subheading text-lg leading-relaxed text-background/75">
-                  {lang === "es"
-                    ? <>CultureCheck nace para conectar a las personas con esa <span className="text-[#c65a2e]">cultura que se vive</span>.</>
-                    : <>CultureCheck was born to connect people with the <span className="text-[#c65a2e]">culture that is lived</span>.</>}
-                </p>
-              </div>
-            </div>
+            <p className="font-subheading text-xs uppercase tracking-widest text-[#c65a2e] mb-4">{t.howItWorks.label}</p>
+          </motion.div>
+          <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+            {t.howItWorks.steps.map((step, i) => {
+              const Icon = step.icon;
+              return (
+                <motion.div
+                  key={i}
+                  className="text-center space-y-4"
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.15 }}
+                >
+                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
+                    <Icon className="h-6 w-6 text-primary" />
+                  </div>
+                  <div className="w-6 h-0.5 bg-[#c65a2e] mx-auto" />
+                  <h3 className="font-heading text-xl text-foreground">{i + 1}. {step.title}</h3>
+                  <p className="font-subheading text-base text-muted-foreground">{step.desc}</p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
-            <div>
-              <h2 className="font-heading text-[#5b9bd5] text-base md:text-lg tracking-widest uppercase mb-8">{t.philosophy.vision}</h2>
-              <div className="space-y-6">
-                <p className="font-subheading text-lg leading-relaxed text-background/75">
-                  {lang === "es"
-                    ? <>Creemos en una cultura más <span className="text-[#5b9bd5]">activa, cercana y accesible</span>.</>
-                    : <>We believe in a more <span className="text-[#5b9bd5]">active, close and accessible</span> culture.</>}
-                </p>
-                <p className="font-subheading text-lg leading-relaxed text-background/75">
-                  {lang === "es"
-                    ? <>CultureCheck conecta a las personas con experiencias culturales, facilitando que descubrir y crear <span className="text-[#5b9bd5]">forme parte de la vida cotidiana</span>.</>
-                    : <>CultureCheck connects people with cultural experiences, making discovering and creating <span className="text-[#5b9bd5]">part of everyday life</span>.</>}
-                </p>
-                <p className="font-subheading text-lg leading-relaxed text-background/75">
-                  {lang === "es"
-                    ? <>Nuestro objetivo es <span className="text-[#5b9bd5]">construir una comunidad</span> donde la cultura se explore, se comparta y se viva.</>
-                    : <>Our goal is to <span className="text-[#5b9bd5]">build a community</span> where culture is explored, shared and lived.</>}
-                </p>
-              </div>
-            </div>
+      {/* Experience Cards */}
+      <section className="py-24 px-6 md:px-12 bg-muted/30">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            className="mb-12"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={fadeIn}
+          >
+            <p className="font-subheading text-xs uppercase tracking-widest text-[#c65a2e] mb-3">{t.experiences.label}</p>
+            <h2 className="font-heading text-4xl md:text-5xl text-foreground">{t.experiences.title}</h2>
+          </motion.div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {t.experiences.cards.map((card, i) => (
+              <motion.div
+                key={i}
+                className="group bg-background border border-muted overflow-hidden flex flex-col"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+                data-testid={`card-experience-${i}`}
+              >
+                <div className="relative h-48 overflow-hidden">
+                  {card.bg ? (
+                    <img
+                      src={card.bg}
+                      alt={card.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center" style={{ backgroundColor: card.color }}>
+                      <span className="font-heading text-5xl text-foreground/20">{card.title[0]}</span>
+                    </div>
+                  )}
+                </div>
+                <div className="p-5 flex flex-col flex-1 gap-3">
+                  <h3 className="font-heading text-xl text-foreground">{card.title}</h3>
+                  <p className="font-subheading text-sm text-muted-foreground flex-1">{card.desc}</p>
+                  <a href={MARKETPLACE_URL} data-testid={`button-experience-${i}`}>
+                    <Button variant="outline" className="rounded-none border-foreground hover:bg-foreground hover:text-background font-subheading text-sm w-full transition-colors">
+                      {t.experiences.cta} <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </a>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          <motion.div
+            className="mt-10 text-center"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={fadeIn}
+          >
+            <a href={MARKETPLACE_URL} data-testid="button-explore-all">
+              <Button size="lg" className="rounded-none bg-primary hover:bg-primary/90 text-white font-subheading text-lg px-10 py-6">
+                {t.hero.primaryCta} <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </a>
           </motion.div>
         </div>
       </section>
-      {/* For Creative Centers Section */}
+
+      {/* For Cultural Spaces */}
       <section id="centers" className="py-24 bg-accent text-accent-foreground px-6 md:px-12">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          <motion.div 
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-start">
+          <motion.div
+            className="space-y-6"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={fadeIn}
+          >
+            <h2 className="font-heading text-4xl md:text-5xl leading-tight">{t.centers.title}</h2>
+            <p className="font-subheading text-xl text-white/80">{t.centers.subtitle}</p>
+            <ul className="space-y-3 font-subheading text-lg text-white/70">
+              {t.centers.benefits.map((b, i) => (
+                <li key={i} className="flex items-center gap-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#c65a2e] flex-shrink-0" />
+                  {b}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+          <motion.div
+            className="bg-background p-8 shadow-2xl border border-muted"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <h3 className="font-heading text-2xl mb-6 text-accent">{t.centers.ctaTitle}</h3>
+            {centerForm.status === "success" ? (
+              <div className="flex items-center gap-2 text-green-600 font-subheading" data-testid="status-center-success">
+                <CheckCircle className="h-5 w-5" />
+                {lang === "es" ? "¡Solicitud recibida! Te contactaremos pronto." : "Application received! We'll be in touch."}
+              </div>
+            ) : (
+              <form className="space-y-4" data-testid="form-center" onSubmit={async (e) => {
+                e.preventDefault();
+                const form = e.currentTarget;
+                const name = (form.elements.namedItem("centerName") as HTMLInputElement).value;
+                const email = (form.elements.namedItem("email") as HTMLInputElement).value;
+                await centerForm.submit({ email, centerName: name, formType: "center" });
+                form.reset();
+              }}>
+                <Input name="centerName" type="text" required placeholder={t.centers.namePlaceholder} className="rounded-none border-muted bg-muted/30 text-foreground h-12" data-testid="input-center-name" />
+                <Input name="email" type="email" required placeholder={t.centers.emailPlaceholder} className="rounded-none border-muted bg-muted/30 text-foreground h-12" data-testid="input-center-email" />
+                <Button type="submit" disabled={centerForm.status === "submitting"} className="w-full rounded-none bg-accent text-white hover:bg-accent/90 font-subheading text-lg h-12 transition-all" data-testid="button-center-submit">
+                  {centerForm.status === "submitting" ? <Loader2 className="h-5 w-5 animate-spin" /> : t.centers.submit}
+                </Button>
+              </form>
+            )}
+            {centerForm.status === "error" && (
+              <p className="text-red-500 text-sm mt-2">{lang === "es" ? "Error al enviar. Inténtalo de nuevo." : "Submission failed. Please try again."}</p>
+            )}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Partners / Collaborations */}
+      <section className="py-20 px-6 md:px-12">
+        <div className="max-w-2xl mx-auto text-center">
+          <motion.div
             className="space-y-8"
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <h2 className="text-5xl md:text-7xl">{t.centers.title}</h2>
-            <ul className="space-y-4 font-subheading text-xl text-white/90">
-              {t.centers.benefits.map((b, i) => (
-                <li key={i} className="border-b border-white/20 pb-4">{b}</li>
+            <h2 className="font-heading text-3xl md:text-4xl text-foreground">{t.joinUs.title}</h2>
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 font-subheading text-sm text-foreground/50 uppercase tracking-widest">
+              {t.joinUs.roles.map((r, i) => (
+                <span key={i}>{r}</span>
               ))}
-            </ul>
-            <div className="bg-background p-10 mt-8 shadow-2xl border border-muted">
-              <h3 className="font-heading text-3xl mb-6 text-accent">{t.centers.ctaTitle}</h3>
-              {centerForm.status === "success" ? (
-                <div className="flex items-center gap-2 text-green-600 font-subheading" data-testid="status-center-success">
-                  <CheckCircle className="h-5 w-5" />
-                  {lang === "es" ? "¡Solicitud recibida! Te contactaremos pronto." : "Application received! We'll be in touch."}
-                </div>
-              ) : (
-                <form className="space-y-4" data-testid="form-center" onSubmit={async (e) => {
-                  e.preventDefault();
-                  const form = e.currentTarget;
-                  const name = (form.elements.namedItem("centerName") as HTMLInputElement).value;
-                  const email = (form.elements.namedItem("email") as HTMLInputElement).value;
-                  await centerForm.submit({ email, centerName: name, formType: "center" });
-                  form.reset();
-                }}>
-                  <Input name="centerName" type="text" required placeholder={t.centers.namePlaceholder} className="rounded-none border-muted bg-muted/30 text-foreground h-12" data-testid="input-center-name" />
-                  <Input name="email" type="email" required placeholder={t.centers.emailPlaceholder} className="rounded-none border-muted bg-muted/30 text-foreground h-12" data-testid="input-center-email" />
-                  <Button type="submit" disabled={centerForm.status === "submitting"} className="w-full rounded-none bg-accent text-white hover:bg-accent/90 font-subheading text-xl h-14 transition-all hover:tracking-widest" data-testid="button-center-submit">
-                    {centerForm.status === "submitting" ? <Loader2 className="h-5 w-5 animate-spin" /> : t.centers.submit}
-                  </Button>
-                </form>
-              )}
-              {centerForm.status === "error" && (
-                <p className="text-red-500 text-sm mt-2">{lang === "es" ? "Error al enviar. Inténtalo de nuevo." : "Submission failed. Please try again."}</p>
-              )}
             </div>
-          </motion.div>
-          <motion.div 
-            className="relative h-[600px] hidden md:block"
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
-             <img src={paintingImage} alt="Abstract painting studio" className="absolute inset-0 w-full h-full object-cover" />
-          </motion.div>
-        </div>
-      </section>
-      {/* For Users Section */}
-      <section id="waitlist" className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          <motion.div 
-            className="order-2 md:order-1 relative h-[600px]"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
-             <div className="absolute inset-0 bg-primary/10 -translate-x-4 translate-y-4"></div>
-             <img src={ceramicsImage} alt="Minimalist ceramics studio" className="absolute inset-0 w-full h-full object-cover" />
-          </motion.div>
-          <motion.div 
-            className="order-1 md:order-2 space-y-8"
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={fadeIn}
-          >
-            <h2 className="text-5xl md:text-7xl text-primary">{t.users.title}</h2>
-            <ul className="space-y-4 font-subheading text-xl text-foreground/80">
-              {t.users.benefits.map((b, i) => (
-                <li key={i} className="border-b border-muted pb-4">
-                  {b}
-                </li>
-              ))}
-            </ul>
-            <div className="bg-muted p-8 mt-8">
-              <h3 className="font-heading text-2xl mb-4">{t.users.ctaTitle}</h3>
-              {userForm.status === "success" ? (
-                <div className="flex items-center gap-2 text-green-600 font-subheading" data-testid="status-user-success">
+            <div className="bg-muted/40 p-8 border border-muted">
+              <h3 className="font-heading text-xl mb-5 text-foreground">{t.joinUs.cta}</h3>
+              {joinForm.status === "success" ? (
+                <div className="flex items-center justify-center gap-2 text-green-600 font-subheading" data-testid="status-join-success">
                   <CheckCircle className="h-5 w-5" />
-                  {lang === "es" ? "¡Gracias! Te contactaremos pronto." : "Thanks! We'll be in touch."}
+                  {lang === "es" ? "¡Mensaje enviado! Te responderemos pronto." : "Message sent! We'll get back to you."}
                 </div>
               ) : (
-                <form className="flex gap-2" data-testid="form-user" onSubmit={async (e) => {
+                <form className="space-y-3 text-left" data-testid="form-joinus" onSubmit={async (e) => {
                   e.preventDefault();
                   const form = e.currentTarget;
+                  const name = (form.elements.namedItem("name") as HTMLInputElement).value;
                   const email = (form.elements.namedItem("email") as HTMLInputElement).value;
-                  await userForm.submit({ email, formType: "user" });
+                  const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value;
+                  await joinForm.submit({ email, name, message, formType: "joinus" });
                   form.reset();
                 }}>
-                  <Input name="email" type="email" required placeholder={t.users.inputPlaceholder} className="rounded-none border-foreground bg-background" data-testid="input-user-email" />
-                  <Button type="submit" disabled={userForm.status === "submitting"} className="rounded-none bg-primary hover:bg-primary/90" data-testid="button-user-submit">
-                    {userForm.status === "submitting" ? <Loader2 className="h-4 w-4 animate-spin" /> : t.users.submit}
+                  <Input name="name" type="text" required placeholder={lang === "es" ? "Nombre" : "Name"} className="rounded-none border-muted bg-background h-10 text-sm" data-testid="input-join-name" />
+                  <Input name="email" type="email" required placeholder={lang === "es" ? "Correo electrónico" : "Email address"} className="rounded-none border-muted bg-background h-10 text-sm" data-testid="input-join-email" />
+                  <textarea
+                    name="message"
+                    placeholder={lang === "es" ? "Mensaje" : "Message"}
+                    className="w-full min-h-[80px] p-3 rounded-none border border-muted bg-background focus:outline-none focus:ring-1 focus:ring-primary font-sans text-sm"
+                    data-testid="input-join-message"
+                  />
+                  <Button type="submit" disabled={joinForm.status === "submitting"} className="w-full rounded-none bg-foreground text-background hover:bg-foreground/90 font-subheading text-sm h-10 uppercase tracking-widest" data-testid="button-join-submit">
+                    {joinForm.status === "submitting" ? <Loader2 className="h-4 w-4 animate-spin" /> : (lang === "es" ? "Enviar" : "Send")}
                   </Button>
                 </form>
               )}
-              {userForm.status === "error" && (
+              {joinForm.status === "error" && (
                 <p className="text-red-500 text-sm mt-2">{lang === "es" ? "Error al enviar. Inténtalo de nuevo." : "Submission failed. Please try again."}</p>
               )}
             </div>
@@ -383,78 +456,34 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Join Us Section */}
-      <section className="py-20 px-6 md:px-12 max-w-4xl mx-auto text-center">
+      {/* Final CTA */}
+      <section className="py-28 bg-foreground text-background px-6 md:px-12 text-center">
         <motion.div
+          className="max-w-3xl mx-auto space-y-8"
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
           variants={fadeIn}
-          className="space-y-8"
         >
-          <h2 className="text-3xl md:text-4xl text-primary uppercase tracking-widest">{t.joinUs.title}</h2>
-          
-          <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 font-subheading text-sm text-foreground/60 py-4 uppercase tracking-widest">
-            {t.joinUs.roles.map((r, i) => (
-              <div key={i} className="flex items-center justify-center text-center">{r}</div>
-            ))}
-          </div>
-
-          <div className="bg-background p-8 mt-6 shadow-lg border border-muted max-w-lg mx-auto">
-            <h3 className="font-heading text-xl mb-4 text-foreground uppercase tracking-wide">{t.joinUs.cta}</h3>
-            {joinForm.status === "success" ? (
-              <div className="flex items-center justify-center gap-2 text-green-600 font-subheading" data-testid="status-join-success">
-                <CheckCircle className="h-5 w-5" />
-                {lang === "es" ? "¡Mensaje enviado! Te responderemos pronto." : "Message sent! We'll get back to you."}
-              </div>
-            ) : (
-              <form className="space-y-3 text-left" data-testid="form-joinus" onSubmit={async (e) => {
-                e.preventDefault();
-                const form = e.currentTarget;
-                const name = (form.elements.namedItem("name") as HTMLInputElement).value;
-                const email = (form.elements.namedItem("email") as HTMLInputElement).value;
-                const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value;
-                await joinForm.submit({ email, name, message, formType: "joinus" });
-                form.reset();
-              }}>
-                <div className="grid grid-cols-1 gap-3">
-                  <Input name="name" type="text" required placeholder={lang === "es" ? "Nombre" : "Name"} className="rounded-none border-muted bg-muted/20 h-10 text-sm" data-testid="input-join-name" />
-                  <Input name="email" type="email" required placeholder={t.centers.emailPlaceholder} className="rounded-none border-muted bg-muted/20 h-10 text-sm" data-testid="input-join-email" />
-                </div>
-                <textarea 
-                  name="message"
-                  placeholder={lang === "es" ? "Mensaje" : "Message"}
-                  className="w-full min-h-[80px] p-3 rounded-none border border-muted bg-muted/20 focus:outline-none focus:ring-1 focus:ring-primary font-sans text-sm"
-                  data-testid="input-join-message"
-                />
-                <Button type="submit" disabled={joinForm.status === "submitting"} className="w-full rounded-none bg-foreground text-background hover:bg-foreground/90 font-subheading text-sm h-10 transition-all uppercase tracking-widest" data-testid="button-join-submit">
-                  {joinForm.status === "submitting" ? <Loader2 className="h-4 w-4 animate-spin" /> : (lang === "es" ? "Enviar" : "Send")}
-                </Button>
-              </form>
-            )}
-            {joinForm.status === "error" && (
-              <p className="text-red-500 text-sm mt-2">{lang === "es" ? "Error al enviar. Inténtalo de nuevo." : "Submission failed. Please try again."}</p>
-            )}
-          </div>
+          <h2 className="font-heading text-4xl md:text-6xl leading-tight text-background">
+            {t.finalCta.title}
+          </h2>
+          <a href={MARKETPLACE_URL} data-testid="button-explore-final">
+            <Button size="lg" className="rounded-none bg-primary hover:bg-primary/90 text-white font-subheading text-xl px-12 py-7 mt-4">
+              {t.finalCta.cta} <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </a>
         </motion.div>
       </section>
-      {/* Vision Section */}
-      <section className="py-24 bg-primary text-primary-foreground px-6 md:px-12 text-center flex items-center justify-center min-h-[50vh] overflow-hidden">
-        <div className="max-w-[90vw] mx-auto">
-          <p className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.3] uppercase tracking-normal break-words">
-            {t.vision.text}
-          </p>
-        </div>
-      </section>
+
       {/* Footer */}
       <footer className="py-12 border-t border-muted px-6 md:px-12 bg-[#F5F1E8]">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="font-heading text-2xl text-foreground flex items-start">
             CultureCheck<span className="text-[0.6em] ml-1 mt-0.5 leading-none">®</span>
           </div>
-
           <div className="flex flex-col items-center md:items-end gap-2">
-            <div className="flex gap-6 font-subheading text-sm">
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6 font-subheading text-sm">
               <Link href="/legal/aviso-legal" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-aviso-legal">Aviso Legal</Link>
               <Link href="/legal/privacidad" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-privacidad">Política de Privacidad</Link>
               <Link href="/legal/cookies" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-cookies">Política de Cookies</Link>
