@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Loader2, CheckCircle, Users, TrendingUp, Eye } from "lucide-react";
-import { SiteNav } from "@/components/SiteNav";
+import { SiteNav, MARKETPLACE_URL } from "@/components/SiteNav";
+import { SiteFooter } from "@/components/SiteFooter";
 
 const FORMSPREE_URL = "https://formspree.io/f/xgoljqjv";
 
@@ -21,11 +21,8 @@ function useFormspree() {
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify(data),
       });
-      if (res.ok) {
-        setStatus("success");
-      } else {
-        setStatus("error");
-      }
+      if (res.ok) setStatus("success");
+      else setStatus("error");
     } catch {
       setStatus("error");
     }
@@ -47,6 +44,7 @@ export default function ParaEspacios() {
   const content = {
     en: {
       hero: {
+        label: "For cultural spaces",
         title: "Do you run a cultural space?",
         subtitle: "Reach new participants and give visibility to your activities",
         cta: "Join CultureCheck"
@@ -68,6 +66,7 @@ export default function ParaEspacios() {
         ]
       },
       form: {
+        label: "Get started",
         title: "Join CultureCheck",
         namePlaceholder: "Space name",
         emailPlaceholder: "Email address",
@@ -78,6 +77,7 @@ export default function ParaEspacios() {
     },
     es: {
       hero: {
+        label: "Para espacios culturales",
         title: "¿Tienes un espacio cultural?",
         subtitle: "Llega a nuevos participantes y da visibilidad a tus actividades",
         cta: "Unirme a CultureCheck"
@@ -99,6 +99,7 @@ export default function ParaEspacios() {
         ]
       },
       form: {
+        label: "Empieza ahora",
         title: "Unirme a CultureCheck",
         namePlaceholder: "Nombre del espacio",
         emailPlaceholder: "Correo electrónico",
@@ -112,33 +113,31 @@ export default function ParaEspacios() {
   const t = content[lang];
 
   return (
-    <div className="min-h-screen bg-white text-gray-900 selection:bg-[#c65a2e] selection:text-white">
+    <div className="min-h-screen bg-white text-[#1A1A1A] selection:bg-[#2C47C7] selection:text-white">
 
-      <SiteNav
-        lang={lang}
-        onLangToggle={() => setLang(lang === "en" ? "es" : "en")}
-        activePage="para-espacios"
-      />
+      <SiteNav lang={lang} onLangToggle={() => setLang(lang === "en" ? "es" : "en")} activePage="para-espacios" />
 
-      {/* Hero */}
-      <section className="pt-28 pb-24 md:pt-40 md:pb-32 px-6 md:px-12 bg-gray-900 text-white">
+      {/* ── Hero ── */}
+      <section className="pt-28 pb-24 md:pt-40 md:pb-36 px-6 md:px-12 bg-white">
         <motion.div
-          className="max-w-3xl mx-auto text-center space-y-7"
+          className="max-w-3xl mx-auto text-center space-y-8"
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
           variants={fadeIn}
         >
-          <p className="font-subheading text-sm uppercase tracking-widest text-[#c65a2e]">Para espacios</p>
-          <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl leading-[1.05]">
+          <span className="inline-block font-subheading text-sm uppercase tracking-widest text-[#2C47C7] bg-[#2C47C7]/8 px-4 py-1.5 rounded-full">
+            {t.hero.label}
+          </span>
+          <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl leading-[1.05] tracking-tight text-[#1A1A1A]">
             {t.hero.title}
           </h1>
-          <p className="font-subheading text-xl md:text-2xl text-gray-300 max-w-xl mx-auto leading-relaxed">
+          <p className="font-subheading text-xl md:text-2xl text-[#1A1A1A]/60 max-w-xl mx-auto leading-relaxed">
             {t.hero.subtitle}
           </p>
           <Button
             size="lg"
-            className="bg-[#c65a2e] hover:bg-[#b04e26] text-white rounded-full font-subheading text-lg px-10 py-6 h-auto mt-2 shadow-md"
+            className="bg-[#FF6A00] hover:bg-[#e55e00] text-white rounded-full font-subheading text-lg px-10 py-6 h-auto shadow-md hover:shadow-lg transition-all"
             onClick={() => document.getElementById("form")?.scrollIntoView({ behavior: "smooth" })}
             data-testid="button-hero-spaces"
           >
@@ -147,8 +146,8 @@ export default function ParaEspacios() {
         </motion.div>
       </section>
 
-      {/* Value proposition */}
-      <section className="py-24 px-6 md:px-12 bg-white">
+      {/* ── Value proposition ── */}
+      <section className="py-24 px-6 md:px-12 bg-[#F5F1E8]">
         <div className="max-w-5xl mx-auto">
           <motion.div
             className="text-center mb-16"
@@ -157,25 +156,25 @@ export default function ParaEspacios() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <p className="font-subheading text-sm uppercase tracking-widest text-[#c65a2e]">{t.value.label}</p>
+            <span className="font-subheading text-sm uppercase tracking-widest text-[#2C47C7]">{t.value.label}</span>
           </motion.div>
-          <div className="grid md:grid-cols-3 gap-10 md:gap-16">
+          <div className="grid md:grid-cols-3 gap-10 md:gap-14">
             {t.value.items.map((item, i) => {
               const Icon = item.icon;
               return (
                 <motion.div
                   key={i}
                   className="text-center space-y-5"
-                  initial={{ opacity: 0, y: 24 }}
+                  initial={{ opacity: 0, y: 28 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.15 }}
                 >
-                  <div className="w-16 h-16 rounded-full bg-[#c65a2e]/10 flex items-center justify-center mx-auto">
-                    <Icon className="h-7 w-7 text-[#c65a2e]" />
+                  <div className="w-16 h-16 rounded-2xl bg-[#2C47C7]/10 flex items-center justify-center mx-auto">
+                    <Icon className="h-7 w-7 text-[#2C47C7]" />
                   </div>
-                  <h3 className="font-heading text-2xl text-gray-900">{item.title}</h3>
-                  <p className="font-subheading text-base text-gray-500 leading-relaxed">{item.desc}</p>
+                  <h3 className="font-heading text-2xl text-[#1A1A1A]">{item.title}</h3>
+                  <p className="font-subheading text-base text-[#1A1A1A]/60 leading-relaxed">{item.desc}</p>
                 </motion.div>
               );
             })}
@@ -183,8 +182,8 @@ export default function ParaEspacios() {
         </div>
       </section>
 
-      {/* Cómo funciona */}
-      <section className="py-20 px-6 md:px-12 bg-gray-50">
+      {/* ── Cómo funciona ── */}
+      <section className="py-24 px-6 md:px-12 bg-white">
         <div className="max-w-3xl mx-auto">
           <motion.div
             className="text-center mb-12"
@@ -193,22 +192,22 @@ export default function ParaEspacios() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <p className="font-subheading text-sm uppercase tracking-widest text-[#c65a2e]">{t.howItWorks.label}</p>
+            <span className="font-subheading text-sm uppercase tracking-widest text-[#2C47C7]">{t.howItWorks.label}</span>
           </motion.div>
           <div className="space-y-4">
             {t.howItWorks.steps.map((step, i) => (
               <motion.div
                 key={i}
-                className="flex items-start gap-8 p-7 bg-white border border-gray-200 rounded-xl"
+                className="flex items-start gap-8 p-7 bg-[#F5F1E8] rounded-2xl"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
               >
-                <span className="font-heading text-4xl text-[#c65a2e]/20 flex-shrink-0 leading-none mt-1">{step.num}</span>
+                <span className="font-heading text-4xl text-[#2C47C7]/20 flex-shrink-0 leading-none mt-1">{step.num}</span>
                 <div>
-                  <h3 className="font-heading text-xl text-gray-900 mb-1">{step.title}</h3>
-                  <p className="font-subheading text-base text-gray-500 leading-relaxed">{step.desc}</p>
+                  <h3 className="font-heading text-xl text-[#1A1A1A] mb-1">{step.title}</h3>
+                  <p className="font-subheading text-base text-[#1A1A1A]/60 leading-relaxed">{step.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -216,8 +215,8 @@ export default function ParaEspacios() {
         </div>
       </section>
 
-      {/* Form */}
-      <section id="form" className="py-24 px-6 md:px-12 bg-white">
+      {/* ── Form ── */}
+      <section id="form" className="py-24 px-6 md:px-12 bg-[#F5F1E8]">
         <div className="max-w-md mx-auto">
           <motion.div
             className="space-y-8"
@@ -226,11 +225,11 @@ export default function ParaEspacios() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <div className="text-center space-y-2">
-              <p className="font-subheading text-sm uppercase tracking-widest text-[#c65a2e]">Únete</p>
-              <h2 className="font-heading text-3xl md:text-4xl text-gray-900">{t.form.title}</h2>
+            <div className="text-center space-y-3">
+              <span className="font-subheading text-sm uppercase tracking-widest text-[#2C47C7]">{t.form.label}</span>
+              <h2 className="font-heading text-3xl md:text-4xl text-[#1A1A1A]">{t.form.title}</h2>
             </div>
-            <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8">
+            <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
               {centerForm.status === "success" ? (
                 <div className="flex items-center justify-center gap-2 text-green-600 font-subheading py-4" data-testid="status-center-success">
                   <CheckCircle className="h-5 w-5" />
@@ -245,26 +244,12 @@ export default function ParaEspacios() {
                   await centerForm.submit({ email, centerName: name, formType: "center" });
                   form.reset();
                 }}>
-                  <Input
-                    name="centerName"
-                    type="text"
-                    required
-                    placeholder={t.form.namePlaceholder}
-                    className="rounded-xl border-gray-300 bg-white h-12 text-base"
-                    data-testid="input-center-name"
-                  />
-                  <Input
-                    name="email"
-                    type="email"
-                    required
-                    placeholder={t.form.emailPlaceholder}
-                    className="rounded-xl border-gray-300 bg-white h-12 text-base"
-                    data-testid="input-center-email"
-                  />
+                  <Input name="centerName" type="text" required placeholder={t.form.namePlaceholder} className="rounded-xl border-gray-300 bg-gray-50 h-12 text-base" data-testid="input-center-name" />
+                  <Input name="email" type="email" required placeholder={t.form.emailPlaceholder} className="rounded-xl border-gray-300 bg-gray-50 h-12 text-base" data-testid="input-center-email" />
                   <Button
                     type="submit"
                     disabled={centerForm.status === "submitting"}
-                    className="w-full rounded-full bg-[#c65a2e] hover:bg-[#b04e26] text-white font-subheading text-base h-12 shadow-sm"
+                    className="w-full rounded-full bg-[#FF6A00] hover:bg-[#e55e00] text-white font-subheading text-base h-12 shadow-sm hover:shadow-md transition-all"
                     data-testid="button-center-submit"
                   >
                     {centerForm.status === "submitting" ? <Loader2 className="h-5 w-5 animate-spin" /> : t.form.submit}
@@ -279,24 +264,7 @@ export default function ParaEspacios() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-10 border-t border-gray-200 px-6 md:px-12 bg-white">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="font-heading text-xl text-gray-700 flex items-start">
-            CultureCheck<span className="text-[0.6em] ml-1 mt-0.5 leading-none">®</span>
-          </div>
-          <div className="flex flex-col items-center md:items-end gap-2">
-            <div className="flex flex-wrap justify-center gap-4 md:gap-6 font-subheading text-sm">
-              <Link href="/legal/aviso-legal" className="text-gray-400 hover:text-gray-700 transition-colors">Aviso Legal</Link>
-              <Link href="/legal/privacidad" className="text-gray-400 hover:text-gray-700 transition-colors">Política de Privacidad</Link>
-              <Link href="/legal/cookies" className="text-gray-400 hover:text-gray-700 transition-colors">Política de Cookies</Link>
-            </div>
-            <div className="text-gray-400 font-subheading text-sm">
-              © {new Date().getFullYear()} CultureCheck
-            </div>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

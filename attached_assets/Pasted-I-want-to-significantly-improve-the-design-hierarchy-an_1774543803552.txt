@@ -1,0 +1,129 @@
+I want to significantly improve the design, hierarchy and product feel of my website. The current version feels weak, unbalanced and not product-focused.
+
+Apply the following changes carefully.
+
+1. BRAND & COLOR SYSTEM (CRITICAL)
+
+Use the following color hierarchy:
+
+Primary color: Blue (#2C47C7 or similar)
+Accent color: Orange (#FF6A00 or similar)
+Backgrounds: White and Beige (#F5F1E8)
+Text: Black (#1A1A1A)
+
+Rules:
+
+Blue = main brand color (links, highlights, structure)
+Orange = ONLY for primary CTA buttons
+Beige = used for alternating sections
+Black = main text color
+
+REMOVE any navy/dark blue not aligned with this palette.
+
+Ensure strong contrast and readability.
+
+2. HERO SECTION (MAKE IT STRONG)
+
+The hero must clearly drive action.
+
+Center all content
+Increase title size significantly
+Subtitle clearly readable
+Add spacing between elements
+
+CTA:
+
+“Explorar actividades” must be:
+large
+orange
+visually dominant
+
+Secondary CTA:
+
+smaller, less prominent
+
+Optional:
+
+Add a strong visual or image background related to creative activities
+3. NAVIGATION (VERY IMPORTANT)
+Make navbar clean, minimal and clearly readable
+Increase font size and spacing
+
+Include:
+
+Inicio
+Explorar actividades (PRIMARY → styled as button in orange)
+Para espacios
+Visión
+
+Make navbar sticky
+
+4. SECTIONS LAYOUT
+Clearly separate sections with spacing
+Alternate backgrounds:
+white / beige / white / beige
+Add clear section titles
+Improve vertical rhythm (more spacing between blocks)
+5. ACTIVITIES CARDS (CRITICAL UPGRADE)
+
+Current cards feel weak. Improve them:
+
+Each card should:
+
+Have a larger image
+Clear title (bold)
+Short description (max 2 lines)
+Button: “Ver actividad” (styled properly)
+
+Make cards look clickable and “real”, like a product.
+
+Add hover effect (slight shadow or lift)
+
+6. CREATE “REAL PRODUCT FEEL”
+
+The site should NOT feel like a concept.
+
+Improve:
+
+Visual consistency
+Card layout
+CTA clarity
+
+Make it feel like:
+→ users can already browse and book activities
+
+7. TYPOGRAPHY
+Titles: large and bold
+Subtitles: medium size
+Body text: clearly readable
+
+Ensure:
+
+good line spacing
+strong contrast (black on light backgrounds)
+8. FOOTER
+Move Instagram and email to footer
+Clean layout
+Optional: slightly darker background or beige contrast
+9. CTA STRATEGY
+
+Repeat “Explorar actividades”:
+
+Navbar
+Hero
+Mid page (optional)
+Final section
+
+Make it always visible and consistent
+
+IMPORTANT
+
+Do NOT change the content text.
+
+Focus on:
+
+visual hierarchy
+layout
+spacing
+color system
+making it feel like a real product

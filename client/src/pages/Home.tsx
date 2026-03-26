@@ -5,9 +5,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Search, CalendarCheck, Sparkles } from "lucide-react";
 import ceramicsImage from "@/assets/images/ceramics.png";
 import paintingImage from "@/assets/images/painting.png";
-import { SiteNav } from "@/components/SiteNav";
-
-const MARKETPLACE_URL = "#";
+import { SiteNav, MARKETPLACE_URL } from "@/components/SiteNav";
+import { SiteFooter } from "@/components/SiteFooter";
 
 const fadeIn = {
   initial: { opacity: 0, y: 28 },
@@ -21,6 +20,7 @@ export default function Home() {
   const content = {
     en: {
       hero: {
+        label: "Cultural activities marketplace",
         headline: "Discover and book cultural activities near you",
         subheadline: "Find your next creative workshop and book in a few steps",
         primaryCta: "Explore activities",
@@ -40,17 +40,19 @@ export default function Home() {
         cta: "View activity",
         cards: [
           { title: "Ceramics", desc: "Create unique pieces in a professional studio", bg: ceramicsImage, color: null },
-          { title: "Crafts", desc: "Handmade objects and traditional techniques", bg: null, color: "#d4c9bb" },
+          { title: "Crafts", desc: "Handmade objects and traditional techniques", bg: null, color: "#c9b99a" },
           { title: "Painting", desc: "Express yourself through colour and technique", bg: paintingImage, color: null }
         ]
       },
       finalCta: {
+        label: "Ready to explore?",
         title: "Explore cultural activities near you",
         cta: "Explore activities"
       }
     },
     es: {
       hero: {
+        label: "Marketplace de actividades culturales",
         headline: "Descubre y reserva actividades culturales cerca de ti",
         subheadline: "Encuentra tu próximo taller creativo y reserva en pocos pasos",
         primaryCta: "Explorar actividades",
@@ -70,11 +72,12 @@ export default function Home() {
         cta: "Ver actividad",
         cards: [
           { title: "Cerámica", desc: "Crea piezas únicas en un taller profesional", bg: ceramicsImage, color: null },
-          { title: "Artesanía", desc: "Objetos hechos a mano con técnicas tradicionales", bg: null, color: "#d4c9bb" },
+          { title: "Artesanía", desc: "Objetos hechos a mano con técnicas tradicionales", bg: null, color: "#c9b99a" },
           { title: "Pintura", desc: "Exprésate a través del color y la técnica", bg: paintingImage, color: null }
         ]
       },
       finalCta: {
+        label: "¿Listo para explorar?",
         title: "Explora actividades culturales cerca de ti",
         cta: "Explorar actividades"
       }
@@ -84,16 +87,12 @@ export default function Home() {
   const t = content[lang];
 
   return (
-    <div className="min-h-screen bg-white text-gray-900 selection:bg-[#c65a2e] selection:text-white">
+    <div className="min-h-screen bg-white text-[#1A1A1A] selection:bg-[#2C47C7] selection:text-white">
 
-      <SiteNav
-        lang={lang}
-        onLangToggle={() => setLang(lang === "en" ? "es" : "en")}
-        activePage="home"
-      />
+      <SiteNav lang={lang} onLangToggle={() => setLang(lang === "en" ? "es" : "en")} activePage="home" />
 
-      {/* Hero */}
-      <section className="pt-28 pb-24 md:pt-40 md:pb-32 px-6 md:px-12 bg-white">
+      {/* ── Hero ── */}
+      <section className="pt-28 pb-24 md:pt-40 md:pb-36 px-6 md:px-12 bg-white">
         <motion.div
           className="max-w-4xl mx-auto text-center space-y-8"
           initial="initial"
@@ -101,18 +100,20 @@ export default function Home() {
           viewport={{ once: true }}
           variants={fadeIn}
         >
-          <p className="font-subheading text-sm uppercase tracking-widest text-[#c65a2e]">CultureCheck</p>
-          <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight text-gray-900">
+          <span className="inline-block font-subheading text-sm uppercase tracking-widest text-[#2C47C7] bg-[#2C47C7]/8 px-4 py-1.5 rounded-full">
+            {t.hero.label}
+          </span>
+          <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-[82px] leading-[1.05] tracking-tight text-[#1A1A1A]">
             {t.hero.headline}
           </h1>
-          <p className="font-subheading text-xl md:text-2xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
+          <p className="font-subheading text-xl md:text-2xl text-[#1A1A1A]/60 max-w-2xl mx-auto leading-relaxed">
             {t.hero.subheadline}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
             <a href={MARKETPLACE_URL} data-testid="button-explore-hero">
               <Button
                 size="lg"
-                className="bg-[#c65a2e] hover:bg-[#b04e26] text-white rounded-full font-subheading text-lg px-10 py-6 h-auto shadow-md w-full sm:w-auto"
+                className="bg-[#FF6A00] hover:bg-[#e55e00] text-white rounded-full font-subheading text-lg px-10 py-6 h-auto shadow-md w-full sm:w-auto transition-all hover:shadow-lg"
               >
                 {t.hero.primaryCta} <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -121,7 +122,7 @@ export default function Home() {
               <Button
                 size="lg"
                 variant="outline"
-                className="rounded-full border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white font-subheading text-lg px-10 py-6 h-auto w-full sm:w-auto transition-colors"
+                className="rounded-full border-2 border-[#1A1A1A]/30 text-[#1A1A1A] hover:border-[#1A1A1A] font-subheading text-base px-8 py-6 h-auto w-full sm:w-auto transition-colors"
               >
                 {t.hero.secondaryCta}
               </Button>
@@ -130,8 +131,8 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Cómo funciona */}
-      <section className="py-24 px-6 md:px-12 bg-gray-50">
+      {/* ── Cómo funciona ── */}
+      <section className="py-24 px-6 md:px-12 bg-[#F5F1E8]">
         <div className="max-w-5xl mx-auto">
           <motion.div
             className="text-center mb-16"
@@ -140,25 +141,25 @@ export default function Home() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <p className="font-subheading text-sm uppercase tracking-widest text-[#c65a2e] mb-3">{t.howItWorks.label}</p>
+            <span className="inline-block font-subheading text-sm uppercase tracking-widest text-[#2C47C7] mb-4">{t.howItWorks.label}</span>
           </motion.div>
-          <div className="grid md:grid-cols-3 gap-10 md:gap-16">
+          <div className="grid md:grid-cols-3 gap-10 md:gap-14">
             {t.howItWorks.steps.map((step, i) => {
               const Icon = step.icon;
               return (
                 <motion.div
                   key={i}
                   className="text-center space-y-5"
-                  initial={{ opacity: 0, y: 24 }}
+                  initial={{ opacity: 0, y: 28 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.15 }}
                 >
-                  <div className="w-16 h-16 rounded-full bg-[#c65a2e]/10 flex items-center justify-center mx-auto">
-                    <Icon className="h-7 w-7 text-[#c65a2e]" />
+                  <div className="w-16 h-16 rounded-2xl bg-[#2C47C7]/10 flex items-center justify-center mx-auto">
+                    <Icon className="h-7 w-7 text-[#2C47C7]" />
                   </div>
-                  <h3 className="font-heading text-2xl text-gray-900">{i + 1}. {step.title}</h3>
-                  <p className="font-subheading text-base text-gray-500 leading-relaxed">{step.desc}</p>
+                  <h3 className="font-heading text-2xl text-[#1A1A1A]">{i + 1}. {step.title}</h3>
+                  <p className="font-subheading text-base text-[#1A1A1A]/60 leading-relaxed">{step.desc}</p>
                 </motion.div>
               );
             })}
@@ -166,7 +167,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Activity Cards */}
+      {/* ── Activity Cards ── */}
       <section className="py-24 px-6 md:px-12 bg-white">
         <div className="max-w-5xl mx-auto">
           <motion.div
@@ -176,21 +177,21 @@ export default function Home() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <p className="font-subheading text-sm uppercase tracking-widest text-[#c65a2e] mb-3">{t.activities.label}</p>
-            <h2 className="font-heading text-4xl md:text-5xl text-gray-900">{t.activities.title}</h2>
+            <span className="font-subheading text-sm uppercase tracking-widest text-[#2C47C7] block mb-3">{t.activities.label}</span>
+            <h2 className="font-heading text-4xl md:text-5xl text-[#1A1A1A]">{t.activities.title}</h2>
           </motion.div>
           <div className="grid sm:grid-cols-3 gap-6">
             {t.activities.cards.map((card, i) => (
               <motion.div
                 key={i}
-                className="group bg-white border border-gray-200 overflow-hidden flex flex-col rounded-xl shadow-sm hover:shadow-md transition-shadow"
-                initial={{ opacity: 0, y: 20 }}
+                className="group bg-white border border-gray-200 overflow-hidden flex flex-col rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
                 data-testid={`card-activity-${i}`}
               >
-                <div className="relative h-52 overflow-hidden">
+                <div className="relative h-60 overflow-hidden rounded-t-2xl">
                   {card.bg ? (
                     <img
                       src={card.bg}
@@ -198,21 +199,18 @@ export default function Home() {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   ) : (
-                    <div
-                      className="w-full h-full flex items-center justify-center"
-                      style={{ backgroundColor: card.color! }}
-                    >
-                      <span className="font-heading text-7xl text-white/40">{card.title[0]}</span>
+                    <div className="w-full h-full flex items-center justify-center" style={{ backgroundColor: card.color! }}>
+                      <span className="font-heading text-7xl text-white/50">{card.title[0]}</span>
                     </div>
                   )}
                 </div>
-                <div className="p-5 flex flex-col flex-1 gap-3">
-                  <h3 className="font-heading text-xl text-gray-900">{card.title}</h3>
-                  <p className="font-subheading text-sm text-gray-500 flex-1 leading-relaxed">{card.desc}</p>
+                <div className="p-6 flex flex-col flex-1 gap-3">
+                  <h3 className="font-heading text-2xl text-[#1A1A1A]">{card.title}</h3>
+                  <p className="font-subheading text-sm text-[#1A1A1A]/60 flex-1 leading-relaxed line-clamp-2">{card.desc}</p>
                   <a href={MARKETPLACE_URL} data-testid={`button-activity-${i}`}>
                     <Button
                       variant="outline"
-                      className="rounded-full border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white font-subheading text-sm w-full transition-colors"
+                      className="rounded-full border-[#2C47C7] text-[#2C47C7] hover:bg-[#2C47C7] hover:text-white font-subheading text-sm w-full transition-all"
                     >
                       {t.activities.cta} <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
@@ -224,8 +222,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-28 bg-gray-900 text-white px-6 md:px-12 text-center">
+      {/* ── Final CTA ── */}
+      <section className="py-32 bg-[#2C47C7] text-white px-6 md:px-12 text-center">
         <motion.div
           className="max-w-3xl mx-auto space-y-8"
           initial="initial"
@@ -233,13 +231,16 @@ export default function Home() {
           viewport={{ once: true }}
           variants={fadeIn}
         >
+          <span className="inline-block font-subheading text-sm uppercase tracking-widest text-white/60">
+            {t.finalCta.label}
+          </span>
           <h2 className="font-heading text-4xl md:text-6xl leading-tight text-white">
             {t.finalCta.title}
           </h2>
           <a href={MARKETPLACE_URL} data-testid="button-explore-final">
             <Button
               size="lg"
-              className="bg-[#c65a2e] hover:bg-[#b04e26] text-white rounded-full font-subheading text-xl px-12 py-7 h-auto mt-2 shadow-lg"
+              className="bg-[#FF6A00] hover:bg-[#e55e00] text-white rounded-full font-subheading text-xl px-14 py-7 h-auto mt-2 shadow-lg hover:shadow-xl transition-all"
             >
               {t.finalCta.cta} <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
@@ -247,24 +248,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-10 border-t border-gray-200 px-6 md:px-12 bg-white">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="font-heading text-xl text-gray-700 flex items-start">
-            CultureCheck<span className="text-[0.6em] ml-1 mt-0.5 leading-none">®</span>
-          </div>
-          <div className="flex flex-col items-center md:items-end gap-2">
-            <div className="flex flex-wrap justify-center gap-4 md:gap-6 font-subheading text-sm">
-              <Link href="/legal/aviso-legal" className="text-gray-400 hover:text-gray-700 transition-colors" data-testid="link-aviso-legal">Aviso Legal</Link>
-              <Link href="/legal/privacidad" className="text-gray-400 hover:text-gray-700 transition-colors" data-testid="link-privacidad">Política de Privacidad</Link>
-              <Link href="/legal/cookies" className="text-gray-400 hover:text-gray-700 transition-colors" data-testid="link-cookies">Política de Cookies</Link>
-            </div>
-            <div className="text-gray-400 font-subheading text-sm">
-              © {new Date().getFullYear()} CultureCheck
-            </div>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

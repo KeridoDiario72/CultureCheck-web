@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Loader2, CheckCircle } from "lucide-react";
 import { SiteNav } from "@/components/SiteNav";
+import { SiteFooter } from "@/components/SiteFooter";
 
 const FORMSPREE_URL = "https://formspree.io/f/xgoljqjv";
 
@@ -21,11 +21,8 @@ function useFormspree() {
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify(data),
       });
-      if (res.ok) {
-        setStatus("success");
-      } else {
-        setStatus("error");
-      }
+      if (res.ok) setStatus("success");
+      else setStatus("error");
     } catch {
       setStatus("error");
     }
@@ -128,16 +125,12 @@ export default function Vision() {
   const t = content[lang];
 
   return (
-    <div className="min-h-screen bg-white text-gray-900 selection:bg-[#c65a2e] selection:text-white">
+    <div className="min-h-screen bg-white text-[#1A1A1A] selection:bg-[#2C47C7] selection:text-white">
 
-      <SiteNav
-        lang={lang}
-        onLangToggle={() => setLang(lang === "en" ? "es" : "en")}
-        activePage="vision"
-      />
+      <SiteNav lang={lang} onLangToggle={() => setLang(lang === "en" ? "es" : "en")} activePage="vision" />
 
-      {/* What is CultureCheck */}
-      <section className="pt-28 pb-20 md:pt-40 md:pb-24 px-6 md:px-12 bg-gray-900 text-white">
+      {/* ── What is CultureCheck ── */}
+      <section className="pt-28 pb-24 md:pt-40 md:pb-28 px-6 md:px-12 bg-[#2C47C7] text-white">
         <motion.div
           className="max-w-3xl mx-auto text-center space-y-6"
           initial="initial"
@@ -145,16 +138,18 @@ export default function Vision() {
           viewport={{ once: true }}
           variants={fadeIn}
         >
-          <p className="font-subheading text-sm uppercase tracking-widest text-[#c65a2e]">{t.what.label}</p>
-          <p className="font-heading text-3xl md:text-4xl lg:text-5xl text-white leading-snug">
+          <span className="inline-block font-subheading text-sm uppercase tracking-widest text-white/60 bg-white/10 px-4 py-1.5 rounded-full">
+            {t.what.label}
+          </span>
+          <p className="font-heading text-4xl md:text-5xl lg:text-6xl text-white leading-snug">
             {t.what.text}
           </p>
         </motion.div>
       </section>
 
-      {/* Problem / Solution */}
+      {/* ── Problem ── */}
       <section className="py-20 px-6 md:px-12 bg-white">
-        <div className="max-w-3xl mx-auto space-y-8">
+        <div className="max-w-3xl mx-auto">
           <motion.div
             className="space-y-6"
             initial="initial"
@@ -162,12 +157,12 @@ export default function Vision() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <p className="font-subheading text-sm uppercase tracking-widest text-[#c65a2e]">{t.problem.label}</p>
-            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-gray-900 leading-tight">{t.problem.title}</h2>
-            <ul className="space-y-4 mt-4">
+            <span className="font-subheading text-sm uppercase tracking-widest text-[#2C47C7]">{t.problem.label}</span>
+            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-[#1A1A1A] leading-tight">{t.problem.title}</h2>
+            <ul className="space-y-4 pt-2">
               {t.problem.items.map((item, i) => (
-                <li key={i} className="flex items-center gap-4 font-subheading text-lg text-gray-600">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#c65a2e] flex-shrink-0" />
+                <li key={i} className="flex items-center gap-4 font-subheading text-lg text-[#1A1A1A]/70">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#FF6A00] flex-shrink-0" />
                   {item}
                 </li>
               ))}
@@ -176,8 +171,8 @@ export default function Vision() {
         </div>
       </section>
 
-      {/* Mission */}
-      <section className="py-20 px-6 md:px-12 bg-gray-50">
+      {/* ── Mission ── */}
+      <section className="py-20 px-6 md:px-12 bg-[#F5F1E8]">
         <div className="max-w-3xl mx-auto">
           <motion.div
             className="space-y-6"
@@ -186,17 +181,17 @@ export default function Vision() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <p className="font-subheading text-sm uppercase tracking-widest text-[#c65a2e]">{t.mission.label}</p>
+            <span className="font-subheading text-sm uppercase tracking-widest text-[#2C47C7]">{t.mission.label}</span>
             <div className="space-y-5">
               {t.mission.paragraphs.map((p, i) => (
-                <p key={i} className="font-subheading text-lg text-gray-600 leading-relaxed">{p}</p>
+                <p key={i} className="font-subheading text-lg text-[#1A1A1A]/70 leading-relaxed">{p}</p>
               ))}
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Vision */}
+      {/* ── Vision ── */}
       <section className="py-20 px-6 md:px-12 bg-white">
         <div className="max-w-3xl mx-auto">
           <motion.div
@@ -206,18 +201,18 @@ export default function Vision() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <p className="font-subheading text-sm uppercase tracking-widest text-[#5b9bd5]">{t.vision.label}</p>
+            <span className="font-subheading text-sm uppercase tracking-widest text-[#2C47C7]">{t.vision.label}</span>
             <div className="space-y-5">
               {t.vision.paragraphs.map((p, i) => (
-                <p key={i} className="font-subheading text-lg text-gray-600 leading-relaxed">{p}</p>
+                <p key={i} className="font-subheading text-lg text-[#1A1A1A]/70 leading-relaxed">{p}</p>
               ))}
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Collaborate / Join Us */}
-      <section className="py-20 px-6 md:px-12 bg-gray-50">
+      {/* ── Collaborate / Join Us ── */}
+      <section className="py-20 px-6 md:px-12 bg-[#F5F1E8]">
         <div className="max-w-lg mx-auto text-center">
           <motion.div
             className="space-y-8"
@@ -226,13 +221,13 @@ export default function Vision() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <p className="font-subheading text-sm uppercase tracking-widest text-[#c65a2e]">{t.joinUs.label}</p>
-            <h2 className="font-heading text-3xl md:text-4xl text-gray-900">{t.joinUs.title}</h2>
-            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 font-subheading text-sm text-gray-400 uppercase tracking-widest">
+            <span className="font-subheading text-sm uppercase tracking-widest text-[#2C47C7]">{t.joinUs.label}</span>
+            <h2 className="font-heading text-3xl md:text-4xl text-[#1A1A1A]">{t.joinUs.title}</h2>
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 font-subheading text-sm text-[#1A1A1A]/40 uppercase tracking-widest">
               {t.joinUs.roles.map((r, i) => <span key={i}>{r}</span>)}
             </div>
-            <div className="bg-white border border-gray-200 rounded-2xl p-8">
-              <h3 className="font-heading text-xl mb-6 text-gray-900">{t.joinUs.cta}</h3>
+            <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
+              <h3 className="font-heading text-xl mb-6 text-[#1A1A1A]">{t.joinUs.cta}</h3>
               {joinForm.status === "success" ? (
                 <div className="flex items-center justify-center gap-2 text-green-600 font-subheading" data-testid="status-join-success">
                   <CheckCircle className="h-5 w-5" />
@@ -248,32 +243,18 @@ export default function Vision() {
                   await joinForm.submit({ email, name, message, formType: "joinus" });
                   form.reset();
                 }}>
-                  <Input
-                    name="name"
-                    type="text"
-                    required
-                    placeholder={t.joinUs.namePlaceholder}
-                    className="rounded-xl border-gray-300 bg-gray-50 h-11 text-sm"
-                    data-testid="input-join-name"
-                  />
-                  <Input
-                    name="email"
-                    type="email"
-                    required
-                    placeholder={t.joinUs.emailPlaceholder}
-                    className="rounded-xl border-gray-300 bg-gray-50 h-11 text-sm"
-                    data-testid="input-join-email"
-                  />
+                  <Input name="name" type="text" required placeholder={t.joinUs.namePlaceholder} className="rounded-xl border-gray-300 bg-gray-50 h-11 text-sm" data-testid="input-join-name" />
+                  <Input name="email" type="email" required placeholder={t.joinUs.emailPlaceholder} className="rounded-xl border-gray-300 bg-gray-50 h-11 text-sm" data-testid="input-join-email" />
                   <textarea
                     name="message"
                     placeholder={t.joinUs.messagePlaceholder}
-                    className="w-full min-h-[90px] p-3 rounded-xl border border-gray-300 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#c65a2e]/30 font-sans text-sm"
+                    className="w-full min-h-[90px] p-3 rounded-xl border border-gray-300 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#2C47C7]/30 font-sans text-sm"
                     data-testid="input-join-message"
                   />
                   <Button
                     type="submit"
                     disabled={joinForm.status === "submitting"}
-                    className="w-full rounded-full bg-gray-900 hover:bg-gray-700 text-white font-subheading text-sm h-11"
+                    className="w-full rounded-full bg-[#1A1A1A] hover:bg-[#1A1A1A]/80 text-white font-subheading text-sm h-11"
                     data-testid="button-join-submit"
                   >
                     {joinForm.status === "submitting" ? <Loader2 className="h-4 w-4 animate-spin" /> : t.joinUs.submit}
@@ -288,24 +269,7 @@ export default function Vision() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-10 border-t border-gray-200 px-6 md:px-12 bg-white">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="font-heading text-xl text-gray-700 flex items-start">
-            CultureCheck<span className="text-[0.6em] ml-1 mt-0.5 leading-none">®</span>
-          </div>
-          <div className="flex flex-col items-center md:items-end gap-2">
-            <div className="flex flex-wrap justify-center gap-4 md:gap-6 font-subheading text-sm">
-              <Link href="/legal/aviso-legal" className="text-gray-400 hover:text-gray-700 transition-colors">Aviso Legal</Link>
-              <Link href="/legal/privacidad" className="text-gray-400 hover:text-gray-700 transition-colors">Política de Privacidad</Link>
-              <Link href="/legal/cookies" className="text-gray-400 hover:text-gray-700 transition-colors">Política de Cookies</Link>
-            </div>
-            <div className="text-gray-400 font-subheading text-sm">
-              © {new Date().getFullYear()} CultureCheck
-            </div>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
