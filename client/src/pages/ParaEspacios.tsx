@@ -126,7 +126,7 @@ export default function ParaEspacios() {
           viewport={{ once: true }}
           variants={fadeIn}
         >
-          <span className="inline-block font-subheading text-sm uppercase tracking-widest text-[#2C47C7] bg-[#2C47C7]/8 px-4 py-1.5 rounded-full">
+          <span className="inline-block font-subheading text-base uppercase tracking-widest text-[#2C47C7] bg-[#2C47C7]/8 px-4 py-1.5 rounded-full">
             {t.hero.label}
           </span>
           <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl leading-[1.05] tracking-tight text-[#1A1A1A]">
@@ -156,7 +156,7 @@ export default function ParaEspacios() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <span className="font-subheading text-sm uppercase tracking-widest text-[#2C47C7]">{t.value.label}</span>
+            <span className="font-subheading text-base uppercase tracking-widest text-[#2C47C7]">{t.value.label}</span>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-10 md:gap-14">
             {t.value.items.map((item, i) => {
@@ -192,7 +192,7 @@ export default function ParaEspacios() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <span className="font-subheading text-sm uppercase tracking-widest text-[#2C47C7]">{t.howItWorks.label}</span>
+            <span className="font-subheading text-base uppercase tracking-widest text-[#2C47C7]">{t.howItWorks.label}</span>
           </motion.div>
           <div className="space-y-4">
             {t.howItWorks.steps.map((step, i) => (
@@ -226,7 +226,7 @@ export default function ParaEspacios() {
             variants={fadeIn}
           >
             <div className="text-center space-y-3">
-              <span className="font-subheading text-sm uppercase tracking-widest text-[#2C47C7]">{t.form.label}</span>
+              <span className="font-subheading text-base uppercase tracking-widest text-[#2C47C7]">{t.form.label}</span>
               <h2 className="font-heading text-3xl md:text-4xl text-[#1A1A1A]">{t.form.title}</h2>
             </div>
             <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">

@@ -138,10 +138,10 @@ export default function Vision() {
           viewport={{ once: true }}
           variants={fadeIn}
         >
-          <span className="inline-block font-subheading text-sm uppercase tracking-widest text-white/60 bg-white/10 px-4 py-1.5 rounded-full">
+          <span className="inline-block font-subheading text-base uppercase tracking-widest text-white/60 bg-white/10 px-4 py-1.5 rounded-full">
             {t.what.label}
           </span>
-          <p className="font-heading text-4xl md:text-5xl lg:text-6xl text-white leading-snug">
+          <p className="font-heading text-3xl md:text-4xl lg:text-5xl text-white leading-snug">
             {t.what.text}
           </p>
         </motion.div>
@@ -157,7 +157,7 @@ export default function Vision() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <span className="font-subheading text-sm uppercase tracking-widest text-[#2C47C7]">{t.problem.label}</span>
+            <span className="font-subheading text-base uppercase tracking-widest text-[#2C47C7]">{t.problem.label}</span>
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-[#1A1A1A] leading-tight">{t.problem.title}</h2>
             <ul className="space-y-4 pt-2">
               {t.problem.items.map((item, i) => (
@@ -181,7 +181,7 @@ export default function Vision() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <span className="font-subheading text-sm uppercase tracking-widest text-[#2C47C7]">{t.mission.label}</span>
+            <span className="font-subheading text-base uppercase tracking-widest text-[#2C47C7]">{t.mission.label}</span>
             <div className="space-y-5">
               {t.mission.paragraphs.map((p, i) => (
                 <p key={i} className="font-subheading text-lg text-[#1A1A1A]/70 leading-relaxed">{p}</p>
@@ -201,7 +201,7 @@ export default function Vision() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <span className="font-subheading text-sm uppercase tracking-widest text-[#2C47C7]">{t.vision.label}</span>
+            <span className="font-subheading text-base uppercase tracking-widest text-[#2C47C7]">{t.vision.label}</span>
             <div className="space-y-5">
               {t.vision.paragraphs.map((p, i) => (
                 <p key={i} className="font-subheading text-lg text-[#1A1A1A]/70 leading-relaxed">{p}</p>
@@ -221,7 +221,7 @@ export default function Vision() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <span className="font-subheading text-sm uppercase tracking-widest text-[#2C47C7]">{t.joinUs.label}</span>
+            <span className="font-subheading text-base uppercase tracking-widest text-[#2C47C7]">{t.joinUs.label}</span>
             <h2 className="font-heading text-3xl md:text-4xl text-[#1A1A1A]">{t.joinUs.title}</h2>
             <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 font-subheading text-sm text-[#1A1A1A]/40 uppercase tracking-widest">
               {t.joinUs.roles.map((r, i) => <span key={i}>{r}</span>)}

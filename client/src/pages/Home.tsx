@@ -141,10 +141,10 @@ export default function Home() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <p className="font-subheading text-sm uppercase tracking-widest text-[#2C47C7] mb-4">
+            <p className="font-subheading text-base uppercase tracking-widest text-[#2C47C7] mb-4">
               {t.howItWorks.eyebrow}
             </p>
-            <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-[#1A1A1A]">
+            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-[#1A1A1A]">
               {t.howItWorks.title}
             </h2>
           </motion.div>
@@ -182,10 +182,10 @@ export default function Home() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <p className="font-subheading text-sm uppercase tracking-widest text-[#2C47C7] mb-4">
+            <p className="font-subheading text-base uppercase tracking-widest text-[#2C47C7] mb-4">
               {t.activities.eyebrow}
             </p>
-            <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-[#1A1A1A]">
+            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-[#1A1A1A]">
               {t.activities.title}
             </h2>
           </motion.div>
@@ -240,10 +240,10 @@ export default function Home() {
           viewport={{ once: true }}
           variants={fadeIn}
         >
-          <p className="font-subheading text-sm uppercase tracking-widest text-white/50 mb-6">
+          <p className="font-subheading text-base uppercase tracking-widest text-white/50 mb-6">
             {t.finalCta.eyebrow}
           </p>
-          <h2 className="font-heading text-4xl md:text-6xl leading-tight text-white mb-10">
+          <h2 className="font-heading text-3xl md:text-5xl leading-tight text-white mb-10">
             {t.finalCta.title}
           </h2>
           <a href={MARKETPLACE_URL} data-testid="button-explore-final">
