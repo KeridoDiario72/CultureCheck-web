@@ -23,7 +23,7 @@ export default function Home() {
         headline: "Discover and book cultural activities near you",
         subheadline: "Find your next creative workshop and book in a few steps",
         primaryCta: "Explore activities",
-        secondaryCta: "I run a creative space"
+        secondaryCta: "I have a space"
       },
       howItWorks: {
         eyebrow: "Simple process",
@@ -55,7 +55,7 @@ export default function Home() {
         headline: "Descubre y reserva actividades culturales cerca de ti",
         subheadline: "Encuentra tu próximo taller creativo y reserva en pocos pasos",
         primaryCta: "Explorar actividades",
-        secondaryCta: "Tengo un centro creativo"
+        secondaryCta: "Tengo un espacio"
       },
       howItWorks: {
         eyebrow: "Proceso sencillo",
