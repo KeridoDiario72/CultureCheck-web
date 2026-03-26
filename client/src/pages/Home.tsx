@@ -266,7 +266,7 @@ export default function Home() {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <p className="font-heading text-2xl md:text-3xl text-[#1A1A1A]/40 tracking-wide">
-              · · · {t.activities.more} · · ·
+              {t.activities.more}
             </p>
           </motion.div>
         </div>
