@@ -2,15 +2,15 @@ import { useState } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Mail, Instagram, Search, CalendarCheck, Sparkles } from "lucide-react";
+import { ArrowRight, Search, CalendarCheck, Sparkles } from "lucide-react";
 import ceramicsImage from "@/assets/images/ceramics.png";
 import paintingImage from "@/assets/images/painting.png";
-import logoImage from "@/assets/images/logo-transparent-trimmed.png";
+import { SiteNav } from "@/components/SiteNav";
 
 const MARKETPLACE_URL = "#";
 
 const fadeIn = {
-  initial: { opacity: 0, y: 24 },
+  initial: { opacity: 0, y: 28 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.6 }
 };
@@ -20,10 +20,6 @@ export default function Home() {
 
   const content = {
     en: {
-      nav: {
-        spaces: "For spaces",
-        vision: "Vision"
-      },
       hero: {
         headline: "Discover and book cultural activities near you",
         subheadline: "Find your next creative workshop and book in a few steps",
@@ -44,7 +40,7 @@ export default function Home() {
         cta: "View activity",
         cards: [
           { title: "Ceramics", desc: "Create unique pieces in a professional studio", bg: ceramicsImage, color: null },
-          { title: "Crafts", desc: "Handmade objects and traditional techniques", bg: null, color: "#e8ddd0" },
+          { title: "Crafts", desc: "Handmade objects and traditional techniques", bg: null, color: "#d4c9bb" },
           { title: "Painting", desc: "Express yourself through colour and technique", bg: paintingImage, color: null }
         ]
       },
@@ -54,10 +50,6 @@ export default function Home() {
       }
     },
     es: {
-      nav: {
-        spaces: "Para espacios",
-        vision: "Visión"
-      },
       hero: {
         headline: "Descubre y reserva actividades culturales cerca de ti",
         subheadline: "Encuentra tu próximo taller creativo y reserva en pocos pasos",
@@ -78,7 +70,7 @@ export default function Home() {
         cta: "Ver actividad",
         cards: [
           { title: "Cerámica", desc: "Crea piezas únicas en un taller profesional", bg: ceramicsImage, color: null },
-          { title: "Artesanía", desc: "Objetos hechos a mano con técnicas tradicionales", bg: null, color: "#e8ddd0" },
+          { title: "Artesanía", desc: "Objetos hechos a mano con técnicas tradicionales", bg: null, color: "#d4c9bb" },
           { title: "Pintura", desc: "Exprésate a través del color y la técnica", bg: paintingImage, color: null }
         ]
       },
@@ -92,67 +84,45 @@ export default function Home() {
   const t = content[lang];
 
   return (
-    <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-white">
+    <div className="min-h-screen bg-white text-gray-900 selection:bg-[#c65a2e] selection:text-white">
 
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 py-3 md:py-4 flex justify-between items-center bg-[#F5F1E8] border-b border-muted shadow-sm">
-        <div className="flex items-center gap-6 min-w-0">
-          <div className="flex-shrink-0 h-8 sm:h-10 md:h-14 flex items-center">
-            <img src={logoImage} alt="CultureCheck Logo" className="h-full w-auto object-contain max-w-[120px] sm:max-w-[160px] md:max-w-none" />
-          </div>
-          <div className="hidden md:flex items-center gap-6 font-subheading text-sm text-muted-foreground">
-            <Link href="/para-espacios" className="hover:text-primary transition-colors" data-testid="link-nav-spaces">{t.nav.spaces}</Link>
-            <Link href="/vision" className="hover:text-primary transition-colors" data-testid="link-nav-vision">{t.nav.vision}</Link>
-          </div>
-        </div>
-        <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0">
-          <button
-            onClick={() => setLang(lang === "en" ? "es" : "en")}
-            className="font-subheading text-sm uppercase tracking-widest hover:text-primary transition-colors"
-          >
-            {lang === "en" ? "ES" : "EN"}
-          </button>
-          <a href="https://instagram.com/culturecheck_" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-instagram" aria-label="Instagram">
-            <Instagram className="h-4 w-4 sm:h-5 sm:w-5" />
-          </a>
-          <a href="mailto:hola@culturecheck.site" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-mail" aria-label="Email">
-            <Mail className="h-4 w-4 sm:h-5 sm:w-5" />
-          </a>
-          <Link href="/para-espacios">
-            <Button
-              variant="outline"
-              className="hidden sm:inline-flex font-subheading text-xs sm:text-sm rounded-none border-foreground hover:bg-foreground hover:text-background transition-colors px-3 sm:px-4 py-1.5 sm:py-2 whitespace-nowrap"
-              data-testid="button-nav-spaces"
-            >
-              {t.hero.secondaryCta}
-            </Button>
-          </Link>
-        </div>
-      </nav>
+      <SiteNav
+        lang={lang}
+        onLangToggle={() => setLang(lang === "en" ? "es" : "en")}
+        activePage="home"
+      />
 
       {/* Hero */}
-      <section className="pt-32 pb-20 md:pt-48 md:pb-32 px-6 md:px-12 max-w-5xl mx-auto text-center">
+      <section className="pt-28 pb-24 md:pt-40 md:pb-32 px-6 md:px-12 bg-white">
         <motion.div
-          className="space-y-8"
+          className="max-w-4xl mx-auto text-center space-y-8"
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
           variants={fadeIn}
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight text-foreground font-heading">
+          <p className="font-subheading text-sm uppercase tracking-widest text-[#c65a2e]">CultureCheck</p>
+          <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight text-gray-900">
             {t.hero.headline}
           </h1>
-          <p className="font-subheading text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="font-subheading text-xl md:text-2xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
             {t.hero.subheadline}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
             <a href={MARKETPLACE_URL} data-testid="button-explore-hero">
-              <Button size="lg" className="rounded-none bg-primary hover:bg-primary/90 text-white font-subheading text-lg px-10 py-6 w-full sm:w-auto">
+              <Button
+                size="lg"
+                className="bg-[#c65a2e] hover:bg-[#b04e26] text-white rounded-full font-subheading text-lg px-10 py-6 h-auto shadow-md w-full sm:w-auto"
+              >
                 {t.hero.primaryCta} <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </a>
             <Link href="/para-espacios" data-testid="button-spaces-hero">
-              <Button size="lg" variant="outline" className="rounded-none border-2 border-foreground hover:bg-foreground hover:text-background font-subheading text-lg px-10 py-6 w-full sm:w-auto">
+              <Button
+                size="lg"
+                variant="outline"
+                className="rounded-full border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white font-subheading text-lg px-10 py-6 h-auto w-full sm:w-auto transition-colors"
+              >
                 {t.hero.secondaryCta}
               </Button>
             </Link>
@@ -161,34 +131,34 @@ export default function Home() {
       </section>
 
       {/* Cómo funciona */}
-      <section className="py-24 px-6 md:px-12 bg-muted/20">
+      <section className="py-24 px-6 md:px-12 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <motion.div
-            className="text-center mb-14"
+            className="text-center mb-16"
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <p className="font-subheading text-xs uppercase tracking-widest text-[#c65a2e] mb-2">{t.howItWorks.label}</p>
+            <p className="font-subheading text-sm uppercase tracking-widest text-[#c65a2e] mb-3">{t.howItWorks.label}</p>
           </motion.div>
-          <div className="grid md:grid-cols-3 gap-10">
+          <div className="grid md:grid-cols-3 gap-10 md:gap-16">
             {t.howItWorks.steps.map((step, i) => {
               const Icon = step.icon;
               return (
                 <motion.div
                   key={i}
-                  className="text-center space-y-4"
+                  className="text-center space-y-5"
                   initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.15 }}
                 >
-                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
-                    <Icon className="h-6 w-6 text-primary" />
+                  <div className="w-16 h-16 rounded-full bg-[#c65a2e]/10 flex items-center justify-center mx-auto">
+                    <Icon className="h-7 w-7 text-[#c65a2e]" />
                   </div>
-                  <h3 className="font-heading text-xl text-foreground">{i + 1}. {step.title}</h3>
-                  <p className="font-subheading text-base text-muted-foreground">{step.desc}</p>
+                  <h3 className="font-heading text-2xl text-gray-900">{i + 1}. {step.title}</h3>
+                  <p className="font-subheading text-base text-gray-500 leading-relaxed">{step.desc}</p>
                 </motion.div>
               );
             })}
@@ -197,7 +167,7 @@ export default function Home() {
       </section>
 
       {/* Activity Cards */}
-      <section className="py-24 px-6 md:px-12">
+      <section className="py-24 px-6 md:px-12 bg-white">
         <div className="max-w-5xl mx-auto">
           <motion.div
             className="mb-12"
@@ -206,14 +176,14 @@ export default function Home() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <p className="font-subheading text-xs uppercase tracking-widest text-[#c65a2e] mb-3">{t.activities.label}</p>
-            <h2 className="font-heading text-4xl md:text-5xl text-foreground">{t.activities.title}</h2>
+            <p className="font-subheading text-sm uppercase tracking-widest text-[#c65a2e] mb-3">{t.activities.label}</p>
+            <h2 className="font-heading text-4xl md:text-5xl text-gray-900">{t.activities.title}</h2>
           </motion.div>
           <div className="grid sm:grid-cols-3 gap-6">
             {t.activities.cards.map((card, i) => (
               <motion.div
                 key={i}
-                className="group bg-background border border-muted overflow-hidden flex flex-col"
+                className="group bg-white border border-gray-200 overflow-hidden flex flex-col rounded-xl shadow-sm hover:shadow-md transition-shadow"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -228,16 +198,22 @@ export default function Home() {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   ) : (
-                    <div className="w-full h-full flex items-center justify-center" style={{ backgroundColor: card.color! }}>
-                      <span className="font-heading text-6xl text-foreground/15">{card.title[0]}</span>
+                    <div
+                      className="w-full h-full flex items-center justify-center"
+                      style={{ backgroundColor: card.color! }}
+                    >
+                      <span className="font-heading text-7xl text-white/40">{card.title[0]}</span>
                     </div>
                   )}
                 </div>
                 <div className="p-5 flex flex-col flex-1 gap-3">
-                  <h3 className="font-heading text-xl text-foreground">{card.title}</h3>
-                  <p className="font-subheading text-sm text-muted-foreground flex-1">{card.desc}</p>
+                  <h3 className="font-heading text-xl text-gray-900">{card.title}</h3>
+                  <p className="font-subheading text-sm text-gray-500 flex-1 leading-relaxed">{card.desc}</p>
                   <a href={MARKETPLACE_URL} data-testid={`button-activity-${i}`}>
-                    <Button variant="outline" className="rounded-none border-foreground hover:bg-foreground hover:text-background font-subheading text-sm w-full transition-colors">
+                    <Button
+                      variant="outline"
+                      className="rounded-full border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white font-subheading text-sm w-full transition-colors"
+                    >
                       {t.activities.cta} <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </a>
@@ -249,7 +225,7 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-28 bg-foreground text-background px-6 md:px-12 text-center">
+      <section className="py-28 bg-gray-900 text-white px-6 md:px-12 text-center">
         <motion.div
           className="max-w-3xl mx-auto space-y-8"
           initial="initial"
@@ -257,11 +233,14 @@ export default function Home() {
           viewport={{ once: true }}
           variants={fadeIn}
         >
-          <h2 className="font-heading text-4xl md:text-6xl leading-tight text-background">
+          <h2 className="font-heading text-4xl md:text-6xl leading-tight text-white">
             {t.finalCta.title}
           </h2>
           <a href={MARKETPLACE_URL} data-testid="button-explore-final">
-            <Button size="lg" className="rounded-none bg-primary hover:bg-primary/90 text-white font-subheading text-xl px-12 py-7 mt-4">
+            <Button
+              size="lg"
+              className="bg-[#c65a2e] hover:bg-[#b04e26] text-white rounded-full font-subheading text-xl px-12 py-7 h-auto mt-2 shadow-lg"
+            >
               {t.finalCta.cta} <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </a>
@@ -269,18 +248,18 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 border-t border-muted px-6 md:px-12 bg-[#F5F1E8]">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="font-heading text-2xl text-foreground flex items-start">
+      <footer className="py-10 border-t border-gray-200 px-6 md:px-12 bg-white">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="font-heading text-xl text-gray-700 flex items-start">
             CultureCheck<span className="text-[0.6em] ml-1 mt-0.5 leading-none">®</span>
           </div>
           <div className="flex flex-col items-center md:items-end gap-2">
             <div className="flex flex-wrap justify-center gap-4 md:gap-6 font-subheading text-sm">
-              <Link href="/legal/aviso-legal" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-aviso-legal">Aviso Legal</Link>
-              <Link href="/legal/privacidad" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-privacidad">Política de Privacidad</Link>
-              <Link href="/legal/cookies" className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-cookies">Política de Cookies</Link>
+              <Link href="/legal/aviso-legal" className="text-gray-400 hover:text-gray-700 transition-colors" data-testid="link-aviso-legal">Aviso Legal</Link>
+              <Link href="/legal/privacidad" className="text-gray-400 hover:text-gray-700 transition-colors" data-testid="link-privacidad">Política de Privacidad</Link>
+              <Link href="/legal/cookies" className="text-gray-400 hover:text-gray-700 transition-colors" data-testid="link-cookies">Política de Cookies</Link>
             </div>
-            <div className="text-muted-foreground font-subheading text-sm">
+            <div className="text-gray-400 font-subheading text-sm">
               © {new Date().getFullYear()} CultureCheck
             </div>
           </div>
