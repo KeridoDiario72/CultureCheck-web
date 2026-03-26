@@ -98,7 +98,7 @@ export default function Home() {
       <SiteNav lang={lang} onLangToggle={() => setLang(lang === "en" ? "es" : "en")} activePage="home" />
 
       {/* ── Hero ── */}
-      <section className="relative min-h-[88vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
 
         {/* Mosaic background — irregular asymmetric grid */}
         <div
@@ -139,16 +139,16 @@ export default function Home() {
 
         {/* Centered card */}
         <motion.div
-          className="relative z-10 w-full max-w-2xl mx-4 sm:mx-6"
+          className="relative z-10 w-full max-w-xl mx-6 sm:mx-8"
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <div className="bg-white rounded-3xl shadow-2xl px-8 py-12 sm:px-14 sm:py-14 text-center">
-            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl leading-[1.05] tracking-tight text-[#1A1A1A] mb-6">
+          <div className="bg-white rounded-3xl shadow-2xl px-7 py-10 sm:px-11 sm:py-12 text-center">
+            <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl leading-[1.08] tracking-tight text-[#1A1A1A] mb-4">
               {t.hero.headline}
             </h1>
-            <p className="font-subheading text-lg md:text-xl text-[#1A1A1A]/55 leading-relaxed max-w-lg mx-auto mb-10">
+            <p className="font-subheading text-base md:text-lg text-[#1A1A1A]/55 leading-relaxed max-w-md mx-auto mb-8">
               {t.hero.subheadline}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
