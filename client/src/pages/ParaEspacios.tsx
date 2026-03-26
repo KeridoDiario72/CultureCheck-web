@@ -137,7 +137,7 @@ export default function ParaEspacios() {
           </p>
           <Button
             size="lg"
-            className="bg-[#FF6A00] hover:bg-[#e55e00] text-white rounded-full font-subheading text-lg px-10 py-6 h-auto shadow-md hover:shadow-lg transition-all"
+            className="bg-accent hover:bg-accent/90 text-white rounded-full font-subheading text-lg px-10 py-6 h-auto shadow-md hover:shadow-lg transition-all"
             onClick={() => document.getElementById("form")?.scrollIntoView({ behavior: "smooth" })}
             data-testid="button-hero-spaces"
           >
@@ -249,7 +249,7 @@ export default function ParaEspacios() {
                   <Button
                     type="submit"
                     disabled={centerForm.status === "submitting"}
-                    className="w-full rounded-full bg-[#FF6A00] hover:bg-[#e55e00] text-white font-subheading text-base h-12 shadow-sm hover:shadow-md transition-all"
+                    className="w-full rounded-full bg-accent hover:bg-accent/90 text-white font-subheading text-base h-12 shadow-sm hover:shadow-md transition-all"
                     data-testid="button-center-submit"
                   >
                     {centerForm.status === "submitting" ? <Loader2 className="h-5 w-5 animate-spin" /> : t.form.submit}

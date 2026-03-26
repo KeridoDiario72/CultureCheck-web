@@ -18,7 +18,7 @@ export default function AvisoLegal() {
           <section>
             <h2 className="font-heading text-xl mb-4 text-foreground">1. Información general</h2>
             <p className="mb-4">En cumplimiento con el deber de información recogido en el artículo 10 de la Ley 34/2002, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI-CE), se informa que el presente sitio web es titularidad de:</p>
-            <div className="space-y-1 pl-4 border-l-2 border-[#FF6A00] mb-4">
+            <div className="space-y-1 pl-4 border-l-2 border-accent mb-4">
               <p><strong>Titular:</strong> CultureCheck</p>
               <p><strong>Actividad:</strong> Plataforma digital para el descubrimiento y reserva de actividades culturales y creativas.</p>
               <p><strong>Correo electrónico de contacto:</strong> hola@culturecheck.site</p>

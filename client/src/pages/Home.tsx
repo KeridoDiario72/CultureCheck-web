@@ -113,7 +113,7 @@ export default function Home() {
             <a href={MARKETPLACE_URL} data-testid="button-explore-hero">
               <Button
                 size="lg"
-                className="bg-[#FF6A00] hover:bg-[#e55e00] text-white rounded-full font-subheading text-lg px-10 py-6 h-auto shadow-md w-full sm:w-auto transition-all hover:shadow-lg"
+                className="bg-accent hover:bg-accent/90 text-white rounded-full font-subheading text-lg px-10 py-6 h-auto shadow-md w-full sm:w-auto transition-all hover:shadow-lg"
               >
                 {t.hero.primaryCta} <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -240,7 +240,7 @@ export default function Home() {
           <a href={MARKETPLACE_URL} data-testid="button-explore-final">
             <Button
               size="lg"
-              className="bg-[#FF6A00] hover:bg-[#e55e00] text-white rounded-full font-subheading text-xl px-14 py-7 h-auto mt-2 shadow-lg hover:shadow-xl transition-all"
+              className="bg-accent hover:bg-accent/90 text-white rounded-full font-subheading text-xl px-14 py-7 h-auto mt-2 shadow-lg hover:shadow-xl transition-all"
             >
               {t.finalCta.cta} <ArrowRight className="ml-2 h-5 w-5" />
             </Button>

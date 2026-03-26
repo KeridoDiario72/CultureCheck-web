@@ -162,7 +162,7 @@ export default function Vision() {
             <ul className="space-y-4 pt-2">
               {t.problem.items.map((item, i) => (
                 <li key={i} className="flex items-center gap-4 font-subheading text-lg text-[#1A1A1A]/70">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#FF6A00] flex-shrink-0" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-accent flex-shrink-0" />
                   {item}
                 </li>
               ))}

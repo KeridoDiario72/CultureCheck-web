@@ -56,7 +56,7 @@ export function SiteNav({ lang, onLangToggle, activePage }: SiteNavProps) {
             {lang === "en" ? "ES" : "EN"}
           </button>
           <a href={MARKETPLACE_URL} data-testid="button-nav-cta">
-            <Button className="bg-[#FF6A00] hover:bg-[#e55e00] text-white rounded-full font-subheading text-sm px-5 h-9 gap-1.5 shadow-sm">
+            <Button className="bg-accent hover:bg-accent/90 text-white rounded-full font-subheading text-sm px-5 h-9 gap-1.5 shadow-sm">
               {t.cta} <ArrowRight className="h-3.5 w-3.5" />
             </Button>
           </a>
