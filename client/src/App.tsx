@@ -5,6 +5,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
+import ParaEspacios from "@/pages/ParaEspacios";
+import Vision from "@/pages/Vision";
 import AvisoLegal from "@/pages/AvisoLegal";
 import Privacidad from "@/pages/Privacidad";
 import Cookies from "@/pages/Cookies";
@@ -13,6 +15,8 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home}/>
+      <Route path="/para-espacios" component={ParaEspacios}/>
+      <Route path="/vision" component={Vision}/>
       <Route path="/legal/aviso-legal" component={AvisoLegal}/>
       <Route path="/legal/privacidad" component={Privacidad}/>
       <Route path="/legal/cookies" component={Cookies}/>
