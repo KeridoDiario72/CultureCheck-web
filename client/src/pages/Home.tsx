@@ -175,23 +175,20 @@ export default function Home() {
       </section>
 
       {/* ── Cómo funciona ── */}
-      <section className="py-28 md:py-36 px-6 md:px-12 bg-white">
+      <section className="py-16 md:py-20 px-6 md:px-12 bg-white">
         <div className="max-w-5xl mx-auto">
           <motion.div
-            className="text-center mb-20"
+            className="text-center mb-12"
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <p className="font-subheading text-base uppercase tracking-widest text-[#2C47C7] mb-4">
-              {t.howItWorks.eyebrow}
-            </p>
-            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-[#1A1A1A]">
+            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-[#2C47C7]">
               {t.howItWorks.title}
             </h2>
           </motion.div>
-          <div className="grid md:grid-cols-3 gap-12 md:gap-16">
+          <div className="grid md:grid-cols-3 gap-8 md:gap-10">
             {t.howItWorks.steps.map((step, i) => {
               const Icon = step.icon;
               return (
@@ -203,11 +200,11 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.15 }}
                 >
-                  <div className="w-16 h-16 rounded-2xl bg-[#2C47C7]/10 flex items-center justify-center mx-auto mb-6">
-                    <Icon className="h-7 w-7 text-[#2C47C7]" />
+                  <div className="w-14 h-14 rounded-2xl bg-[#2C47C7]/10 flex items-center justify-center mx-auto mb-4">
+                    <Icon className="h-6 w-6 text-[#2C47C7]" />
                   </div>
-                  <h3 className="font-heading text-2xl text-[#1A1A1A] mb-3">{i + 1}. {step.title}</h3>
-                  <p className="font-subheading text-lg text-[#1A1A1A]/55 leading-relaxed">{step.desc}</p>
+                  <h3 className="font-heading text-xl text-[#1A1A1A] mb-2">{i + 1}. {step.title}</h3>
+                  <p className="font-subheading text-base text-[#1A1A1A]/55 leading-relaxed">{step.desc}</p>
                 </motion.div>
               );
             })}
