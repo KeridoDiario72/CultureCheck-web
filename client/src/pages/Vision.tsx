@@ -155,7 +155,7 @@ export default function Vision() {
             variants={fadeIn}
           >
             {/* Title */}
-            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-[#1A1A1A] leading-tight">{t.problem.title}</h2>
+            <h2 className="font-heading text-2xl md:text-3xl text-[#1A1A1A] leading-tight">{t.problem.title}</h2>
             {/* Paragraphs */}
             <div className="space-y-4">
               <p className="font-subheading text-lg md:text-xl text-[#1A1A1A]/60 leading-relaxed">{t.problem.para1}</p>
