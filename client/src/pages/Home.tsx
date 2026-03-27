@@ -55,7 +55,7 @@ export default function Home() {
           { title: "Reading",        desc: "Book clubs and shared reading experiences",         bg: actLectura },
           { title: "Crafts",        desc: "Handmade objects with traditional techniques",      bg: heroImg6 },
           { title: "Embroidery",    desc: "Bead and stitch unique handmade pieces",           bg: heroImg3 },
-          { title: "Floral Design", desc: "Arrange flowers and create botanical compositions", bg: actFloral },
+          { title: "Design",        desc: "Arrange flowers and create botanical compositions", bg: actArtesania },
         ]
       },
       finalCta: {
@@ -89,7 +89,7 @@ export default function Home() {
           { title: "Lectura",        desc: "Clubes de lectura y experiencias literarias compartidas", bg: actLectura },
           { title: "Artesanía",      desc: "Objetos hechos a mano con técnicas tradicionales",       bg: heroImg6 },
           { title: "Bordado",        desc: "Cose y borda piezas únicas con tus propias manos",       bg: heroImg3 },
-          { title: "Diseño Floral",  desc: "Crea composiciones botánicas y arreglos florales",       bg: actFloral },
+          { title: "Diseño",         desc: "Crea composiciones botánicas y arreglos florales",       bg: actArtesania },
         ]
       },
       finalCta: {
