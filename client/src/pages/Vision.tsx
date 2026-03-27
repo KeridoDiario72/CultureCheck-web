@@ -47,9 +47,9 @@ export default function Vision() {
         text: "CultureCheck was born from a simple idea: culture should be easy to discover and part of everyday life."
       },
       problem: {
-        label: "The problem",
-        title: "Discovering cultural activities shouldn't be complicated",
-        items: ["A place to discover", "A place to book"]
+        para1: "Today, the cultural offer is scattered and many people don't know what options are available nearby or how to access them.",
+        para2: "CultureCheck brings cultural and creative activities together in one place, making discovery and booking easy.",
+        cards: ["A place to discover", "A place to book"]
       },
       mission: {
         label: "Mission",
@@ -85,9 +85,9 @@ export default function Vision() {
         text: "CultureCheck nace de una idea simple: la cultura debería ser fácil de descubrir y formar parte de la vida cotidiana."
       },
       problem: {
-        label: "El problema",
-        title: "Descubrir actividades culturales no debería ser complicado",
-        items: ["Un lugar para descubrir", "Un lugar para reservar"]
+        para1: "Hoy en día, la oferta está dispersa y muchas personas no saben qué opciones tienen cerca o cómo acceder a ellas.",
+        para2: "CultureCheck reúne en un solo lugar actividades culturales y creativas, facilitando el descubrimiento y la reserva.",
+        cards: ["Un lugar para descubrir", "Un lugar para reservar"]
       },
       mission: {
         label: "Misión",
@@ -146,22 +146,28 @@ export default function Vision() {
       <section className="py-20 px-6 md:px-12 bg-white">
         <div className="max-w-3xl mx-auto">
           <motion.div
-            className="space-y-6"
+            className="space-y-8"
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <span className="font-subheading text-base uppercase tracking-widest text-[#2C47C7]">{t.problem.label}</span>
-            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-[#1A1A1A] leading-tight">{t.problem.title}</h2>
-            <ul className="space-y-4 pt-2">
-              {t.problem.items.map((item, i) => (
-                <li key={i} className="flex items-center gap-4 font-subheading text-lg text-[#1A1A1A]/70">
-                  <span className="w-2.5 h-2.5 rounded-full bg-accent flex-shrink-0" />
-                  {item}
-                </li>
+            {/* Paragraphs */}
+            <div className="space-y-4">
+              <p className="font-subheading text-lg md:text-xl text-[#1A1A1A]/70 leading-relaxed">{t.problem.para1}</p>
+              <p className="font-subheading text-lg md:text-xl text-[#1A1A1A] leading-relaxed font-medium">{t.problem.para2}</p>
+            </div>
+            {/* Cards */}
+            <div className="grid grid-cols-2 gap-4">
+              {t.problem.cards.map((card, i) => (
+                <div
+                  key={i}
+                  className="rounded-2xl border border-[#2C47C7]/20 bg-[#2C47C7]/5 px-6 py-8 text-center"
+                >
+                  <span className="font-heading text-xl md:text-2xl text-[#2C47C7]">{card}</span>
+                </div>
               ))}
-            </ul>
+            </div>
           </motion.div>
         </div>
       </section>
