@@ -13,6 +13,7 @@ import actPintura from "@assets/vitaly-gariev-9K1r-ubhwD0-unsplash_1774551347033
 import actArtesania from "@assets/laura-adai-5H2ketFL1LE-unsplash_1774551347027.jpg";
 import actFloral from "@assets/hillary-ungson-y0VAG6tKjxU-unsplash_1774551347030.jpg";
 import heroVelas from "@assets/ionela-mat-4U-cfybSixM-unsplash_1774551347025.jpg";
+import actLectura from "@assets/bill-ringer-7C2JUQRJ5hE-unsplash_1774604994388.jpg";
 import heroAula from "@assets/illan-riestra-nava-vRKpmLZdGmw-unsplash_1774551347026.jpg";
 import heroVidriera from "@assets/jakub-zerdzicki-8_RxHhvMZz0-unsplash_1774551347032.jpg";
 import heroBrochas from "@assets/pew-nguyen-i0k1TyYw_Ss-unsplash_1774551347035.jpg";
@@ -51,7 +52,7 @@ export default function Home() {
         cards: [
           { title: "Ceramics",      desc: "Throw and shape clay in a professional studio",    bg: heroImg1 },
           { title: "Painting",      desc: "Express yourself through colour and technique",     bg: actPintura },
-          { title: "Textiles",      desc: "Dye, weave and spin with natural fibres",          bg: heroImg3 },
+          { title: "Reading",        desc: "Book clubs and shared reading experiences",         bg: actLectura },
           { title: "Crafts",        desc: "Handmade objects with traditional techniques",      bg: actArtesania },
           { title: "Embroidery",    desc: "Bead and stitch unique handmade pieces",           bg: heroImg6 },
           { title: "Floral Design", desc: "Arrange flowers and create botanical compositions", bg: actFloral },
@@ -85,7 +86,7 @@ export default function Home() {
         cards: [
           { title: "Cerámica",       desc: "Modela arcilla en el torno de un taller profesional",   bg: heroImg1 },
           { title: "Pintura",        desc: "Exprésate a través del color y la técnica pictórica",    bg: actPintura },
-          { title: "Tejidos",        desc: "Tinte, telar y fibras naturales de la mano de expertos", bg: heroImg3 },
+          { title: "Lectura",        desc: "Clubes de lectura y experiencias literarias compartidas", bg: actLectura },
           { title: "Artesanía",      desc: "Objetos hechos a mano con técnicas tradicionales",       bg: actArtesania },
           { title: "Bordado",        desc: "Cose y borda piezas únicas con tus propias manos",       bg: heroImg6 },
           { title: "Diseño Floral",  desc: "Crea composiciones botánicas y arreglos florales",       bg: actFloral },
