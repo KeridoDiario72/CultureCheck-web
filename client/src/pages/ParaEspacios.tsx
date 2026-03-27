@@ -61,7 +61,7 @@ export default function ParaEspacios() {
       howItWorks: {
         label: "How it works",
         steps: [
-          { num: "01", title: "Publish your activities", desc: "Create your profile and list your workshops" },
+          { num: "01", title: "Publish your activities", desc: "Create your profile and announce your workshops" },
           { num: "02", title: "Receive bookings", desc: "Participants book directly through the platform" },
           { num: "03", title: "Reach new users", desc: "Grow your community of participants" }
         ]
@@ -94,7 +94,7 @@ export default function ParaEspacios() {
       howItWorks: {
         label: "Cómo funciona",
         steps: [
-          { num: "01", title: "Publica tus actividades", desc: "Crea tu perfil y lista tus talleres y clases" },
+          { num: "01", title: "Publica tus actividades", desc: "Crea tu perfil y anuncia tus talleres" },
           { num: "02", title: "Recibe reservas", desc: "Los participantes reservan directamente a través de la plataforma" },
           { num: "03", title: "Llega a nuevos usuarios", desc: "Haz crecer tu comunidad de participantes" }
         ]
