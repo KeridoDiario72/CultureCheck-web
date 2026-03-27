@@ -154,16 +154,16 @@ export default function ParaEspacios() {
       </section>
 
       {/* ── Value proposition ── */}
-      <section className="py-24 px-6 md:px-12 bg-[#F5F1E8]">
+      <section className="py-14 md:py-20 px-6 md:px-12 bg-[#F5F1E8]">
         <div className="max-w-5xl mx-auto">
           <motion.div
-            className="text-center mb-16"
+            className="text-center mb-12"
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <span className="font-subheading text-base uppercase tracking-widest text-[#2C47C7]">{t.value.label}</span>
+            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-[#2C47C7]">{t.value.label}</h2>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-10 md:gap-14">
             {t.value.items.map((item, i) => {
