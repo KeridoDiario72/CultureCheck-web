@@ -119,19 +119,19 @@ export default function ParaEspacios() {
       <SiteNav lang={lang} onLangToggle={() => setLang(lang === "en" ? "es" : "en")} activePage="para-espacios" />
 
       {/* ── Hero ── */}
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background image */}
         <img
           src={heroSpaces}
           alt="Espacio cultural"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/55" />
 
-        {/* Content */}
+        {/* Content — pt-16 clears the fixed nav */}
         <motion.div
-          className="relative z-10 max-w-3xl mx-auto text-center px-6 space-y-8"
+          className="relative z-10 max-w-3xl mx-auto text-center px-6 pt-16 space-y-8"
           initial="initial"
           animate="animate"
           variants={fadeIn}
