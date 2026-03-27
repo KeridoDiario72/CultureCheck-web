@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Menu, X } from "lucide-react";
 import logoImage from "@/assets/images/logo-transparent-trimmed.png";
@@ -14,6 +14,12 @@ interface SiteNavProps {
 
 export function SiteNav({ lang, onLangToggle, activePage }: SiteNavProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [, navigate] = useLocation();
+
+  function goTo(path: string) {
+    setMobileOpen(false);
+    navigate(path);
+  }
 
   const labels = {
     en: { home: "Home", spaces: "For spaces", vision: "Vision", cta: "Explore activities" },
@@ -85,30 +91,27 @@ export function SiteNav({ lang, onLangToggle, activePage }: SiteNavProps) {
       {/* Mobile dropdown */}
       {mobileOpen && (
         <div className="fixed top-16 left-0 right-0 z-40 bg-white border-b border-gray-200 shadow-md px-6 pb-4 flex flex-col md:hidden">
-          <Link
-            href="/"
-            className={activePage === "home" ? mobileLinkActive : mobileLinkInactive}
-            onClick={() => setMobileOpen(false)}
+          <button
+            className={`text-left ${activePage === "home" ? mobileLinkActive : mobileLinkInactive}`}
+            onClick={() => goTo("/")}
             data-testid="link-mobile-nav-home"
           >
             {t.home}
-          </Link>
-          <Link
-            href="/para-espacios"
-            className={activePage === "para-espacios" ? mobileLinkActive : mobileLinkInactive}
-            onClick={() => setMobileOpen(false)}
+          </button>
+          <button
+            className={`text-left ${activePage === "para-espacios" ? mobileLinkActive : mobileLinkInactive}`}
+            onClick={() => goTo("/para-espacios")}
             data-testid="link-mobile-nav-spaces"
           >
             {t.spaces}
-          </Link>
-          <Link
-            href="/vision"
-            className={activePage === "vision" ? mobileLinkActive : mobileLinkInactive}
-            onClick={() => setMobileOpen(false)}
+          </button>
+          <button
+            className={`text-left ${activePage === "vision" ? mobileLinkActive : mobileLinkInactive}`}
+            onClick={() => goTo("/vision")}
             data-testid="link-mobile-nav-vision"
           >
             {t.vision}
-          </Link>
+          </button>
           <a href={MARKETPLACE_URL} className="mt-4" data-testid="button-mobile-nav-cta">
             <Button className="w-full bg-accent hover:bg-accent/90 text-white rounded-full font-subheading text-sm h-10 gap-1.5 shadow-sm">
               {t.cta} <ArrowRight className="h-3.5 w-3.5" />
