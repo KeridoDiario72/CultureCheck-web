@@ -223,7 +223,7 @@ export default function ParaEspacios() {
       </section>
 
       {/* ── Form ── */}
-      <section id="form" className="py-10 md:py-14 px-6 md:px-12 bg-[#F5F1E8]">
+      <section id="form" className="py-16 md:py-24 px-6 md:px-12 bg-[#F5F1E8]">
         <div className="max-w-md mx-auto">
           <motion.div
             className="space-y-8"
@@ -232,9 +232,9 @@ export default function ParaEspacios() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <div className="text-center space-y-2">
-              <p className="font-heading text-xl md:text-2xl text-[#2C47C7]">{t.form.label}</p>
-              <h2 className="font-heading text-4xl md:text-5xl font-bold text-[#1A1A1A]">{t.form.title}</h2>
+            <div className="text-center space-y-5">
+              <p className="font-subheading text-sm md:text-base uppercase tracking-[0.22em] text-[#2C47C7] font-medium">{t.form.label}</p>
+              <h2 className="font-heading text-5xl md:text-6xl uppercase tracking-normal leading-snug text-[#1A1A1A]">{t.form.title}</h2>
             </div>
             <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
               {centerForm.status === "success" ? (
