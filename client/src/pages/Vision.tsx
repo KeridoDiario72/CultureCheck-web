@@ -47,6 +47,7 @@ export default function Vision() {
         text: "CultureCheck was born from a simple idea: culture should be easy to discover and part of everyday life."
       },
       problem: {
+        title: "Discovering cultural activities shouldn't be complicated",
         para1: "Today, the cultural offer is scattered and many people don't know what options are available nearby or how to access them.",
         para2: "CultureCheck brings cultural and creative activities together in one place, making discovery and booking easy.",
         cards: ["A place to discover", "A place to book"]
@@ -85,6 +86,7 @@ export default function Vision() {
         text: "CultureCheck nace de una idea simple: la cultura debería ser fácil de descubrir y formar parte de la vida cotidiana."
       },
       problem: {
+        title: "Descubrir actividades culturales no debería ser complicado",
         para1: "Hoy en día, la oferta está dispersa y muchas personas no saben qué opciones tienen cerca o cómo acceder a ellas.",
         para2: "CultureCheck reúne en un solo lugar actividades culturales y creativas, facilitando el descubrimiento y la reserva.",
         cards: ["Un lugar para descubrir", "Un lugar para reservar"]
@@ -152,10 +154,12 @@ export default function Vision() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
+            {/* Title */}
+            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-[#1A1A1A] leading-tight">{t.problem.title}</h2>
             {/* Paragraphs */}
             <div className="space-y-4">
-              <p className="font-subheading text-lg md:text-xl text-[#1A1A1A]/70 leading-relaxed">{t.problem.para1}</p>
-              <p className="font-subheading text-lg md:text-xl text-[#1A1A1A] leading-relaxed font-medium">{t.problem.para2}</p>
+              <p className="font-subheading text-lg md:text-xl text-[#1A1A1A]/60 leading-relaxed">{t.problem.para1}</p>
+              <p className="font-subheading text-lg md:text-xl text-[#1A1A1A]/60 leading-relaxed">{t.problem.para2}</p>
             </div>
             {/* Cards */}
             <div className="grid grid-cols-2 gap-4">
