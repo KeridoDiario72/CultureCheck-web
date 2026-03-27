@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Loader2, CheckCircle, Users, TrendingUp, Eye } from "lucide-react";
 import { SiteNav, MARKETPLACE_URL } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
+import heroSpaces from "@assets/max-tcvetkov-RIWgN6czP8U-unsplash_1774606270640.jpg";
 
 const FORMSPREE_URL = "https://formspree.io/f/xgoljqjv";
 
@@ -118,21 +119,27 @@ export default function ParaEspacios() {
       <SiteNav lang={lang} onLangToggle={() => setLang(lang === "en" ? "es" : "en")} activePage="para-espacios" />
 
       {/* ── Hero ── */}
-      <section className="pt-28 pb-24 md:pt-40 md:pb-36 px-6 md:px-12 bg-white">
+      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+        {/* Background image */}
+        <img
+          src={heroSpaces}
+          alt="Espacio cultural"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/55" />
+
+        {/* Content */}
         <motion.div
-          className="max-w-3xl mx-auto text-center space-y-8"
+          className="relative z-10 max-w-3xl mx-auto text-center px-6 space-y-8"
           initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
+          animate="animate"
           variants={fadeIn}
         >
-          <span className="inline-block font-subheading text-base uppercase tracking-widest text-[#2C47C7] bg-[#2C47C7]/8 px-4 py-1.5 rounded-full">
-            {t.hero.label}
-          </span>
-          <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl leading-[1.05] tracking-tight text-[#1A1A1A]">
+          <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl leading-[1.05] tracking-tight text-white">
             {t.hero.title}
           </h1>
-          <p className="font-subheading text-xl md:text-2xl text-[#1A1A1A]/60 max-w-xl mx-auto leading-relaxed">
+          <p className="font-subheading text-xl md:text-2xl text-white/70 max-w-xl mx-auto leading-relaxed">
             {t.hero.subtitle}
           </p>
           <Button
