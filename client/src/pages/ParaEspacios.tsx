@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Loader2, CheckCircle, Users, TrendingUp, Eye } from "lucide-react";
 import { SiteNav, MARKETPLACE_URL } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
-import heroSpaces from "@assets/max-tcvetkov-RIWgN6czP8U-unsplash_1774606270640.jpg";
+import heroSpaces from "@assets/optimized/max-tcvetkov-RIWgN6czP8U-unsplash_1774606270640.webp";
 
 const FORMSPREE_URL = "https://formspree.io/f/xgoljqjv";
 
