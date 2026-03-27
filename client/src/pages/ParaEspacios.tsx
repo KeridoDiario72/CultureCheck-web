@@ -233,7 +233,7 @@ export default function ParaEspacios() {
             variants={fadeIn}
           >
             <div className="text-center space-y-5">
-              <p className="font-subheading text-base md:text-lg uppercase tracking-[0.22em] text-[#2C47C7] font-medium">{t.form.label}</p>
+              <p className="font-subheading md:text-lg uppercase tracking-[0.22em] text-[#2C47C7] font-medium text-[22px]">{t.form.label}</p>
               <h2 className="font-heading text-4xl md:text-5xl uppercase tracking-normal leading-snug text-[#1A1A1A] whitespace-nowrap">{t.form.title}</h2>
             </div>
             <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
