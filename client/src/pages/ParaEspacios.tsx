@@ -54,7 +54,7 @@ export default function ParaEspacios() {
         label: "Why CultureCheck",
         items: [
           { icon: Users, title: "Reach new audiences", desc: "Make your activities discoverable by more people" },
-          { icon: TrendingUp, title: "Improve occupancy", desc: "Fill your workshops and activities more efficiently" },
+          { icon: TrendingUp, title: "Improve occupancy", desc: "Fill your workshops and activities" },
           { icon: Eye, title: "Greater visibility", desc: "Become part of the city's cultural scene" }
         ]
       },
@@ -87,7 +87,7 @@ export default function ParaEspacios() {
         label: "Por qué CultureCheck",
         items: [
           { icon: Users, title: "Llega a nuevos públicos", desc: "Haz que más personas descubran tus actividades" },
-          { icon: TrendingUp, title: "Mejora la ocupación", desc: "Llena tus talleres y actividades de forma más eficiente" },
+          { icon: TrendingUp, title: "Mejora la ocupación", desc: "Llena tus talleres y actividades" },
           { icon: Eye, title: "Mayor visibilidad", desc: "Forma parte de la oferta cultural de la ciudad" }
         ]
       },
@@ -154,10 +154,10 @@ export default function ParaEspacios() {
       </section>
 
       {/* ── Value proposition ── */}
-      <section className="py-14 md:py-20 px-6 md:px-12 bg-[#F5F1E8]">
+      <section className="py-10 md:py-14 px-6 md:px-12 bg-[#F5F1E8]">
         <div className="max-w-5xl mx-auto">
           <motion.div
-            className="text-center mb-12"
+            className="text-center mb-8"
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
@@ -165,7 +165,7 @@ export default function ParaEspacios() {
           >
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-[#2C47C7]">{t.value.label}</h2>
           </motion.div>
-          <div className="grid md:grid-cols-3 gap-10 md:gap-14">
+          <div className="grid md:grid-cols-3 gap-8 md:gap-10">
             {t.value.items.map((item, i) => {
               const Icon = item.icon;
               return (
