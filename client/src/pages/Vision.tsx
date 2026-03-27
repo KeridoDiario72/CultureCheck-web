@@ -44,8 +44,7 @@ export default function Vision() {
   const content = {
     en: {
       what: {
-        label: "What is CultureCheck",
-        text: "A platform to discover and book cultural and creative activities in one place."
+        text: "CultureCheck was born from a simple idea: culture should be easy to discover and part of everyday life."
       },
       problem: {
         label: "The problem",
@@ -83,8 +82,7 @@ export default function Vision() {
     },
     es: {
       what: {
-        label: "Qué es CultureCheck",
-        text: "Una plataforma para descubrir y reservar actividades culturales y creativas en un solo lugar."
+        text: "CultureCheck nace de una idea simple: la cultura debería ser fácil de descubrir y formar parte de la vida cotidiana."
       },
       problem: {
         label: "El problema",
@@ -132,15 +130,12 @@ export default function Vision() {
       {/* ── What is CultureCheck ── */}
       <section className="pt-28 pb-24 md:pt-40 md:pb-28 px-6 md:px-12 bg-[#2C47C7] text-white">
         <motion.div
-          className="max-w-3xl mx-auto text-center space-y-6"
+          className="max-w-3xl mx-auto text-center"
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
           variants={fadeIn}
         >
-          <span className="inline-block font-subheading text-base uppercase tracking-widest text-white/60 bg-white/10 px-4 py-1.5 rounded-full">
-            {t.what.label}
-          </span>
           <p className="font-heading text-3xl md:text-4xl lg:text-5xl text-white leading-snug">
             {t.what.text}
           </p>
