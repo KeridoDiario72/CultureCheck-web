@@ -53,9 +53,9 @@ export default function ParaEspacios() {
       value: {
         label: "Why CultureCheck",
         items: [
-          { icon: Users, title: "Reach new audiences", desc: "Connect with people actively looking for creative activities" },
+          { icon: Users, title: "Reach new audiences", desc: "Make your activities discoverable by more people" },
           { icon: TrendingUp, title: "Improve occupancy", desc: "Fill your workshops and activities more efficiently" },
-          { icon: Eye, title: "Increase visibility", desc: "Your space appears to thousands of potential participants" }
+          { icon: Eye, title: "Greater visibility", desc: "Become part of the city's cultural scene" }
         ]
       },
       howItWorks: {
@@ -86,9 +86,9 @@ export default function ParaEspacios() {
       value: {
         label: "Por qué CultureCheck",
         items: [
-          { icon: Users, title: "Llega a nuevos públicos", desc: "Conecta con personas que buscan activamente actividades creativas" },
+          { icon: Users, title: "Llega a nuevos públicos", desc: "Haz que más personas descubran tus actividades" },
           { icon: TrendingUp, title: "Mejora la ocupación", desc: "Llena tus talleres y actividades de forma más eficiente" },
-          { icon: Eye, title: "Da visibilidad a tus actividades", desc: "Tu espacio aparece ante miles de participantes potenciales" }
+          { icon: Eye, title: "Mayor visibilidad", desc: "Forma parte de la oferta cultural de la ciudad" }
         ]
       },
       howItWorks: {
