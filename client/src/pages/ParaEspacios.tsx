@@ -154,10 +154,10 @@ export default function ParaEspacios() {
       </section>
 
       {/* ── Value proposition ── */}
-      <section className="py-16 md:py-20 px-6 md:px-12 bg-[#F5F1E8]">
+      <section className="py-10 md:py-14 px-6 md:px-12 bg-[#F5F1E8]">
         <div className="max-w-5xl mx-auto">
           <motion.div
-            className="text-center mb-10"
+            className="text-center mb-8"
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
@@ -190,10 +190,10 @@ export default function ParaEspacios() {
       </section>
 
       {/* ── Cómo funciona ── */}
-      <section className="py-16 md:py-20 px-6 md:px-12 bg-white">
+      <section className="py-10 md:py-14 px-6 md:px-12 bg-white">
         <div className="max-w-3xl mx-auto">
           <motion.div
-            className="text-center mb-10"
+            className="text-center mb-8"
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
@@ -223,7 +223,7 @@ export default function ParaEspacios() {
       </section>
 
       {/* ── Form ── */}
-      <section id="form" className="py-16 md:py-20 px-6 md:px-12 bg-[#F5F1E8]">
+      <section id="form" className="py-24 px-6 md:px-12 bg-[#F5F1E8]">
         <div className="max-w-md mx-auto">
           <motion.div
             className="space-y-8"
@@ -232,8 +232,9 @@ export default function ParaEspacios() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <div className="text-center mb-10">
-              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-[#2C47C7]">{t.form.label}</h2>
+            <div className="text-center space-y-3">
+              <span className="font-subheading text-base uppercase tracking-widest text-[#2C47C7]">{t.form.label}</span>
+              <h2 className="font-heading text-3xl md:text-4xl text-[#1A1A1A]">{t.form.title}</h2>
             </div>
             <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
               {centerForm.status === "success" ? (
