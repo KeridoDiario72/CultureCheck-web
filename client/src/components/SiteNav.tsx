@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLocation } from "wouter";
+import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Menu, X } from "lucide-react";
 import logoImage from "@/assets/images/logo-transparent-trimmed.png";
@@ -14,12 +14,6 @@ interface SiteNavProps {
 
 export function SiteNav({ lang, onLangToggle, activePage }: SiteNavProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [, navigate] = useLocation();
-
-  function goTo(path: string) {
-    setMobileOpen(false);
-    navigate(path);
-  }
 
   const labels = {
     en: { home: "Home", spaces: "For spaces", vision: "Vision", cta: "Explore activities" },
@@ -31,7 +25,7 @@ export function SiteNav({ lang, onLangToggle, activePage }: SiteNavProps) {
   const active = `${baseLink} font-semibold text-[#2C47C7]`;
   const inactive = `${baseLink} text-[#1A1A1A]/70 hover:text-[#1A1A1A]`;
 
-  const mobileLinkBase = "font-subheading text-base py-3 border-b border-gray-100 transition-colors";
+  const mobileLinkBase = "font-subheading text-base py-3 border-b border-gray-100 transition-colors block w-full text-left";
   const mobileLinkActive = `${mobileLinkBase} font-semibold text-[#2C47C7]`;
   const mobileLinkInactive = `${mobileLinkBase} text-[#1A1A1A]/70`;
 
@@ -42,12 +36,12 @@ export function SiteNav({ lang, onLangToggle, activePage }: SiteNavProps) {
 
           {/* Logo */}
           <div className="flex-shrink-0 h-9 flex items-center">
-            <Link href="/" onClick={() => setMobileOpen(false)}>
+            <Link href="/">
               <img src={logoImage} alt="CultureCheck" className="h-full w-auto object-contain max-w-[130px] cursor-pointer" />
             </Link>
           </div>
 
-          {/* Center links (desktop) */}
+          {/* Center links — desktop only */}
           <div className="hidden md:flex items-center gap-8">
             <Link href="/" className={activePage === "home" ? active : inactive} data-testid="link-nav-home">
               {t.home}
@@ -60,7 +54,7 @@ export function SiteNav({ lang, onLangToggle, activePage }: SiteNavProps) {
             </Link>
           </div>
 
-          {/* Right: lang toggle + primary CTA (desktop) + hamburger (mobile) */}
+          {/* Right side */}
           <div className="flex items-center gap-3 flex-shrink-0">
             <button
               onClick={onLangToggle}
@@ -74,7 +68,7 @@ export function SiteNav({ lang, onLangToggle, activePage }: SiteNavProps) {
                 {t.cta} <ArrowRight className="h-3.5 w-3.5" />
               </Button>
             </a>
-            {/* Hamburger */}
+            {/* Hamburger — mobile only */}
             <button
               className="md:hidden p-1.5 text-[#1A1A1A]/70 hover:text-[#1A1A1A] transition-colors"
               onClick={() => setMobileOpen((v) => !v)}
@@ -88,36 +82,44 @@ export function SiteNav({ lang, onLangToggle, activePage }: SiteNavProps) {
         </div>
       </nav>
 
-      {/* Mobile dropdown */}
+      {/* Mobile dropdown overlay */}
       {mobileOpen && (
-        <div className="fixed top-16 left-0 right-0 z-40 bg-white border-b border-gray-200 shadow-md px-6 pb-4 flex flex-col md:hidden">
-          <button
-            className={`text-left ${activePage === "home" ? mobileLinkActive : mobileLinkInactive}`}
-            onClick={() => goTo("/")}
-            data-testid="link-mobile-nav-home"
-          >
-            {t.home}
-          </button>
-          <button
-            className={`text-left ${activePage === "para-espacios" ? mobileLinkActive : mobileLinkInactive}`}
-            onClick={() => goTo("/para-espacios")}
-            data-testid="link-mobile-nav-spaces"
-          >
-            {t.spaces}
-          </button>
-          <button
-            className={`text-left ${activePage === "vision" ? mobileLinkActive : mobileLinkInactive}`}
-            onClick={() => goTo("/vision")}
-            data-testid="link-mobile-nav-vision"
-          >
-            {t.vision}
-          </button>
-          <a href={MARKETPLACE_URL} className="mt-4" data-testid="button-mobile-nav-cta">
-            <Button className="w-full bg-accent hover:bg-accent/90 text-white rounded-full font-subheading text-sm h-10 gap-1.5 shadow-sm">
-              {t.cta} <ArrowRight className="h-3.5 w-3.5" />
-            </Button>
-          </a>
-        </div>
+        <>
+          {/* Backdrop — closes menu when tapping outside */}
+          <div
+            className="fixed inset-0 z-30 md:hidden"
+            onClick={() => setMobileOpen(false)}
+          />
+          {/* Menu panel */}
+          <div className="fixed top-16 left-0 right-0 z-50 bg-white border-b border-gray-200 shadow-lg px-6 pb-5 flex flex-col md:hidden">
+            <Link
+              href="/"
+              className={activePage === "home" ? mobileLinkActive : mobileLinkInactive}
+              data-testid="link-mobile-nav-home"
+            >
+              {t.home}
+            </Link>
+            <Link
+              href="/para-espacios"
+              className={activePage === "para-espacios" ? mobileLinkActive : mobileLinkInactive}
+              data-testid="link-mobile-nav-spaces"
+            >
+              {t.spaces}
+            </Link>
+            <Link
+              href="/vision"
+              className={activePage === "vision" ? mobileLinkActive : mobileLinkInactive}
+              data-testid="link-mobile-nav-vision"
+            >
+              {t.vision}
+            </Link>
+            <a href={MARKETPLACE_URL} className="mt-4" data-testid="button-mobile-nav-cta">
+              <Button className="w-full bg-accent hover:bg-accent/90 text-white rounded-full font-subheading text-sm h-10 gap-1.5 shadow-sm">
+                {t.cta} <ArrowRight className="h-3.5 w-3.5" />
+              </Button>
+            </a>
+          </div>
+        </>
       )}
     </>
   );
