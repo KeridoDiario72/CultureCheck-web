@@ -190,16 +190,16 @@ export default function ParaEspacios() {
       </section>
 
       {/* ── Cómo funciona ── */}
-      <section className="py-24 px-6 md:px-12 bg-white">
+      <section className="py-10 md:py-14 px-6 md:px-12 bg-white">
         <div className="max-w-3xl mx-auto">
           <motion.div
-            className="text-center mb-12"
+            className="text-center mb-8"
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <span className="font-subheading text-base uppercase tracking-widest text-[#2C47C7]">{t.howItWorks.label}</span>
+            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-[#2C47C7]">{t.howItWorks.label}</h2>
           </motion.div>
           <div className="space-y-4">
             {t.howItWorks.steps.map((step, i) => (
