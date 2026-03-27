@@ -247,9 +247,9 @@ export default function Vision() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <h2 className="font-heading text-3xl md:text-4xl text-[#1A1A1A] whitespace-nowrap">{t.joinUs.title}</h2>
-            <div className="flex flex-nowrap justify-center gap-x-6 font-subheading text-xs text-[#1A1A1A]/40 uppercase tracking-widest">
-              {t.joinUs.roles.map((r, i) => <span key={i} className="whitespace-nowrap">{r}</span>)}
+            <h2 className="font-heading text-3xl md:text-4xl text-[#1A1A1A]">{t.joinUs.title}</h2>
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 font-subheading text-xs text-[#1A1A1A]/40 uppercase tracking-widest">
+              {t.joinUs.roles.map((r, i) => <span key={i}>{r}</span>)}
             </div>
             <div className="max-w-lg mx-auto">
             <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
