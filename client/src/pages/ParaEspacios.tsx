@@ -63,7 +63,7 @@ export default function ParaEspacios() {
         steps: [
           { num: "01", title: "Publish your activities", desc: "Create your profile and announce your workshops" },
           { num: "02", title: "Receive bookings", desc: "Participants book directly through the platform" },
-          { num: "03", title: "Reach new users", desc: "Grow your community" }
+          { num: "03", title: "Reach new users", desc: "Grow your community of participants" }
         ]
       },
       form: {
@@ -96,7 +96,7 @@ export default function ParaEspacios() {
         steps: [
           { num: "01", title: "Publica tus actividades", desc: "Crea tu perfil y anuncia tus talleres" },
           { num: "02", title: "Recibe reservas", desc: "Los participantes reservan directamente a través de la plataforma" },
-          { num: "03", title: "Llega a nuevos usuarios", desc: "Haz crecer tu comunidad" }
+          { num: "03", title: "Llega a nuevos usuarios", desc: "Haz crecer tu comunidad de participantes" }
         ]
       },
       form: {
@@ -223,7 +223,7 @@ export default function ParaEspacios() {
       </section>
 
       {/* ── Form ── */}
-      <section id="form" className="py-24 px-6 md:px-12 bg-[#F5F1E8]">
+      <section id="form" className="py-10 md:py-14 px-6 md:px-12 bg-[#F5F1E8]">
         <div className="max-w-md mx-auto">
           <motion.div
             className="space-y-8"
@@ -232,9 +232,9 @@ export default function ParaEspacios() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <div className="text-center space-y-3">
-              <span className="font-subheading text-base uppercase tracking-widest text-[#2C47C7]">{t.form.label}</span>
-              <h2 className="font-heading text-3xl md:text-4xl text-[#1A1A1A]">{t.form.title}</h2>
+            <div className="text-center space-y-2">
+              <p className="font-heading text-xl md:text-2xl text-[#2C47C7]">{t.form.label}</p>
+              <h2 className="font-heading text-4xl md:text-5xl font-bold text-[#1A1A1A]">{t.form.title}</h2>
             </div>
             <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
               {centerForm.status === "success" ? (
