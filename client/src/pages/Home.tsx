@@ -53,8 +53,8 @@ export default function Home() {
           { title: "Ceramics",      desc: "Throw and shape clay in a professional studio",    bg: heroImg1 },
           { title: "Painting",      desc: "Express yourself through colour and technique",     bg: actPintura },
           { title: "Reading",        desc: "Book clubs and shared reading experiences",         bg: actLectura },
-          { title: "Crafts",        desc: "Handmade objects with traditional techniques",      bg: actArtesania },
-          { title: "Embroidery",    desc: "Bead and stitch unique handmade pieces",           bg: heroImg6 },
+          { title: "Crafts",        desc: "Handmade objects with traditional techniques",      bg: heroImg6 },
+          { title: "Embroidery",    desc: "Bead and stitch unique handmade pieces",           bg: heroImg3 },
           { title: "Floral Design", desc: "Arrange flowers and create botanical compositions", bg: actFloral },
         ]
       },
@@ -87,8 +87,8 @@ export default function Home() {
           { title: "Cerámica",       desc: "Modela arcilla en el torno de un taller profesional",   bg: heroImg1 },
           { title: "Pintura",        desc: "Exprésate a través del color y la técnica pictórica",    bg: actPintura },
           { title: "Lectura",        desc: "Clubes de lectura y experiencias literarias compartidas", bg: actLectura },
-          { title: "Artesanía",      desc: "Objetos hechos a mano con técnicas tradicionales",       bg: actArtesania },
-          { title: "Bordado",        desc: "Cose y borda piezas únicas con tus propias manos",       bg: heroImg6 },
+          { title: "Artesanía",      desc: "Objetos hechos a mano con técnicas tradicionales",       bg: heroImg6 },
+          { title: "Bordado",        desc: "Cose y borda piezas únicas con tus propias manos",       bg: heroImg3 },
           { title: "Diseño Floral",  desc: "Crea composiciones botánicas y arreglos florales",       bg: actFloral },
         ]
       },
