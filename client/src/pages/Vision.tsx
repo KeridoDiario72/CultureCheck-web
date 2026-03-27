@@ -217,19 +217,18 @@ export default function Vision() {
       </section>
 
       {/* ── Collaborate / Join Us ── */}
-      <section className="py-20 px-6 md:px-12 bg-[#F5F1E8]">
+      <section className="py-10 md:py-14 px-6 md:px-12 bg-[#F5F1E8]">
         <div className="max-w-lg mx-auto text-center">
           <motion.div
-            className="space-y-8"
+            className="space-y-6"
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <span className="font-subheading text-base uppercase tracking-widest text-[#2C47C7]">{t.joinUs.label}</span>
-            <h2 className="font-heading text-3xl md:text-4xl text-[#1A1A1A]">{t.joinUs.title}</h2>
-            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 font-subheading text-sm text-[#1A1A1A]/40 uppercase tracking-widest">
-              {t.joinUs.roles.map((r, i) => <span key={i}>{r}</span>)}
+            <h2 className="font-heading text-3xl md:text-4xl text-[#1A1A1A] whitespace-nowrap">{t.joinUs.title}</h2>
+            <div className="flex flex-nowrap justify-center gap-x-4 font-subheading text-xs text-[#1A1A1A]/40 uppercase tracking-widest overflow-x-auto">
+              {t.joinUs.roles.map((r, i) => <span key={i} className="whitespace-nowrap">{r}</span>)}
             </div>
             <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
               <h3 className="font-heading text-xl mb-6 text-[#1A1A1A]">{t.joinUs.cta}</h3>
