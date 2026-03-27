@@ -223,7 +223,7 @@ export default function ParaEspacios() {
       </section>
 
       {/* ── Form ── */}
-      <section id="form" className="py-16 md:py-24 px-6 md:px-12 bg-[#F5F1E8]">
+      <section id="form" className="py-10 md:py-14 px-6 md:px-12 bg-[#F5F1E8]">
         <div className="max-w-md mx-auto">
           <motion.div
             className="space-y-8"
