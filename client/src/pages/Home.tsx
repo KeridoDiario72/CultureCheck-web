@@ -41,7 +41,7 @@ export default function Home() {
         title: "How it works",
         steps: [
           { icon: Search, title: "Discover activities", desc: "Browse workshops and creative activities near you" },
-          { icon: CalendarCheck, title: "Book easily", desc: "Simple, fast and secure booking" },
+          { icon: CalendarCheck, title: "Book easily", desc: "Book in a simple, fast and secure way" },
           { icon: Sparkles, title: "Enjoy and explore", desc: "Live new creative experiences" }
         ]
       },
@@ -75,7 +75,7 @@ export default function Home() {
         title: "Cómo funciona",
         steps: [
           { icon: Search, title: "Descubre actividades", desc: "Explora talleres y actividades creativas cerca de ti" },
-          { icon: CalendarCheck, title: "Reserva fácilmente", desc: "Reserva simple, rápida y segura" },
+          { icon: CalendarCheck, title: "Reserva fácilmente", desc: "Reserva de forma simple, rápida y segura" },
           { icon: Sparkles, title: "Disfruta y explora", desc: "Vive nuevas experiencias creativas" }
         ]
       },
