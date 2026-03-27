@@ -176,38 +176,35 @@ export default function Vision() {
         </div>
       </section>
 
-      {/* ── Mission ── */}
-      <section className="py-20 px-6 md:px-12 bg-[#1A1A1A]">
-        <div className="max-w-3xl mx-auto">
+      {/* ── Mission + Vision ── */}
+      <section className="py-14 md:py-20 px-6 md:px-12 bg-[#1A1A1A]">
+        <div className="max-w-3xl mx-auto space-y-12">
           <motion.div
-            className="space-y-6"
+            className="space-y-5"
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
             variants={fadeIn}
           >
             <span className="font-subheading text-sm uppercase tracking-widest text-[#c65a2e]">{t.mission.label}</span>
-            <div className="space-y-5">
+            <div className="space-y-4">
               {t.mission.paragraphs.map((p, i) => (
                 <p key={i} className="font-subheading text-lg text-white/70 leading-relaxed">{p}</p>
               ))}
             </div>
           </motion.div>
-        </div>
-      </section>
 
-      {/* ── Vision ── */}
-      <section className="py-20 px-6 md:px-12 bg-[#1A1A1A]">
-        <div className="max-w-3xl mx-auto">
+          <div className="border-t border-white/10" />
+
           <motion.div
-            className="space-y-6"
+            className="space-y-5"
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
             variants={fadeIn}
           >
             <span className="font-subheading text-sm uppercase tracking-widest text-[#5b9bd5]">{t.vision.label}</span>
-            <div className="space-y-5">
+            <div className="space-y-4">
               {t.vision.paragraphs.map((p, i) => (
                 <p key={i} className="font-subheading text-lg text-white/70 leading-relaxed">{p}</p>
               ))}
