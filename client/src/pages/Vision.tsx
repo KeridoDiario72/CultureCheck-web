@@ -230,6 +230,7 @@ export default function Vision() {
             <div className="flex flex-nowrap justify-center gap-x-6 font-subheading text-xs text-[#1A1A1A]/40 uppercase tracking-widest">
               {t.joinUs.roles.map((r, i) => <span key={i} className="whitespace-nowrap">{r}</span>)}
             </div>
+            <div className="max-w-lg mx-auto">
             <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
               <h3 className="font-heading text-xl mb-6 text-[#1A1A1A]">{t.joinUs.cta}</h3>
               {joinForm.status === "success" ? (
@@ -268,6 +269,7 @@ export default function Vision() {
               {joinForm.status === "error" && (
                 <p className="text-red-500 text-sm mt-2">{t.joinUs.error}</p>
               )}
+            </div>
             </div>
           </motion.div>
         </div>
