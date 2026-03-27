@@ -177,7 +177,7 @@ export default function Vision() {
       </section>
 
       {/* ── Mission ── */}
-      <section className="py-20 px-6 md:px-12 bg-[#F5F1E8]">
+      <section className="py-20 px-6 md:px-12 bg-[#1A1A1A]">
         <div className="max-w-3xl mx-auto">
           <motion.div
             className="space-y-6"
@@ -186,10 +186,10 @@ export default function Vision() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <span className="font-subheading text-base uppercase tracking-widest text-[#2C47C7]">{t.mission.label}</span>
+            <span className="font-subheading text-sm uppercase tracking-widest text-[#c65a2e]">{t.mission.label}</span>
             <div className="space-y-5">
               {t.mission.paragraphs.map((p, i) => (
-                <p key={i} className="font-subheading text-lg text-[#1A1A1A]/70 leading-relaxed">{p}</p>
+                <p key={i} className="font-subheading text-lg text-white/70 leading-relaxed">{p}</p>
               ))}
             </div>
           </motion.div>
@@ -197,7 +197,7 @@ export default function Vision() {
       </section>
 
       {/* ── Vision ── */}
-      <section className="py-20 px-6 md:px-12 bg-white">
+      <section className="py-20 px-6 md:px-12 bg-[#1A1A1A]">
         <div className="max-w-3xl mx-auto">
           <motion.div
             className="space-y-6"
@@ -206,10 +206,10 @@ export default function Vision() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <span className="font-subheading text-base uppercase tracking-widest text-[#2C47C7]">{t.vision.label}</span>
+            <span className="font-subheading text-sm uppercase tracking-widest text-[#5b9bd5]">{t.vision.label}</span>
             <div className="space-y-5">
               {t.vision.paragraphs.map((p, i) => (
-                <p key={i} className="font-subheading text-lg text-[#1A1A1A]/70 leading-relaxed">{p}</p>
+                <p key={i} className="font-subheading text-lg text-white/70 leading-relaxed">{p}</p>
               ))}
             </div>
           </motion.div>
