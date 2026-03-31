@@ -138,7 +138,7 @@ export default function Vision() {
           viewport={{ once: true }}
           variants={fadeIn}
         >
-          <p className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-tight tracking-tight">
+          <p className="font-heading text-4xl sm:text-5xl md:text-6xl text-white leading-tight tracking-wide uppercase">
             {t.what.text}
           </p>
         </motion.div>
