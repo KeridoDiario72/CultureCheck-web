@@ -150,10 +150,10 @@ export default function Vision() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <p className="font-subheading text-lg text-white/70 leading-relaxed">
+            <p className="font-subheading text-lg text-white/70 leading-relaxed whitespace-nowrap">
               {lang === "es"
-                ? <>En un entorno cada vez más digital, muchas personas buscan participar en la <span className="text-white tracking-wider whitespace-nowrap">cultura de forma activa</span>.</>
-                : <>In an increasingly digital world, many people seek to <span className="text-white tracking-wider whitespace-nowrap">participate in culture actively</span>.</>}
+                ? <>En un entorno cada vez más digital, muchas personas buscan participar en la <span className="text-white tracking-wider">cultura de forma activa</span>.</>
+                : <>In an increasingly digital world, many people seek to <span className="text-white tracking-wider">participate in culture actively</span>.</>}
             </p>
             <p className="font-subheading text-lg text-white/70 leading-relaxed">
               {lang === "es"
