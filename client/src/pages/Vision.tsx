@@ -127,54 +127,51 @@ export default function Vision() {
 
       <SiteNav lang={lang} onLangToggle={() => setLang(lang === "en" ? "es" : "en")} activePage="vision" />
 
-      {/* ── What is CultureCheck ── */}
-      <section className="pt-28 pb-20 md:pt-36 md:pb-24 px-6 md:px-12 bg-[#2C47C7] text-white">
-        <motion.div
-          className="max-w-4xl mx-auto text-center"
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-          variants={fadeIn}
-        >
-          <p className="font-heading text-4xl sm:text-5xl md:text-6xl text-white leading-tight tracking-wide uppercase">
-            {t.what.text}
-          </p>
-        </motion.div>
-      </section>
+      {/* ── Hero + Mission ── */}
+      <section className="pt-28 pb-20 md:pt-36 md:pb-28 px-6 md:px-12 bg-[#2C47C7] text-white">
+        <div className="max-w-4xl mx-auto flex flex-col items-center gap-16 md:gap-20">
 
-      {/* ── Mission + Vision ── */}
-      <section className="py-14 md:py-20 px-6 md:px-12 bg-[#1A1A1A]">
-        <div className="max-w-3xl mx-auto space-y-12">
-          <motion.div
-            className="space-y-4"
+          {/* Big headline */}
+          <motion.p
+            className="font-heading text-4xl sm:text-5xl md:text-6xl text-white leading-tight tracking-wide uppercase text-center"
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <div className="space-y-4 text-center">
-              <p className="font-subheading text-lg text-white/70 leading-relaxed">
-                {lang === "es"
-                  ? <>En un entorno cada vez más digital, muchas personas buscan participar en la <span className="text-[#c65a2e]">cultura de forma activa</span>.</>
-                  : <>In an increasingly digital world, many people seek to <span className="text-[#c65a2e]">participate in culture actively</span>.</>}
-              </p>
-              <p className="font-subheading text-lg text-white/70 leading-relaxed">
-                {lang === "es"
-                  ? <>Al mismo tiempo, descubrir <span className="text-[#c65a2e]">actividades culturales</span> puede ser complicado y disperso.</>
-                  : <>At the same time, discovering <span className="text-[#c65a2e]">cultural activities</span> can be complicated and scattered.</>}
-              </p>
-              <p className="font-subheading text-lg text-white/70 leading-relaxed">
-                {lang === "es"
-                  ? <>CultureCheck nace para conectar a las personas con esa <span className="text-[#c65a2e]">cultura que se vive</span>.</>
-                  : <>CultureCheck was born to <span className="text-[#c65a2e]">connect people with the culture</span> that is lived.</>}
-              </p>
-              <p className="font-subheading text-lg text-white/70 leading-relaxed">
-                {lang === "es"
-                  ? <>Nuestro objetivo es construir una <span className="text-[#c65a2e]">comunidad</span> donde la cultura se comparta de forma cotidiana.</>
-                  : <>Our goal is to build a <span className="text-[#c65a2e]">community</span> where culture is shared as part of everyday life.</>}
-              </p>
-            </div>
+            {t.what.text}
+          </motion.p>
+
+          {/* Paragraphs */}
+          <motion.div
+            className="max-w-2xl w-full space-y-5 text-center"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={fadeIn}
+          >
+            <p className="font-subheading text-lg text-white/70 leading-relaxed">
+              {lang === "es"
+                ? <>En un entorno cada vez más digital, muchas personas buscan participar en la <span className="text-[#c65a2e]">cultura de forma activa</span>.</>
+                : <>In an increasingly digital world, many people seek to <span className="text-[#c65a2e]">participate in culture actively</span>.</>}
+            </p>
+            <p className="font-subheading text-lg text-white/70 leading-relaxed">
+              {lang === "es"
+                ? <>Al mismo tiempo, descubrir <span className="text-[#c65a2e]">actividades culturales</span> puede ser complicado y disperso.</>
+                : <>At the same time, discovering <span className="text-[#c65a2e]">cultural activities</span> can be complicated and scattered.</>}
+            </p>
+            <p className="font-subheading text-lg text-white/70 leading-relaxed">
+              {lang === "es"
+                ? <>CultureCheck nace para conectar a las personas con esa <span className="text-[#c65a2e]">cultura que se vive</span>.</>
+                : <>CultureCheck was born to <span className="text-[#c65a2e]">connect people with the culture</span> that is lived.</>}
+            </p>
+            <p className="font-subheading text-lg text-white/70 leading-relaxed">
+              {lang === "es"
+                ? <>Nuestro objetivo es construir una <span className="text-[#c65a2e]">comunidad</span> donde la cultura se comparta de forma cotidiana.</>
+                : <>Our goal is to build a <span className="text-[#c65a2e]">community</span> where culture is shared as part of everyday life.</>}
+            </p>
           </motion.div>
+
         </div>
       </section>
 
