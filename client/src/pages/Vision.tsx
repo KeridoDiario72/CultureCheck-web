@@ -128,8 +128,8 @@ export default function Vision() {
       <SiteNav lang={lang} onLangToggle={() => setLang(lang === "en" ? "es" : "en")} activePage="vision" />
 
       {/* ── Hero + Mission ── */}
-      <section className="pt-28 pb-20 md:pt-36 md:pb-28 px-6 md:px-12 bg-[#2C47C7] text-white">
-        <div className="max-w-4xl mx-auto flex flex-col items-center gap-16 md:gap-20">
+      <section className="pt-28 pb-28 md:pt-36 md:pb-36 px-6 md:px-12 bg-[#2C47C7] text-white">
+        <div className="max-w-4xl mx-auto flex flex-col items-center gap-10 md:gap-12">
 
           {/* Big headline */}
           <motion.p
@@ -152,23 +152,23 @@ export default function Vision() {
           >
             <p className="font-subheading text-lg text-white/70 leading-relaxed">
               {lang === "es"
-                ? <>En un entorno cada vez más digital, muchas personas buscan participar en la <span className="text-[#1A1A1A]">cultura de forma activa</span>.</>
-                : <>In an increasingly digital world, many people seek to <span className="text-[#1A1A1A]">participate in culture actively</span>.</>}
+                ? <>En un entorno cada vez más digital, muchas personas buscan participar en la <span className="text-white font-bold">cultura de forma activa</span>.</>
+                : <>In an increasingly digital world, many people seek to <span className="text-white font-bold">participate in culture actively</span>.</>}
             </p>
             <p className="font-subheading text-lg text-white/70 leading-relaxed">
               {lang === "es"
-                ? <>Al mismo tiempo, descubrir <span className="text-[#1A1A1A]">actividades culturales</span> puede ser complicado y disperso.</>
-                : <>At the same time, discovering <span className="text-[#1A1A1A]">cultural activities</span> can be complicated and scattered.</>}
+                ? <>Al mismo tiempo, descubrir <span className="text-white font-bold">actividades culturales</span> puede ser complicado y disperso.</>
+                : <>At the same time, discovering <span className="text-white font-bold">cultural activities</span> can be complicated and scattered.</>}
             </p>
             <p className="font-subheading text-lg text-white/70 leading-relaxed">
               {lang === "es"
-                ? <>CultureCheck nace para conectar a las personas con esa <span className="text-[#1A1A1A]">cultura que se vive</span>.</>
-                : <>CultureCheck was born to <span className="text-[#1A1A1A]">connect people with the culture</span> that is lived.</>}
+                ? <>CultureCheck nace para conectar a las personas con esa <span className="text-white font-bold">cultura que se vive</span>.</>
+                : <>CultureCheck was born to <span className="text-white font-bold">connect people with the culture</span> that is lived.</>}
             </p>
             <p className="font-subheading text-lg text-white/70 leading-relaxed">
               {lang === "es"
-                ? <>Nuestro objetivo es construir una <span className="text-[#1A1A1A]">comunidad</span> donde la cultura se comparta de forma cotidiana.</>
-                : <>Our goal is to build a <span className="text-[#1A1A1A]">community</span> where culture is shared as part of everyday life.</>}
+                ? <>Nuestro objetivo es construir una <span className="text-white font-bold">comunidad</span> donde la cultura se comparta de forma cotidiana.</>
+                : <>Our goal is to build a <span className="text-white font-bold">community</span> where culture is shared as part of everyday life.</>}
             </p>
           </motion.div>
 
