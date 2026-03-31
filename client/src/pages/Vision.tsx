@@ -142,6 +142,65 @@ export default function Vision() {
         </motion.div>
       </section>
 
+      {/* ── Mission + Vision ── */}
+      <section className="py-14 md:py-20 px-6 md:px-12 bg-[#1A1A1A]">
+        <div className="max-w-3xl mx-auto space-y-12">
+          <motion.div
+            className="space-y-4"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={fadeIn}
+          >
+            <div className="space-y-4">
+              <p className="font-subheading text-lg text-white/70 leading-relaxed">
+                {lang === "es"
+                  ? <>En un entorno cada vez más digital, muchas personas buscan participar en la <span className="text-[#c65a2e]">cultura de forma activa</span>.</>
+                  : <>In an increasingly digital world, many people seek to <span className="text-[#c65a2e]">participate in culture actively</span>.</>}
+              </p>
+              <p className="font-subheading text-lg text-white/70 leading-relaxed">
+                {lang === "es"
+                  ? <>Al mismo tiempo, descubrir <span className="text-[#c65a2e]">actividades culturales</span> puede ser complicado y disperso.</>
+                  : <>At the same time, discovering <span className="text-[#c65a2e]">cultural activities</span> can be complicated and scattered.</>}
+              </p>
+              <p className="font-subheading text-lg text-white/70 leading-relaxed">
+                {lang === "es"
+                  ? <>CultureCheck nace para conectar a las personas con esa <span className="text-[#c65a2e]">cultura que se vive</span>.</>
+                  : <>CultureCheck was born to <span className="text-[#c65a2e]">connect people with the culture</span> that is lived.</>}
+              </p>
+            </div>
+          </motion.div>
+
+          <div className="border-t border-white/10" />
+
+          <motion.div
+            className="space-y-4"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={fadeIn}
+          >
+            <div className="space-y-4">
+              <p className="font-subheading text-lg text-white/70 leading-relaxed">
+                {lang === "es"
+                  ? <>Creemos en una <span className="text-[#5b9bd5]">cultura más activa</span>, cercana y accesible.</>
+                  : <>We believe in a more <span className="text-[#5b9bd5]">active, close and accessible</span> culture.</>}
+              </p>
+              <p className="font-subheading text-lg text-white/70 leading-relaxed">
+                {lang === "es"
+                  ? <>CultureCheck conecta a las personas con actividades culturales, facilitando que <span className="text-[#5b9bd5]">descubrir y crear</span> forme parte de la vida cotidiana.</>
+                  : <>CultureCheck connects people with cultural activities, making <span className="text-[#5b9bd5]">discovering and creating</span> part of everyday life.</>}
+              </p>
+              <p className="font-subheading text-lg text-white/70 leading-relaxed">
+                {lang === "es"
+                  ? <>Nuestro objetivo es construir una <span className="text-[#5b9bd5]">comunidad</span> donde la cultura se explore, se comparta y se viva.</>
+                  : <>Our goal is to build a <span className="text-[#5b9bd5]">community</span> where culture is explored, shared and lived.</>}
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ── Problem ── */}
       <section className="py-20 px-6 md:px-12 bg-white">
         <div className="max-w-3xl mx-auto">
@@ -166,67 +225,6 @@ export default function Vision() {
                   <span className="font-heading text-xl md:text-2xl text-[#2C47C7]">{card}</span>
                 </div>
               ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── Mission + Vision ── */}
-      <section className="py-14 md:py-20 px-6 md:px-12 bg-[#1A1A1A]">
-        <div className="max-w-3xl mx-auto space-y-12">
-          <motion.div
-            className="space-y-5"
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={fadeIn}
-          >
-            <span className="font-subheading text-sm uppercase tracking-widest text-[#c65a2e]">{t.mission.label}</span>
-            <div className="space-y-4">
-              <p className="font-subheading text-lg text-white/70 leading-relaxed">
-                {lang === "es"
-                  ? <>En un entorno cada vez más digital, muchas personas buscan participar en la <span className="text-[#c65a2e]">cultura de forma activa</span>.</>
-                  : <>In an increasingly digital world, many people seek to <span className="text-[#c65a2e]">participate in culture actively</span>.</>}
-              </p>
-              <p className="font-subheading text-lg text-white/70 leading-relaxed">
-                {lang === "es"
-                  ? <>Al mismo tiempo, descubrir <span className="text-[#c65a2e]">actividades culturales</span> puede ser complicado y disperso.</>
-                  : <>At the same time, discovering <span className="text-[#c65a2e]">cultural activities</span> can be complicated and scattered.</>}
-              </p>
-              <p className="font-subheading text-lg text-white/70 leading-relaxed">
-                {lang === "es"
-                  ? <>CultureCheck nace para conectar a las personas con esa <span className="text-[#c65a2e]">cultura que se vive</span>.</>
-                  : <>CultureCheck was born to <span className="text-[#c65a2e]">connect people with the culture</span> that is lived.</>}
-              </p>
-            </div>
-          </motion.div>
-
-          <div className="border-t border-white/10" />
-
-          <motion.div
-            className="space-y-5"
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={fadeIn}
-          >
-            <span className="font-subheading text-sm uppercase tracking-widest text-[#5b9bd5]">{t.vision.label}</span>
-            <div className="space-y-4">
-              <p className="font-subheading text-lg text-white/70 leading-relaxed">
-                {lang === "es"
-                  ? <>Creemos en una <span className="text-[#5b9bd5]">cultura más activa</span>, cercana y accesible.</>
-                  : <>We believe in a more <span className="text-[#5b9bd5]">active, close and accessible</span> culture.</>}
-              </p>
-              <p className="font-subheading text-lg text-white/70 leading-relaxed">
-                {lang === "es"
-                  ? <>CultureCheck conecta a las personas con actividades culturales, facilitando que <span className="text-[#5b9bd5]">descubrir y crear</span> forme parte de la vida cotidiana.</>
-                  : <>CultureCheck connects people with cultural activities, making <span className="text-[#5b9bd5]">discovering and creating</span> part of everyday life.</>}
-              </p>
-              <p className="font-subheading text-lg text-white/70 leading-relaxed">
-                {lang === "es"
-                  ? <>Nuestro objetivo es construir una <span className="text-[#5b9bd5]">comunidad</span> donde la cultura se explore, se comparta y se viva.</>
-                  : <>Our goal is to build a <span className="text-[#5b9bd5]">community</span> where culture is explored, shared and lived.</>}
-              </p>
             </div>
           </motion.div>
         </div>
