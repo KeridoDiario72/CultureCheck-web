@@ -152,7 +152,7 @@ export default function Vision() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <div className="space-y-4">
+            <div className="space-y-4 text-center">
               <p className="font-subheading text-lg text-white/70 leading-relaxed">
                 {lang === "es"
                   ? <>En un entorno cada vez más digital, muchas personas buscan participar en la <span className="text-[#c65a2e]">cultura de forma activa</span>.</>
@@ -180,21 +180,21 @@ export default function Vision() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <div className="space-y-4">
+            <div className="space-y-4 text-center">
               <p className="font-subheading text-lg text-white/70 leading-relaxed">
                 {lang === "es"
-                  ? <>Creemos en una <span className="text-[#5b9bd5]">cultura más activa</span>, cercana y accesible.</>
-                  : <>We believe in a more <span className="text-[#5b9bd5]">active, close and accessible</span> culture.</>}
+                  ? <>Creemos en una <span className="text-[#c65a2e]">cultura más activa</span>, cercana y accesible.</>
+                  : <>We believe in a more <span className="text-[#c65a2e]">active, close and accessible</span> culture.</>}
               </p>
               <p className="font-subheading text-lg text-white/70 leading-relaxed">
                 {lang === "es"
-                  ? <>CultureCheck conecta a las personas con actividades culturales, facilitando que <span className="text-[#5b9bd5]">descubrir y crear</span> forme parte de la vida cotidiana.</>
-                  : <>CultureCheck connects people with cultural activities, making <span className="text-[#5b9bd5]">discovering and creating</span> part of everyday life.</>}
+                  ? <>CultureCheck conecta a las personas con actividades culturales, facilitando que <span className="text-[#c65a2e]">descubrir y crear</span> forme parte de la vida cotidiana.</>
+                  : <>CultureCheck connects people with cultural activities, making <span className="text-[#c65a2e]">discovering and creating</span> part of everyday life.</>}
               </p>
               <p className="font-subheading text-lg text-white/70 leading-relaxed">
                 {lang === "es"
-                  ? <>Nuestro objetivo es construir una <span className="text-[#5b9bd5]">comunidad</span> donde la cultura se explore, se comparta y se viva.</>
-                  : <>Our goal is to build a <span className="text-[#5b9bd5]">community</span> where culture is explored, shared and lived.</>}
+                  ? <>Nuestro objetivo es construir una <span className="text-[#c65a2e]">comunidad</span> donde la cultura se explore, se comparta y se viva.</>
+                  : <>Our goal is to build a <span className="text-[#c65a2e]">community</span> where culture is explored, shared and lived.</>}
               </p>
             </div>
           </motion.div>
