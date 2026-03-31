@@ -54,9 +54,9 @@ export function SiteNav({ lang, onLangToggle, activePage }: SiteNavProps) {
           </div>
 
           {/* Center: logo (desktop only) */}
-          <div className="hidden md:flex justify-center h-9 items-center">
+          <div className="hidden md:flex justify-center h-12 items-center">
             <Link href="/">
-              <img src={logoImage} alt="CultureCheck" className="h-full w-auto object-contain max-w-[130px] cursor-pointer" />
+              <img src={logoImage} alt="CultureCheck" className="h-full w-auto object-contain max-w-[170px] cursor-pointer" />
             </Link>
           </div>
 
