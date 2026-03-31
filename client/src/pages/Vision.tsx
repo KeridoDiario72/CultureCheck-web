@@ -164,13 +164,13 @@ export default function Vision() {
             </p>
             <p className="font-subheading text-lg text-white/70 leading-relaxed">
               {lang === "es"
-                ? <>CultureCheck nace para conectar a las personas con esa <span className="text-white tracking-wider whitespace-nowrap">cultura que se vive</span>.</>
-                : <>CultureCheck was born to <span className="text-white tracking-wider whitespace-nowrap">connect people with the culture</span> that is lived.</>}
+                ? <>Nuestro objetivo es construir una <span className="text-white tracking-wider whitespace-nowrap">comunidad</span> donde la cultura se comparta de forma cotidiana.</>
+                : <>Our goal is to build a <span className="text-white tracking-wider whitespace-nowrap">community</span> where culture is shared as part of everyday life.</>}
             </p>
             <p className="font-subheading text-lg text-white/70 leading-relaxed">
               {lang === "es"
-                ? <>Nuestro objetivo es construir una <span className="text-white tracking-wider whitespace-nowrap">comunidad</span> donde la cultura se comparta de forma cotidiana.</>
-                : <>Our goal is to build a <span className="text-white tracking-wider whitespace-nowrap">community</span> where culture is shared as part of everyday life.</>}
+                ? <>CultureCheck nace para conectar a las personas con esa <span className="text-white tracking-wider whitespace-nowrap">cultura que se vive</span>.</>
+                : <>CultureCheck was born to <span className="text-white tracking-wider whitespace-nowrap">connect people with the culture</span> that is lived.</>}
             </p>
           </motion.div>
 
