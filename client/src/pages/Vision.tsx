@@ -189,9 +189,9 @@ export default function Vision() {
             variants={fadeIn}
           >
             {/* Title — bold statement */}
-            <h2 className="font-subheading font-bold text-xl md:text-2xl text-[#1A1A1A] leading-snug text-balance">{t.problem.title}</h2>
+            <h2 className="font-subheading font-bold text-xl md:text-2xl text-[#1A1A1A] leading-snug text-balance text-center">{t.problem.title}</h2>
             {/* Description */}
-            <p className="font-subheading text-lg md:text-xl text-[#1A1A1A]/60 leading-relaxed">{t.problem.para2}</p>
+            <p className="font-subheading text-lg md:text-xl text-[#1A1A1A]/60 leading-relaxed text-center">{t.problem.para2}</p>
             {/* Cards */}
             <div className="grid grid-cols-2 gap-4">
               {t.problem.cards.map((card, i) => (
