@@ -32,27 +32,36 @@ export function SiteNav({ lang, onLangToggle, activePage }: SiteNavProps) {
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 h-16 px-4 md:px-8 flex items-center bg-white border-b border-gray-200 shadow-sm">
-        <div className="w-full max-w-7xl mx-auto flex items-center justify-between gap-6">
+        <div className="w-full max-w-7xl mx-auto flex md:grid md:grid-cols-3 items-center justify-between md:justify-normal gap-6 md:gap-0">
 
-          {/* Logo */}
-          <div className="flex-shrink-0 h-9 flex items-center">
+          {/* Left: links (desktop) / Logo (mobile) */}
+          <div className="flex items-center gap-8">
+            {/* Mobile: logo */}
+            <div className="md:hidden flex-shrink-0 h-9 flex items-center">
+              <Link href="/">
+                <img src={logoImage} alt="CultureCheck" className="h-full w-auto object-contain max-w-[130px] cursor-pointer" />
+              </Link>
+            </div>
+            {/* Desktop: nav links */}
+            <div className="hidden md:flex items-center gap-8">
+              <Link href="/para-espacios" className={activePage === "para-espacios" ? active : inactive} data-testid="link-nav-spaces">
+                {t.spaces}
+              </Link>
+              <Link href="/vision" className={activePage === "vision" ? active : inactive} data-testid="link-nav-vision">
+                {t.vision}
+              </Link>
+            </div>
+          </div>
+
+          {/* Center: logo (desktop only) */}
+          <div className="hidden md:flex justify-center h-9 items-center">
             <Link href="/">
               <img src={logoImage} alt="CultureCheck" className="h-full w-auto object-contain max-w-[130px] cursor-pointer" />
             </Link>
           </div>
 
-          {/* Center links — desktop only */}
-          <div className="hidden md:flex items-center gap-8">
-            <Link href="/para-espacios" className={activePage === "para-espacios" ? active : inactive} data-testid="link-nav-spaces">
-              {t.spaces}
-            </Link>
-            <Link href="/vision" className={activePage === "vision" ? active : inactive} data-testid="link-nav-vision">
-              {t.vision}
-            </Link>
-          </div>
-
-          {/* Right side */}
-          <div className="flex items-center gap-3 flex-shrink-0">
+          {/* Right: lang toggle + CTA + hamburger */}
+          <div className="flex items-center gap-3 justify-end flex-shrink-0">
             <button
               onClick={onLangToggle}
               className="font-subheading text-xs uppercase tracking-widest text-[#1A1A1A]/50 hover:text-[#1A1A1A] transition-colors"
