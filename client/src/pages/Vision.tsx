@@ -44,7 +44,7 @@ export default function Vision() {
   const content = {
     en: {
       what: {
-        text: "CultureCheck was born from a simple idea: culture should be easy to discover and part of everyday life."
+        text: "culture that is lived"
       },
       problem: {
         title: "Discovering cultural activities shouldn't be complicated",
@@ -83,7 +83,7 @@ export default function Vision() {
     },
     es: {
       what: {
-        text: "CultureCheck nace de una idea simple: la cultura debería ser fácil de descubrir y formar parte de la vida cotidiana."
+        text: "cultura que se vive"
       },
       problem: {
         title: "Descubrir actividades culturales no debería ser complicado",
@@ -130,15 +130,15 @@ export default function Vision() {
       <SiteNav lang={lang} onLangToggle={() => setLang(lang === "en" ? "es" : "en")} activePage="vision" />
 
       {/* ── What is CultureCheck ── */}
-      <section className="pt-28 pb-24 md:pt-40 md:pb-28 px-6 md:px-12 bg-[#2C47C7] text-white">
+      <section className="pt-28 pb-20 md:pt-36 md:pb-24 px-6 md:px-12 bg-[#2C47C7] text-white">
         <motion.div
-          className="max-w-3xl mx-auto text-center"
+          className="max-w-4xl mx-auto text-center"
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
           variants={fadeIn}
         >
-          <p className="font-heading text-3xl md:text-4xl lg:text-5xl text-white leading-snug">
+          <p className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-tight tracking-tight">
             {t.what.text}
           </p>
         </motion.div>
