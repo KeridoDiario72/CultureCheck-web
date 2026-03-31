@@ -47,7 +47,7 @@ export default function Vision() {
         text: "culture that is lived"
       },
       problem: {
-        title: "CultureCheck was born from a simple idea: culture should be easy to discover and part of everyday life.",
+        title: "Culture should be easy to discover and part of everyday life.",
         para2: "CultureCheck brings cultural and creative activities together in one place, making discovery and booking easy.",
         cards: ["A place to discover", "A place to book"]
       },
@@ -85,7 +85,7 @@ export default function Vision() {
         text: "cultura que se vive"
       },
       problem: {
-        title: "CultureCheck nace de una idea simple: la cultura debería ser fácil de descubrir y formar parte de la vida cotidiana.",
+        title: "La cultura debería ser fácil de descubrir y formar parte de la vida cotidiana.",
         para2: "CultureCheck reúne en un solo lugar actividades culturales y creativas, facilitando el descubrimiento y la reserva.",
         cards: ["Un lugar para descubrir", "Un lugar para reservar"]
       },
