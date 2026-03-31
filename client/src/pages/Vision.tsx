@@ -168,21 +168,10 @@ export default function Vision() {
                   ? <>CultureCheck nace para conectar a las personas con esa <span className="text-[#c65a2e]">cultura que se vive</span>.</>
                   : <>CultureCheck was born to <span className="text-[#c65a2e]">connect people with the culture</span> that is lived.</>}
               </p>
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="space-y-4"
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            variants={fadeIn}
-          >
-            <div className="space-y-4 text-center">
               <p className="font-subheading text-lg text-white/70 leading-relaxed">
                 {lang === "es"
-                  ? <>Nuestro objetivo es construir una <span className="text-[#c65a2e]">comunidad</span> donde la cultura se explore, se comparta y se viva.</>
-                  : <>Our goal is to build a <span className="text-[#c65a2e]">community</span> where culture is explored, shared and lived.</>}
+                  ? <>Nuestro objetivo es construir una <span className="text-[#c65a2e]">comunidad</span> donde la cultura se comparta de forma cotidiana.</>
+                  : <>Our goal is to build a <span className="text-[#c65a2e]">community</span> where culture is shared as part of everyday life.</>}
               </p>
             </div>
           </motion.div>
