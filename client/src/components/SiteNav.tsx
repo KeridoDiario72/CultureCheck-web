@@ -16,8 +16,8 @@ export function SiteNav({ lang, onLangToggle, activePage }: SiteNavProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const labels = {
-    en: { home: "Home", spaces: "For spaces", vision: "Purpose", cta: "Explore activities" },
-    es: { home: "Inicio", spaces: "Para espacios", vision: "Propósito", cta: "Explorar actividades" }
+    en: { spaces: "For spaces", vision: "Purpose", cta: "Explore activities" },
+    es: { spaces: "Para espacios", vision: "Propósito", cta: "Explorar actividades" }
   };
   const t = labels[lang];
 
@@ -43,9 +43,6 @@ export function SiteNav({ lang, onLangToggle, activePage }: SiteNavProps) {
 
           {/* Center links — desktop only */}
           <div className="hidden md:flex items-center gap-8">
-            <Link href="/" className={activePage === "home" ? active : inactive} data-testid="link-nav-home">
-              {t.home}
-            </Link>
             <Link href="/para-espacios" className={activePage === "para-espacios" ? active : inactive} data-testid="link-nav-spaces">
               {t.spaces}
             </Link>
@@ -92,13 +89,6 @@ export function SiteNav({ lang, onLangToggle, activePage }: SiteNavProps) {
           />
           {/* Menu panel */}
           <div className="fixed top-16 left-0 right-0 z-50 bg-white border-b border-gray-200 shadow-lg px-6 pb-5 flex flex-col md:hidden">
-            <Link
-              href="/"
-              className={activePage === "home" ? mobileLinkActive : mobileLinkInactive}
-              data-testid="link-mobile-nav-home"
-            >
-              {t.home}
-            </Link>
             <Link
               href="/para-espacios"
               className={activePage === "para-espacios" ? mobileLinkActive : mobileLinkInactive}
