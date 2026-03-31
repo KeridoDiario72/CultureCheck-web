@@ -61,7 +61,7 @@ export default function Vision() {
         ]
       },
       vision: {
-        label: "Vision",
+        label: "Purpose",
         paragraphs: [
           "We believe in a more active, close and accessible culture.",
           "CultureCheck connects people with cultural activities, making discovering and creating part of everyday life.",
@@ -100,7 +100,7 @@ export default function Vision() {
         ]
       },
       vision: {
-        label: "Visión",
+        label: "Propósito",
         paragraphs: [
           "Creemos en una cultura más activa, cercana y accesible.",
           "CultureCheck conecta a las personas con actividades culturales, facilitando que descubrir y crear forme parte de la vida cotidiana.",

@@ -16,8 +16,8 @@ export function SiteNav({ lang, onLangToggle, activePage }: SiteNavProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const labels = {
-    en: { home: "Home", spaces: "For spaces", vision: "Vision", cta: "Explore activities" },
-    es: { home: "Inicio", spaces: "Para espacios", vision: "Visión", cta: "Explorar actividades" }
+    en: { home: "Home", spaces: "For spaces", vision: "Purpose", cta: "Explore activities" },
+    es: { home: "Inicio", spaces: "Para espacios", vision: "Propósito", cta: "Explorar actividades" }
   };
   const t = labels[lang];
 
