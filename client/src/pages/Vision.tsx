@@ -128,12 +128,12 @@ export default function Vision() {
       <SiteNav lang={lang} onLangToggle={() => setLang(lang === "en" ? "es" : "en")} activePage="vision" />
 
       {/* ── Hero + Mission ── */}
-      <section className="pt-28 pb-28 md:pt-36 md:pb-36 px-6 md:px-12 bg-[#2C47C7] text-white">
+      <section className="pt-28 pb-12 md:pt-36 md:pb-20 px-6 md:px-12 bg-[#2C47C7] text-white">
         <div className="max-w-4xl mx-auto flex flex-col items-center gap-10 md:gap-12">
 
           {/* Big headline */}
           <motion.p
-            className="font-heading text-4xl sm:text-5xl md:text-6xl text-white leading-tight tracking-wide uppercase text-center"
+            className="font-heading text-2xl sm:text-4xl md:text-6xl text-white leading-tight tracking-wide uppercase text-center whitespace-nowrap"
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
