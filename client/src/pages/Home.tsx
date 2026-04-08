@@ -43,7 +43,7 @@ export default function Home() {
         steps: [
           { icon: Search, title: "Discover activities", desc: "Browse workshops and creative activities near you" },
           { icon: CalendarCheck, title: "Book easily", desc: "Book in a simple, fast and secure way" },
-          { icon: Sparkles, title: "Enjoy and explore", desc: "Live new creative experiences" }
+          { icon: Sparkles, title: "Enjoy and explore", desc: "Live new creative activities" }
         ]
       },
       activities: {
@@ -77,7 +77,7 @@ export default function Home() {
         steps: [
           { icon: Search, title: "Descubre actividades", desc: "Explora talleres y actividades creativas cerca de ti" },
           { icon: CalendarCheck, title: "Reserva fácilmente", desc: "Reserva de forma simple, rápida y segura" },
-          { icon: Sparkles, title: "Disfruta y explora", desc: "Vive nuevas experiencias creativas" }
+          { icon: Sparkles, title: "Disfruta y explora", desc: "Vive nuevas actividades creativas" }
         ]
       },
       activities: {
