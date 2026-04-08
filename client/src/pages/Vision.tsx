@@ -152,23 +152,18 @@ export default function Vision() {
           >
             <p className="font-subheading text-lg text-white/70 leading-relaxed">
               {lang === "es"
-                ? <>En un entorno cada vez más digital, muchas personas buscan participar en la <span className="text-white tracking-wider whitespace-nowrap">cultura de forma activa</span>.</>
-                : <>In an increasingly digital world, many people seek to <span className="text-white tracking-wider whitespace-nowrap">participate in culture actively</span>.</>}
+                ? <>En un entorno cada vez más digital, buscamos actividades que <span className="text-white tracking-wider whitespace-nowrap">nos saquen de la pantalla</span> y nos hagan sentir mejor. Pero descubrir propuestas auténticas y con identidad es complicado y disperso.</>
+                : <>In an increasingly digital world, we look for activities that <span className="text-white tracking-wider whitespace-nowrap">take us away from the screen</span> and make us feel better. But discovering authentic proposals with identity is complicated and scattered.</>}
             </p>
             <p className="font-subheading text-lg text-white/70 leading-relaxed">
               {lang === "es"
-                ? <>Al mismo tiempo, descubrir <span className="text-white tracking-wider whitespace-nowrap">actividades culturales</span> puede ser complicado y disperso.</>
-                : <>At the same time, discovering <span className="text-white tracking-wider whitespace-nowrap">cultural activities</span> can be complicated and scattered.</>}
+                ? <>CultureCheck conecta a las personas con esos espacios y con una <span className="text-white tracking-wider whitespace-nowrap">comunidad</span> con la que compartirlos.</>
+                : <>CultureCheck connects people with those spaces and with a <span className="text-white tracking-wider whitespace-nowrap">community</span> to share them with.</>}
             </p>
             <p className="font-subheading text-lg text-white/70 leading-relaxed">
               {lang === "es"
-                ? <>Nuestro objetivo es construir una <span className="text-white tracking-wider whitespace-nowrap">comunidad</span> donde la cultura se comparta de forma cotidiana.</>
-                : <>Our goal is to build a <span className="text-white tracking-wider whitespace-nowrap">community</span> where culture is shared as part of everyday life.</>}
-            </p>
-            <p className="font-subheading text-lg text-white/70 leading-relaxed">
-              {lang === "es"
-                ? <>CultureCheck nace para conectar a las personas con esa <span className="text-white tracking-wider whitespace-nowrap">cultura que se vive</span>.</>
-                : <>CultureCheck was born to <span className="text-white tracking-wider whitespace-nowrap">connect people with the culture</span> that is lived.</>}
+                ? <>Un lugar para reconectar creando y encontrar realización en el proceso creativo. La cultura ya no se quiere ver, <span className="text-white tracking-wider whitespace-nowrap">se quiere vivir</span>.</>
+                : <>A place to reconnect through creating and find fulfillment in the creative process. Culture is no longer something to watch — <span className="text-white tracking-wider whitespace-nowrap">it's something to live</span>.</>}
             </p>
           </motion.div>
 
