@@ -150,30 +150,25 @@ export default function Vision() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <p className="font-subheading text-lg text-white/70 leading-relaxed md:whitespace-nowrap">
+            <p className="font-subheading text-lg text-white/70 leading-relaxed">
               {lang === "es"
-                ? <>En un entorno cada vez más digital, buscamos actividades que <span className="text-white tracking-wider whitespace-nowrap">nos saquen de las pantallas</span> y nos hagan sentir mejor.</>
-                : <>In an increasingly digital world, we look for activities that <span className="text-white tracking-wider whitespace-nowrap">take us away from screens</span> and make us feel better.</>}
+                ? <>En un entorno cada vez más digital y pasivo, muchas personas buscan <span className="text-white tracking-wider whitespace-nowrap">participar en la cultura de forma activa</span>.</>
+                : <>In an increasingly digital and passive world, many people seek to <span className="text-white tracking-wider whitespace-nowrap">participate in culture actively</span>.</>}
             </p>
             <p className="font-subheading text-lg text-white/70 leading-relaxed">
               {lang === "es"
-                ? <>Pero descubrir propuestas auténticas y con identidad es complicado y disperso.</>
-                : <>But discovering authentic proposals with identity is complicated and scattered.</>}
+                ? <>Al mismo tiempo, descubrir <span className="text-white tracking-wider whitespace-nowrap">actividades culturales</span> puede ser complicado y disperso.</>
+                : <>At the same time, discovering <span className="text-white tracking-wider whitespace-nowrap">cultural activities</span> can be complicated and scattered.</>}
             </p>
             <p className="font-subheading text-lg text-white/70 leading-relaxed">
               {lang === "es"
-                ? <>CultureCheck conecta a las personas con esos espacios y con una <span className="text-white tracking-wider whitespace-nowrap">comunidad</span> con la que compartirlos.</>
-                : <>CultureCheck connects people with those spaces and with a <span className="text-white tracking-wider whitespace-nowrap">community</span> to share them with.</>}
+                ? <>Nuestro objetivo es construir una <span className="text-white tracking-wider whitespace-nowrap">comunidad</span> donde la cultura se comparta de forma cotidiana.</>
+                : <>Our goal is to build a <span className="text-white tracking-wider whitespace-nowrap">community</span> where culture is shared as part of everyday life.</>}
             </p>
             <p className="font-subheading text-lg text-white/70 leading-relaxed">
               {lang === "es"
-                ? <>Un lugar para reconectar creando y encontrar realización en el proceso creativo.</>
-                : <>A place to reconnect through creating and find fulfillment in the creative process.</>}
-            </p>
-            <p className="font-subheading text-lg text-white/70 leading-relaxed">
-              {lang === "es"
-                ? <>La cultura ya no solo se quiere ver, <span className="text-white tracking-wider whitespace-nowrap">se quiere vivir</span>.</>
-                : <>Culture is no longer something to just watch — <span className="text-white tracking-wider whitespace-nowrap">it's something to live</span>.</>}
+                ? <>CultureCheck es un espacio para <span className="text-white tracking-wider whitespace-nowrap">reconectar creando</span> y encontrar realización en el proceso creativo.</>
+                : <>CultureCheck is a space to <span className="text-white tracking-wider whitespace-nowrap">reconnect through creating</span> and find fulfillment in the creative process.</>}
             </p>
           </motion.div>
 
