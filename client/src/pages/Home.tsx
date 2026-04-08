@@ -171,7 +171,9 @@ export default function Home() {
               {t.hero.headline}
             </h1>
             <p className="font-subheading text-base md:text-lg text-[#1A1A1A]/55 leading-relaxed max-w-md mx-auto mb-8">
-              {t.hero.subheadline}
+              {lang === "es"
+                ? <>Encuentra tu próximo taller creativo<br className="md:hidden" /> y reserva en pocos pasos</>
+                : t.hero.subheadline}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href={MARKETPLACE_URL} data-testid="button-explore-hero">
