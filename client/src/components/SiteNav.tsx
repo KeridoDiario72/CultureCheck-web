@@ -32,16 +32,19 @@ export function SiteNav({ lang, onLangToggle, activePage }: SiteNavProps) {
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 h-16 px-4 md:px-8 flex items-center bg-white border-b border-gray-200 shadow-sm">
-        <div className="w-full max-w-7xl mx-auto flex md:grid md:grid-cols-3 items-center justify-between md:justify-normal gap-6 md:gap-0">
+        <div className="w-full max-w-7xl mx-auto grid grid-cols-3 items-center">
 
-          {/* Left: links (desktop) / Logo (mobile) */}
-          <div className="flex items-center gap-8">
-            {/* Mobile: logo */}
-            <div className="md:hidden flex-shrink-0 h-9 flex items-center">
-              <Link href="/">
-                <img src={logoImage} alt="CultureCheck" className="h-full w-auto object-contain max-w-[130px] cursor-pointer" />
-              </Link>
-            </div>
+          {/* Left: hamburger (mobile) / nav links (desktop) */}
+          <div className="flex items-center">
+            {/* Mobile: hamburger */}
+            <button
+              className="md:hidden p-1.5 text-[#1A1A1A]/70 hover:text-[#1A1A1A] transition-colors"
+              onClick={() => setMobileOpen((v) => !v)}
+              aria-label="Abrir menú"
+              data-testid="button-mobile-menu"
+            >
+              {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
             {/* Desktop: nav links */}
             <div className="hidden md:flex items-center gap-8">
               <Link href="/para-espacios" className={activePage === "para-espacios" ? active : inactive} data-testid="link-nav-spaces">
@@ -53,15 +56,15 @@ export function SiteNav({ lang, onLangToggle, activePage }: SiteNavProps) {
             </div>
           </div>
 
-          {/* Center: logo (desktop only) */}
-          <div className="hidden md:flex justify-center h-12 items-center">
+          {/* Center: logo */}
+          <div className="flex justify-center items-center h-9 md:h-12">
             <Link href="/">
-              <img src={logoImage} alt="CultureCheck" className="h-full w-auto object-contain max-w-[170px] cursor-pointer" />
+              <img src={logoImage} alt="CultureCheck" className="h-full w-auto object-contain max-w-[130px] md:max-w-[170px] cursor-pointer" />
             </Link>
           </div>
 
-          {/* Right: lang toggle + CTA + hamburger */}
-          <div className="flex items-center gap-3 justify-end flex-shrink-0">
+          {/* Right: lang toggle + CTA (desktop) */}
+          <div className="flex items-center gap-3 justify-end">
             <button
               onClick={onLangToggle}
               className="font-subheading text-xs uppercase tracking-widest text-[#1A1A1A]/50 hover:text-[#1A1A1A] transition-colors"
@@ -74,15 +77,6 @@ export function SiteNav({ lang, onLangToggle, activePage }: SiteNavProps) {
                 {t.cta} <ArrowRight className="h-3.5 w-3.5" />
               </Button>
             </a>
-            {/* Hamburger — mobile only */}
-            <button
-              className="md:hidden p-1.5 text-[#1A1A1A]/70 hover:text-[#1A1A1A] transition-colors"
-              onClick={() => setMobileOpen((v) => !v)}
-              aria-label="Abrir menú"
-              data-testid="button-mobile-menu"
-            >
-              {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </button>
           </div>
 
         </div>
