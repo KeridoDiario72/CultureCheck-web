@@ -152,8 +152,13 @@ export default function Vision() {
           >
             <p className="font-subheading text-lg text-white/70 leading-relaxed">
               {lang === "es"
-                ? <>En un entorno cada vez más digital, buscamos actividades que <span className="text-white tracking-wider whitespace-nowrap">nos saquen de la pantalla</span> y nos hagan sentir mejor. Pero descubrir propuestas auténticas y con identidad es complicado y disperso.</>
-                : <>In an increasingly digital world, we look for activities that <span className="text-white tracking-wider whitespace-nowrap">take us away from the screen</span> and make us feel better. But discovering authentic proposals with identity is complicated and scattered.</>}
+                ? <>En un entorno cada vez más digital, buscamos actividades que <span className="text-white tracking-wider whitespace-nowrap">nos saquen de la pantalla</span> y nos hagan sentir mejor.</>
+                : <>In an increasingly digital world, we look for activities that <span className="text-white tracking-wider whitespace-nowrap">take us away from the screen</span> and make us feel better.</>}
+            </p>
+            <p className="font-subheading text-lg text-white/70 leading-relaxed">
+              {lang === "es"
+                ? <>Pero descubrir propuestas auténticas y con identidad es complicado y disperso.</>
+                : <>But discovering authentic proposals with identity is complicated and scattered.</>}
             </p>
             <p className="font-subheading text-lg text-white/70 leading-relaxed">
               {lang === "es"
@@ -162,8 +167,13 @@ export default function Vision() {
             </p>
             <p className="font-subheading text-lg text-white/70 leading-relaxed">
               {lang === "es"
-                ? <>Un lugar para reconectar creando y encontrar realización en el proceso creativo. La cultura ya no se quiere ver, <span className="text-white tracking-wider whitespace-nowrap">se quiere vivir</span>.</>
-                : <>A place to reconnect through creating and find fulfillment in the creative process. Culture is no longer something to watch — <span className="text-white tracking-wider whitespace-nowrap">it's something to live</span>.</>}
+                ? <>Un lugar para reconectar creando y encontrar realización en el proceso creativo.</>
+                : <>A place to reconnect through creating and find fulfillment in the creative process.</>}
+            </p>
+            <p className="font-subheading text-lg text-white/70 leading-relaxed">
+              {lang === "es"
+                ? <>La cultura ya no solo se quiere ver, <span className="text-white tracking-wider whitespace-nowrap">se quiere vivir</span>.</>
+                : <>Culture is no longer something to just watch — <span className="text-white tracking-wider whitespace-nowrap">it's something to live</span>.</>}
             </p>
           </motion.div>
 
