@@ -170,6 +170,11 @@ export default function Vision() {
                 ? <>CultureCheck es un espacio para <span className="text-white tracking-wider whitespace-nowrap">reconectar creando</span> y encontrar realización en el proceso creativo.</>
                 : <>CultureCheck is a space to <span className="text-white tracking-wider whitespace-nowrap">reconnect through creating</span> and find fulfillment in the creative process.</>}
             </p>
+            <p className="font-subheading text-lg text-white/70 leading-relaxed">
+              {lang === "es"
+                ? <>La cultura ya no solo se quiere ver, <span className="text-white tracking-wider whitespace-nowrap">se quiere vivir</span>.</>
+                : <>Culture is no longer something to just watch — <span className="text-white tracking-wider whitespace-nowrap">it's something to live</span>.</>}
+            </p>
           </motion.div>
 
         </div>
